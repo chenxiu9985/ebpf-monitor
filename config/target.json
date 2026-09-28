@@ -1,0 +1,12 @@
+{
+  "source": "user-provided; target verification pending",
+  "virtualization": "VMware",
+  "os_image": "Ubuntu Server 24.04.3",
+  "kernel": "6.8.0-136-generic",
+  "architecture": "x86_64",
+  "bcc_package": "0.29.1+ds-1ubuntu7",
+  "memory_gib": 3.8,
+  "test_user": "chenxiu",
+  "test_uid": 1000,
+  "implementation": "libbpf CO-RE (BCC is not a runtime dependency)"
+}

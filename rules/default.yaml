@@ -1,0 +1,15 @@
+version: 1
+window_seconds: 30
+reorder_ms: 200
+max_processes: 8192
+exit_retention_seconds: 60
+enabled: [R01, R02, R03, R04, C01, C02]
+sensitive_paths: [/etc/shadow, /etc/gshadow]
+preload_config: /etc/ld.so.preload
+temporary_roots: [/tmp, /var/tmp, /dev/shm]
+service_executables: [/usr/sbin/nginx, /usr/sbin/apache2, /usr/sbin/sshd, /usr/bin/demo-service]
+shell_executables: [/bin/sh, /bin/bash, /usr/bin/sh, /usr/bin/bash, /usr/bin/dash]
+# Exceptions require an exact executable AND uid AND rule match.
+# No broad root exemption and no comm-only allowlist.
+exceptions: []
+

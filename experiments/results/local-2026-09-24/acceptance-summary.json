@@ -1,0 +1,94 @@
+{
+  "started_utc": "2026-09-24T10:10:32.414479+00:00",
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "source_sha256": {
+    "bpf/events.h": "28baa94b2c4aeb552235d5e88256c09e193a14e8fd532842095c4e01edfbcf9d",
+    "bpf/monitor.bpf.c": "8a55ff0642f8912343d7f4855cf46aa3d05822918ee9e127ca4d05f0be47eab8",
+    "collector/main.c": "79aa9335544b5073001854ecdc1184e3d07161aa8a583b4655669bd96fa1cb4f",
+    "monitor/__init__.py": "5708f2cd49ddfd1da4bffa02b4da7c0332c247a572c04fac001ba68e39e6b60b",
+    "monitor/__main__.py": "25e943d5f9b200b469b590acb64e45f79a973ceb77c8eaaa3bc91d93b470bb60",
+    "monitor/engine.py": "06be3810e08e51b6935ef0c9903f812c1b2182e347168b5a766656fc5a7e6ef8",
+    "monitor/model.py": "c0eca2712145499ac2b143459a1cc8758946254f56574a768c296004a7f0aa87",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/runtime.py": "67091a287f81aa6a16ec7bc60f7d634fed3a719c8001aaa2642f01cfb1df3059",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "e3071cd37c97c9e1f68e624cb538e7ceba0b29241a044a2958930897caebeb99",
+    "scripts/acceptance.py": "87ffda90a4e4b1f2c7753a8fb5c6753c32ff569187dad5b8e4382b0f282b7a38",
+    "scripts/benchmark.py": "a123a8387295f6b9bd670a0f0d1b586ee8e7ccd6630d457f5ee1459c0a14e9ce",
+    "scripts/build.sh": "10ab28ad535fc12925ba684245a2ab63a62a44a167a705ed33a09784154f9b30",
+    "scripts/freeze_competitors.py": "9be003626cfb91197d11255828cbe819d7f7f1220e86c4b39d398cb2ffc8f9c7",
+    "scripts/integration.py": "217c9c988ab2265d63988eccec533373fc2236642f9fe6bd5c94ae829591b996",
+    "scripts/live_edges.py": "f380e3de2be349278ee01f11f4e2db95acefec106453d42d0a3f0a59856e7143",
+    "scripts/run.sh": "4c169460ffd652082bc7c497f3f6fab76c5940add24e2638fb52cc232f37ae93",
+    "scripts/target_check.sh": "d872eaa20fe7ddf256e53fda9e323635179c29bd16d371ed2badfde6eb45f6c8",
+    "scripts/transport_recovery.py": "737554f43da1a9b38c704ce2312c376573d795199ea75ff47f5de60993f63793",
+    "scripts/verify_lsm.py": "685432986fbedd8e645f7670b3456cdaac10c519b8e40da839ec12cb0670994e",
+    "tests/fixtures/benign_preload.c": "06d94361278cb90ae9c52c41ab2883c41ff2c704ff51131972c870ad91e90f51",
+    "tests/fixtures/block_client.c": "94e0e143cb2dab14d7d72090fa5a0d1868553586e23b4088aa2244c7c72e3917",
+    "tests/fixtures/edges.c": "005726f7065b304ffe154e58f40f93239dbbc20bb6e4965d3e30a569959baa24",
+    "tests/fixtures/service.c": "8ad7c58ed14db31d1a269cf5a5e3b8f585c2ba54e440bd8719cffd10345db828",
+    "tests/fixtures/worker.c": "b9672fd6e37ac3342b8f267ad84c30da4bbff9726dd581b58c7afacc9d54e2a9",
+    "tests/test_analysis.py": "fa8ecbe6be2493ce8dca14851969dd9ba69730dc794b51654a5e45fd3524e41a",
+    "rules/default.yaml": "8b3ba8ab9526519ab842cde18e7fbb4cebf543a58162ba39e558fe8ba2de4c2e",
+    "schema/README.md": "d6386a4e9b81e80beaad6844abd6f51c1420f981f25276a9122c3da56daa0256",
+    "schema/event.schema.json": "256b02e628009ccadc291e6d6b1bc8096430d6c6bdd60de7bea9b857b160455e",
+    "config/target.json": "de354a40fbcbc82ce8a017f0f2aee0da4bdca5904fa635f27aa0d1c7563455ed"
+  },
+  "stages": [
+    {
+      "name": "environment",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "build",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "unit",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "integration",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "edges",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "recovery",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "benchmark",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "lsm",
+      "status": "unavailable",
+      "returncode": 77
+    }
+  ],
+  "scope": "self-project acceptance; competitors and one-hour workload excluded",
+  "performance_targets": {
+    "integration": {
+      "measured": 736.0196926000001,
+      "strict_upper_limit": 500,
+      "passed": false
+    },
+    "benchmark": {
+      "measured": 13.855327005078577,
+      "strict_upper_limit": 5,
+      "passed": false
+    }
+  },
+  "suite_passed": false,
+  "finished_utc": "2026-09-24T10:10:56.249825+00:00"
+}

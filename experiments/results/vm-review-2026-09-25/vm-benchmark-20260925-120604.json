@@ -1,0 +1,154 @@
+{
+  "source": "LOCAL_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.8.0-136-generic-x86_64-with-glibc2.39",
+    "kernel": "6.8.0-136-generic",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": "lockdown,capability,landlock,yama,apparmor",
+    "bpf_lsm_active": false,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 3960868
+  },
+  "parameters": {
+    "out": "out/vm-benchmark-20260925-120604",
+    "rounds": 5,
+    "opens": 20000,
+    "execs": 1000
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 1.448349345002498,
+      "operations_per_second": 14499.264333194269
+    },
+    {
+      "round": 1,
+      "group": "B1",
+      "seconds": 2.2429313410029863,
+      "operations_per_second": 9362.747586651178,
+      "collector_rss_kib": 36132,
+      "final_metrics": {
+        "events_attempted": 25013,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 2,
+      "group": "B1",
+      "seconds": 2.1452706400013994,
+      "operations_per_second": 9788.974690851268,
+      "collector_rss_kib": 36068,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 2,
+      "group": "B0",
+      "seconds": 1.4255403290007962,
+      "operations_per_second": 14731.256333322766
+    },
+    {
+      "round": 3,
+      "group": "B0",
+      "seconds": 1.4208052219983074,
+      "operations_per_second": 14780.351081807199
+    },
+    {
+      "round": 3,
+      "group": "B1",
+      "seconds": 2.065595863998169,
+      "operations_per_second": 10166.557924526622,
+      "collector_rss_kib": 36052,
+      "final_metrics": {
+        "events_attempted": 25008,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 4,
+      "group": "B1",
+      "seconds": 3.355524719998357,
+      "operations_per_second": 6258.335656072974,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 4,
+      "group": "B0",
+      "seconds": 1.4600848269983544,
+      "operations_per_second": 14382.725997620184
+    },
+    {
+      "round": 5,
+      "group": "B0",
+      "seconds": 1.452311181994446,
+      "operations_per_second": 14459.711018103493
+    },
+    {
+      "round": 5,
+      "group": "B1",
+      "seconds": 2.0374642349997885,
+      "operations_per_second": 10306.929387647475,
+      "collector_rss_kib": 36052,
+      "final_metrics": {
+        "events_attempted": 25005,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    }
+  ],
+  "limitation": "B0/B1 only; includes JSONL storage and local virtualization overhead; not the target VMware benchmark",
+  "median_seconds": {
+    "B0": 1.448349345002498,
+    "B1": 2.1452706400013994
+  },
+  "elapsed_increase_percent": 48.118314645814905,
+  "throughput_drop_percent": 32.48640437266446
+}

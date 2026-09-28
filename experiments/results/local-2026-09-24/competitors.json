@@ -1,0 +1,59 @@
+{
+  "observed_at_utc": "2026-09-24T09:55:45.138376+00:00",
+  "repositories": [
+    {
+      "repo": "falcosecurity/falco",
+      "source": "https://api.github.com/repos/falcosecurity/falco/releases/latest",
+      "installed": false,
+      "tested": false,
+      "tag": "0.45.0",
+      "published_at": "2026-09-21T12:23:40Z",
+      "url": "https://github.com/falcosecurity/falco/releases/tag/0.45.0",
+      "assets": [
+        {
+          "name": "falco-aarch64.debug",
+          "url": "https://github.com/falcosecurity/falco/releases/download/0.45.0/falco-aarch64.debug",
+          "digest": "sha256:00f7bea8fc351f2ddd5acbc321c72d0d30e79a60506a09ad89beb91ff1e1da51"
+        },
+        {
+          "name": "falco-x86_64.debug",
+          "url": "https://github.com/falcosecurity/falco/releases/download/0.45.0/falco-x86_64.debug",
+          "digest": "sha256:a4abc934eeea1255e86390f0102db7ba3567e369a2c12c97d0a9a9395eeb2e92"
+        }
+      ],
+      "commit_sha": "05d5b3e363d5196c68c8ccea842ca57a2ef05562"
+    },
+    {
+      "repo": "aquasecurity/tracee",
+      "source": "https://api.github.com/repos/aquasecurity/tracee/releases/latest",
+      "installed": false,
+      "tested": false,
+      "tag": "v0.24.1",
+      "published_at": "2025-11-19T00:31:18Z",
+      "url": "https://github.com/aquasecurity/tracee/releases/tag/v0.24.1",
+      "assets": [
+        {
+          "name": "checksum-aarch64.v0.24.1.txt",
+          "url": "https://github.com/aquasecurity/tracee/releases/download/v0.24.1/checksum-aarch64.v0.24.1.txt",
+          "digest": "sha256:14ee0eb75c8861edb7cad61e9be7539e2832483cb0e0726c79a26cb4993ff2b1"
+        },
+        {
+          "name": "checksum-x86_64.v0.24.1.txt",
+          "url": "https://github.com/aquasecurity/tracee/releases/download/v0.24.1/checksum-x86_64.v0.24.1.txt",
+          "digest": "sha256:9cd13e95d392f22524c6c6503af2a42cdf5f007e5208b70649bc5fd10cfd0ab8"
+        },
+        {
+          "name": "tracee-aarch64.v0.24.1.tar.gz",
+          "url": "https://github.com/aquasecurity/tracee/releases/download/v0.24.1/tracee-aarch64.v0.24.1.tar.gz",
+          "digest": "sha256:adc67c40d5d6d122f81c6a6d0107ad78d51d6be49917929977d77ae720f261ae"
+        },
+        {
+          "name": "tracee-x86_64.v0.24.1.tar.gz",
+          "url": "https://github.com/aquasecurity/tracee/releases/download/v0.24.1/tracee-x86_64.v0.24.1.tar.gz",
+          "digest": "sha256:8cc56bd8c8dd3efadb0441c84849592affc48a71d3afbe7751a9e2014ef9ec85"
+        }
+      ],
+      "commit_sha": "b40e7f3f89ade93b7f480b9007ab8aafeb978472"
+    }
+  ]
+}

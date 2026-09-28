@@ -1,0 +1,122 @@
+{
+  "date": "2026-09-26",
+  "environment": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "scope": "Local WSL targeted v3 validation, not full acceptance or target VMware validation.",
+  "runs": [
+    {
+      "name": "unit",
+      "returncode": 0,
+      "seconds": 4.032437176,
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    },
+    {
+      "name": "integration",
+      "returncode": 0,
+      "seconds": 4.335882928,
+      "command": [
+        "/usr/bin/python3",
+        "scripts/integration.py",
+        "--out",
+        "/tmp/ebpf-v3-final-h6jznqwm/integration",
+        "--repetitions",
+        "5",
+        "--uid",
+        "1000"
+      ],
+      "passed": true
+    },
+    {
+      "name": "edges",
+      "returncode": 0,
+      "seconds": 2.1759556070000006,
+      "command": [
+        "/usr/bin/python3",
+        "scripts/live_edges.py",
+        "--out",
+        "/tmp/ebpf-v3-final-h6jznqwm/edges"
+      ],
+      "passed": true
+    },
+    {
+      "name": "shutdown",
+      "returncode": 0,
+      "seconds": 6.192377733000001,
+      "command": [
+        "/usr/bin/python3",
+        "scripts/verify_shutdown.py",
+        "--out",
+        "/tmp/ebpf-v3-final-h6jznqwm/shutdown"
+      ],
+      "passed": true
+    },
+    {
+      "name": "recovery",
+      "returncode": 0,
+      "seconds": 6.340345262,
+      "command": [
+        "/usr/bin/python3",
+        "scripts/transport_recovery.py",
+        "--out",
+        "/tmp/ebpf-v3-final-h6jznqwm/recovery"
+      ],
+      "passed": true
+    },
+    {
+      "name": "load-sweep",
+      "returncode": 0,
+      "seconds": 15.911451566,
+      "command": [
+        "/usr/bin/python3",
+        "scripts/load_sweep.py",
+        "--out",
+        "/tmp/ebpf-v3-final-h6jznqwm/load-sweep"
+      ],
+      "passed": true
+    },
+    {
+      "name": "profile-v2",
+      "returncode": 0,
+      "seconds": 13.855556442999998,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "scripts/analysis_benchmark.py",
+        "--source-root",
+        "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v2",
+        "--out",
+        "/tmp/ebpf-v3-final-h6jznqwm/profile-v2",
+        "--rounds",
+        "3"
+      ],
+      "passed": true
+    },
+    {
+      "name": "profile-v3-final",
+      "returncode": 0,
+      "seconds": 3.483555878000004,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "scripts/analysis_benchmark.py",
+        "--out",
+        "/tmp/ebpf-v3-final-h6jznqwm/profile-v3-final",
+        "--rounds",
+        "3"
+      ],
+      "passed": true
+    }
+  ],
+  "analysis_comparison_passed": true,
+  "raw_directory": "out/v3-wsl-20260926",
+  "source_snapshot": "out/v3-wsl-20260926/source",
+  "passed": true
+}

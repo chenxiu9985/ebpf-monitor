@@ -1,0 +1,91 @@
+{
+  "status": "protocol; populate measurements only from actual runs",
+  "groups": [
+    {
+      "id": "B0",
+      "description": "no monitor"
+    },
+    {
+      "id": "B1",
+      "description": "collector only"
+    },
+    {
+      "id": "B2",
+      "description": "collector plus R01-R04",
+      "enabled": [
+        "R01",
+        "R02",
+        "R03",
+        "R04"
+      ]
+    },
+    {
+      "id": "B3",
+      "description": "collector plus R01-R04 and C01-C02",
+      "enabled": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "C01",
+        "C02"
+      ]
+    },
+    {
+      "id": "C1",
+      "description": "Falco; fixed version and matched syscall/rule scope; pending"
+    },
+    {
+      "id": "C2",
+      "description": "Tracee; fixed version and matched event/detector scope; pending"
+    },
+    {
+      "id": "E1",
+      "description": "scoped BPF LSM; requires active bpf LSM"
+    }
+  ],
+  "requirements": {
+    "repetitions_per_scenario": 30,
+    "performance_rounds": 5,
+    "normal_workload_seconds": 3600
+  },
+  "normal_cases": [
+    "non-sensitive read",
+    "approved debugger",
+    "approved preload",
+    "build or installation shell"
+  ],
+  "risk_cases": [
+    "sensitive open attempt",
+    "controlled ptrace write",
+    "temporary preload configuration",
+    "service shell temporary executable chain"
+  ],
+  "measurements": [
+    "TP",
+    "FP",
+    "FN",
+    "alerts_per_host_hour",
+    "chain_completeness",
+    "latency_p50_p95_p99",
+    "throughput",
+    "cpu",
+    "rss",
+    "event_loss"
+  ],
+  "diagnostic_groups": [
+    {
+      "id": "P0",
+      "description": "kernel construction and pairing, ring output disabled; diagnostic only"
+    },
+    {
+      "id": "P1",
+      "description": "normal kernel output and ring consumption; no JSON encoding; diagnostic only"
+    },
+    {
+      "id": "P2",
+      "description": "normal collection and JSON encoding; discard before output; diagnostic only"
+    }
+  ],
+  "diagnostic_limitations": "Not B2/B3 analysis ablation; omitted output is intentional; stage differences are not additive causal costs."
+}

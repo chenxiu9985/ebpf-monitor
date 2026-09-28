@@ -1,0 +1,69 @@
+{
+  "source": "REAL_CAPTURE_OFFLINE_DETECTION_ABLATION",
+  "input_sha256": "3e323e70eba09e22fecdb774b14984678017eb25dd23b4de1b9b89c937f8393f",
+  "repetitions": 30,
+  "groups": {
+    "single_event": {
+      "enabled": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "worker_alert_counts": {
+        "R03": 30,
+        "R01": 30,
+        "R02": 30
+      },
+      "normal_fixture_alerts": 0,
+      "passed": true,
+      "correlated_evidence_lengths": []
+    },
+    "process_context": {
+      "enabled": [
+        "R01",
+        "R02",
+        "R03",
+        "R04"
+      ],
+      "worker_alert_counts": {
+        "R04": 30,
+        "R03": 30,
+        "R01": 30,
+        "R02": 30
+      },
+      "normal_fixture_alerts": 0,
+      "passed": true,
+      "correlated_evidence_lengths": []
+    },
+    "sequence": {
+      "enabled": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "C01",
+        "C02"
+      ],
+      "worker_alert_counts": {
+        "R04": 30,
+        "R03": 30,
+        "C02": 30,
+        "C01": 30,
+        "R01": 30,
+        "R02": 30
+      },
+      "normal_fixture_alerts": 0,
+      "passed": true,
+      "correlated_evidence_lengths": [
+        2,
+        3
+      ]
+    }
+  },
+  "limitations": [
+    "Same captured fixture in all groups; not independent attack families.",
+    "Disabled alerts do not remove engine computation; no CPU or speed claim.",
+    "Controlled examples do not estimate general precision or recall."
+  ],
+  "passed": true
+}

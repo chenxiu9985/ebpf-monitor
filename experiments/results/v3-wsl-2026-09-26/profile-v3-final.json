@@ -1,0 +1,176 @@
+{
+  "source": "SYNTHETIC_ANALYSIS_BENCHMARK",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "source_root": "/mnt/d/work/研究生/演武堂/基于eBPF的Linux内核攻击监控方案/ebpf-monitor-v3",
+  "output_directory": "/tmp/ebpf-v3-final-h6jznqwm/profile-v3-final",
+  "records": 21507,
+  "input_sha256": "88d5dff528ac32524fac9987f62f080e66faf569a062ace6877e6a8be1c452b6",
+  "config": {
+    "version": 1,
+    "window_seconds": 30,
+    "reorder_ms": 200,
+    "max_processes": 8192,
+    "exit_retention_seconds": 60,
+    "enabled": [
+      "C01",
+      "C02",
+      "R01",
+      "R02",
+      "R03",
+      "R04"
+    ],
+    "sensitive_paths": [
+      "/etc/shadow",
+      "/etc/gshadow"
+    ],
+    "preload_config": "/etc/ld.so.preload",
+    "temporary_roots": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ],
+    "service_executables": [
+      "/usr/sbin/nginx",
+      "/usr/sbin/apache2",
+      "/usr/sbin/sshd",
+      "/usr/bin/demo-service"
+    ],
+    "shell_executables": [
+      "/bin/sh",
+      "/bin/bash",
+      "/usr/bin/sh",
+      "/usr/bin/bash",
+      "/usr/bin/dash"
+    ],
+    "exceptions": []
+  },
+  "source_sha256": {
+    "monitor/__init__.py": "50409324baba5d44181b03eefde40f56779f8bcbca2e916109d152152e6ff355",
+    "monitor/__main__.py": "befde7545c73fe47546fbc3e688292fd475cc865445fd006eb739b91f1f8ec95",
+    "monitor/engine.py": "d17b671c4ae5f57dd3b1e852957ec4eeace87dde4418b4e296e9344114ae7c16",
+    "monitor/model.py": "8df2f47cef586f379e23bb0dddfc992b46f81597b88b4167d342d8520a68282f",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/runtime.py": "67091a287f81aa6a16ec7bc60f7d634fed3a719c8001aaa2642f01cfb1df3059",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "e3071cd37c97c9e1f68e624cb538e7ceba0b29241a044a2958930897caebeb99"
+  },
+  "stage_definitions": {
+    "decode": "framed JSON bytes -> dictionaries",
+    "engine": "complete rule engine, including process-cache population",
+    "storage": "all event rows and final SQLite commit, no analysis",
+    "pipeline": "validation, reorder, rules, raw/alerts JSONL and SQLite, final flush"
+  },
+  "limitation": "Sequential diagnostic stages are not additive costs. No eBPF/collector, live socket rate, or VMware claim.",
+  "rounds": [
+    {
+      "round": 1,
+      "decode": {
+        "seconds": 0.04990029499999338,
+        "cpu_seconds": 0.051073594,
+        "events_per_second": 430999.4560152972
+      },
+      "engine_alerts": 6,
+      "engine": {
+        "seconds": 0.04960664899999756,
+        "cpu_seconds": 0.050778431999999984,
+        "events_per_second": 433550.7524404855
+      },
+      "storage": {
+        "seconds": 0.37822427700000105,
+        "cpu_seconds": 0.21806185700000003,
+        "events_per_second": 56863.08708311693
+      },
+      "pipeline_alerts": 6,
+      "alert_sha256": "4a9cf0e7ad0e03c2565d69f471e84aad8a87ec8c42aaeaa68fff0127e33d0aa3",
+      "event_rows": 21507,
+      "engine_metrics": {
+        "processed": 21507,
+        "duplicates": 0,
+        "late": 0,
+        "evicted": 0,
+        "alerts": 6
+      },
+      "pipeline": {
+        "seconds": 0.5884312850000057,
+        "cpu_seconds": 0.40820966100000006,
+        "events_per_second": 36549.722199083604
+      }
+    },
+    {
+      "round": 2,
+      "engine_alerts": 6,
+      "engine": {
+        "seconds": 0.038631374000004826,
+        "cpu_seconds": 0.038580255999999924,
+        "events_per_second": 556723.6619644259
+      },
+      "storage": {
+        "seconds": 0.36263014800000093,
+        "cpu_seconds": 0.19869023500000005,
+        "events_per_second": 59308.36175264706
+      },
+      "pipeline_alerts": 6,
+      "alert_sha256": "4a9cf0e7ad0e03c2565d69f471e84aad8a87ec8c42aaeaa68fff0127e33d0aa3",
+      "event_rows": 21507,
+      "engine_metrics": {
+        "processed": 21507,
+        "duplicates": 0,
+        "late": 0,
+        "evicted": 0,
+        "alerts": 6
+      },
+      "pipeline": {
+        "seconds": 0.5902869059999958,
+        "cpu_seconds": 0.40887750700000014,
+        "events_per_second": 36434.82479687624
+      },
+      "decode": {
+        "seconds": 0.04575095500000259,
+        "cpu_seconds": 0.04569727099999987,
+        "events_per_second": 470088.54787837283
+      }
+    },
+    {
+      "round": 3,
+      "storage": {
+        "seconds": 0.36092517499999843,
+        "cpu_seconds": 0.19289400700000003,
+        "events_per_second": 59588.52828706142
+      },
+      "pipeline_alerts": 6,
+      "alert_sha256": "4a9cf0e7ad0e03c2565d69f471e84aad8a87ec8c42aaeaa68fff0127e33d0aa3",
+      "event_rows": 21507,
+      "engine_metrics": {
+        "processed": 21507,
+        "duplicates": 0,
+        "late": 0,
+        "evicted": 0,
+        "alerts": 6
+      },
+      "pipeline": {
+        "seconds": 0.5728459689999994,
+        "cpu_seconds": 0.39534536200000003,
+        "events_per_second": 37544.123837589614
+      },
+      "decode": {
+        "seconds": 0.049228433999999766,
+        "cpu_seconds": 0.04918161199999993,
+        "events_per_second": 436881.66070852673
+      },
+      "engine_alerts": 6,
+      "engine": {
+        "seconds": 0.04186381099999892,
+        "cpu_seconds": 0.0418208240000002,
+        "events_per_second": 513737.27059871727
+      }
+    }
+  ],
+  "median_seconds": {
+    "decode": 0.049228433999999766,
+    "engine": 0.04186381099999892,
+    "storage": 0.36263014800000093,
+    "pipeline": 0.5884312850000057
+  },
+  "passed": true
+}

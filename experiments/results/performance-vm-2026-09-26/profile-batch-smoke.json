@@ -1,0 +1,223 @@
+{
+  "source": "LOCAL_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.8.0-136-generic-x86_64-with-glibc2.39",
+    "kernel": "6.8.0-136-generic",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": "lockdown,capability,landlock,yama,apparmor",
+    "bpf_lsm_active": false,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 3960868
+  },
+  "parameters": {
+    "out": "out/profile-batch-smoke",
+    "rounds": 1,
+    "opens": 1000,
+    "execs": 100,
+    "profile": true,
+    "environment_label": "vmware",
+    "batch_ms": 10,
+    "compare_batching": false
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 0.3896331049982109,
+      "operations_per_second": 2823.1687346100916,
+      "completion_seconds": 0.3896564050010056,
+      "drain_and_shutdown_seconds": 2.3300002794712782e-05,
+      "children_cpu_seconds": 0.313589
+    },
+    {
+      "round": 1,
+      "group": "P0",
+      "batch_ms": 10,
+      "seconds": 0.41963887400197564,
+      "operations_per_second": 2621.301476456686,
+      "collector_cpu_seconds_during_workload": 0.0,
+      "collector_rss_kib": 36132,
+      "completion_seconds": 1.1505436189981992,
+      "drain_and_shutdown_seconds": 0.7309047449962236,
+      "final_metrics": {
+        "events_attempted": 1504,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 1422,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 0,
+      "children_cpu_seconds": 0.49071899999999996
+    },
+    {
+      "round": 1,
+      "group": "P1",
+      "batch_ms": 10,
+      "seconds": 0.43786083399754716,
+      "operations_per_second": 2512.2137322886524,
+      "collector_cpu_seconds_during_workload": 0.0,
+      "collector_rss_kib": 36072,
+      "completion_seconds": 1.2153368880026392,
+      "drain_and_shutdown_seconds": 0.777476054005092,
+      "final_metrics": {
+        "events_attempted": 1504,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 1422,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 1504,
+      "children_cpu_seconds": 0.504885
+    },
+    {
+      "round": 1,
+      "group": "P2",
+      "batch_ms": 10,
+      "seconds": 0.43459429400536465,
+      "operations_per_second": 2531.0962780068658,
+      "collector_cpu_seconds_during_workload": 0.010000000000000009,
+      "collector_rss_kib": 36072,
+      "completion_seconds": 1.1616190670029027,
+      "drain_and_shutdown_seconds": 0.7270247729975381,
+      "final_metrics": {
+        "events_attempted": 1504,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 1428,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 1504,
+      "children_cpu_seconds": 0.5062180000000001
+    },
+    {
+      "round": 1,
+      "group": "B1",
+      "batch_ms": 10,
+      "seconds": 0.42153176099964185,
+      "operations_per_second": 2609.5305307277536,
+      "collector_cpu_seconds_during_workload": 0.03,
+      "collector_rss_kib": 36184,
+      "completion_seconds": 1.2010531970008742,
+      "drain_and_shutdown_seconds": 0.7795214360012324,
+      "final_metrics": {
+        "events_attempted": 1504,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 1404173,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 0.502991
+    }
+  ],
+  "source_sha256": {
+    "bpf/events.h": "28baa94b2c4aeb552235d5e88256c09e193a14e8fd532842095c4e01edfbcf9d",
+    "bpf/monitor.bpf.c": "16748839f386158a07904fc2932a692aa3fc40a212e0d08a3271d0bc2f58f058",
+    "collector/main.c": "1e82522d9c0981a13dbe125b00a21ff521d46b9d2e2ff7928ebbbe0235b5cdd5",
+    "monitor/__init__.py": "5708f2cd49ddfd1da4bffa02b4da7c0332c247a572c04fac001ba68e39e6b60b",
+    "monitor/__main__.py": "8915476f2450a28ce82eaa7bb26fade23677a1a7fa6374a5123f96ef6282e7c0",
+    "monitor/engine.py": "6b5c545ed3c7531e3ad36de77f1630e70d234bba14adf35e7b2836271feb77fe",
+    "monitor/model.py": "8e7ff2c8b1a927ab5fdab7298fdc7d793c39f250aeb19c215363c827114832db",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/runtime.py": "67091a287f81aa6a16ec7bc60f7d634fed3a719c8001aaa2642f01cfb1df3059",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "e3071cd37c97c9e1f68e624cb538e7ceba0b29241a044a2958930897caebeb99",
+    "scripts/ablation.py": "96f3bb79d6286a70625b4da536992122324aaa354ec08d037c1fd15c5906899c",
+    "scripts/acceptance.py": "87ffda90a4e4b1f2c7753a8fb5c6753c32ff569187dad5b8e4382b0f282b7a38",
+    "scripts/benchmark.py": "7719b1befb262dcf0dd9fc45c306dd909b1c5c57285f69ef13b05aee68e938b3",
+    "scripts/build.sh": "10ab28ad535fc12925ba684245a2ab63a62a44a167a705ed33a09784154f9b30",
+    "scripts/freeze_competitors.py": "9be003626cfb91197d11255828cbe819d7f7f1220e86c4b39d398cb2ffc8f9c7",
+    "scripts/integration.py": "217c9c988ab2265d63988eccec533373fc2236642f9fe6bd5c94ae829591b996",
+    "scripts/live_edges.py": "f380e3de2be349278ee01f11f4e2db95acefec106453d42d0a3f0a59856e7143",
+    "scripts/run.sh": "4c169460ffd652082bc7c497f3f6fab76c5940add24e2638fb52cc232f37ae93",
+    "scripts/target_check.sh": "d872eaa20fe7ddf256e53fda9e323635179c29bd16d371ed2badfde6eb45f6c8",
+    "scripts/transport_recovery.py": "737554f43da1a9b38c704ce2312c376573d795199ea75ff47f5de60993f63793",
+    "scripts/verify_lsm.py": "685432986fbedd8e645f7670b3456cdaac10c519b8e40da839ec12cb0670994e",
+    "tests/fixtures/benign_preload.c": "06d94361278cb90ae9c52c41ab2883c41ff2c704ff51131972c870ad91e90f51",
+    "tests/fixtures/block_client.c": "94e0e143cb2dab14d7d72090fa5a0d1868553586e23b4088aa2244c7c72e3917",
+    "tests/fixtures/edges.c": "005726f7065b304ffe154e58f40f93239dbbc20bb6e4965d3e30a569959baa24",
+    "tests/fixtures/service.c": "8ad7c58ed14db31d1a269cf5a5e3b8f585c2ba54e440bd8719cffd10345db828",
+    "tests/fixtures/worker.c": "b9672fd6e37ac3342b8f267ad84c30da4bbff9726dd581b58c7afacc9d54e2a9",
+    "tests/test_analysis.py": "102d621eab2712e7f191b84c7d4f1ee895204bd401ffde6032f47dab44476ad8",
+    "tests/test_collector_cli.py": "013cad1e9063fc6b66d5b90f163e3387e44f819ab3c3067865b07230f14263da",
+    "tests/test_reload.py": "6b55990293ee64ac6ca39622b8c8921191ba2a38be7de7aaad2a413850e182c3",
+    "rules/default.yaml": "8b3ba8ab9526519ab842cde18e7fbb4cebf543a58162ba39e558fe8ba2de4c2e",
+    "config/target.json": "de354a40fbcbc82ce8a017f0f2aee0da4bdca5904fa635f27aa0d1c7563455ed",
+    "build/collector": "8c3391e4f4bea103e62d926e1f1059fda388d1041b9617f703afe38aff906437"
+  },
+  "output_directory": "/tmp/ebpf-codex-perf.teZzU3/out/profile-batch-smoke",
+  "group_definitions": {
+    "B0": "no collector",
+    "P0": "kernel construction/pairing/counters; ring output disabled",
+    "P1": "all probes + ring transport + consume; no JSON encoding",
+    "P2": "P1 + JSON encoding discarded before output",
+    "B1": "all probes + JSONL output, no analyzer",
+    "B1-unbatched": "same binary with batch-ms=0; adaptive notifications + JSONL"
+  },
+  "limitation": "Microbenchmark on the recorded environment; no analyzer, no application workload. Stage differences are diagnostic comparisons, not additive causal cost estimates.",
+  "median_seconds": {
+    "B0": 0.3896331049982109,
+    "P0": 0.41963887400197564,
+    "P1": 0.43786083399754716,
+    "P2": 0.43459429400536465,
+    "B1": 0.42153176099964185
+  },
+  "median_completion_seconds": {
+    "B0": 0.3896564050010056,
+    "P0": 1.1505436189981992,
+    "P1": 1.2153368880026392,
+    "P2": 1.1616190670029027,
+    "B1": 1.2010531970008742
+  },
+  "completion_throughput_drop_percent": {
+    "P0": 66.13284376473383,
+    "P1": 67.93840384114472,
+    "P2": 66.45574990376497,
+    "B1": 67.55710688135972
+  },
+  "stage_throughput_drop_percent": {
+    "P0": 7.15037878107152,
+    "P1": 11.01439664265711,
+    "P2": 10.345554377342726,
+    "B1": 7.567319702265096
+  },
+  "capture_loss_free": true,
+  "completed": true,
+  "elapsed_increase_percent": 8.186844390847492,
+  "throughput_drop_percent": 7.567319702265096
+}

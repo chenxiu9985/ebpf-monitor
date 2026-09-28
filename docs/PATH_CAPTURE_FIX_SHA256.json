@@ -1,0 +1,12 @@
+{
+  "bpf/events.h": "f1201f1e8db43b0e96bc7a1baeeafdb1ddcf5f86e3f10e9e89642a4e7953be6f",
+  "bpf/monitor.bpf.c": "d101b4e0195cbe051c6809769da70b9bc9b4751954c676e768bd918f907e5bc1",
+  "collector/main.c": "fe1cb27f0dc527d1f49b17f17059449b21ca85c12c794b123480bb34c60ad2e2",
+  "monitor/engine.py": "264967e341fbda157e6c3e7b6997e47d94faf0f2a76ba26b26adf30011d04692",
+  "monitor/model.py": "928be290678f4d03ce7600ddbf4c8ac6ea170809548ff5a4c91374ad77b6c846",
+  "schema/event.schema.json": "0ddcc9a296a36482e315a9f2e98aff4d2cebb01d5c35d691c2bf48a4b14618ae",
+  "tests/test_analysis.py": "72c8fb8d13cd6970ce7bda136335e863bc50a9723bbfe49ac128f9164416423c",
+  "tests/fixtures/denied_open.c": "7b6978334a4b7a5e35524c9438289be49fd860cac28c3985ffb8d8af3980b597",
+  "scripts/verify_denied_open.py": "5f39e5e279e8e38962871b4a947badb3b4f94dc31badef99db80ae29431c011c",
+  "docs/PATH_CAPTURE_FIX.md": "4da90cc5cb6e6b62de63910b1c7f83bfd87b8db0e90aae5d65f3ee881d406ab2"
+}

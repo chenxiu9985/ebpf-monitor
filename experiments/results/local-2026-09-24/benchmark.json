@@ -1,0 +1,154 @@
+{
+  "source": "LOCAL_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762052
+  },
+  "parameters": {
+    "out": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor/out/acceptance-01/benchmark",
+    "rounds": 5,
+    "opens": 2000,
+    "execs": 100
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 0.07381690399999741,
+      "operations_per_second": 28448.768320059506
+    },
+    {
+      "round": 1,
+      "group": "B1",
+      "seconds": 0.08609063499999792,
+      "operations_per_second": 24392.89709037517,
+      "collector_rss_kib": 35856,
+      "final_metrics": {
+        "events_attempted": 2605,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 2,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 2,
+      "group": "B1",
+      "seconds": 0.08688758599999957,
+      "operations_per_second": 24169.16036774241,
+      "collector_rss_kib": 35860,
+      "final_metrics": {
+        "events_attempted": 2602,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 2,
+      "group": "B0",
+      "seconds": 0.07416249599999958,
+      "operations_per_second": 28316.19906643935
+    },
+    {
+      "round": 3,
+      "group": "B0",
+      "seconds": 0.07777493100000044,
+      "operations_per_second": 27000.988274743544
+    },
+    {
+      "round": 3,
+      "group": "B1",
+      "seconds": 0.08366032400000023,
+      "operations_per_second": 25101.504507680296,
+      "collector_rss_kib": 35856,
+      "final_metrics": {
+        "events_attempted": 2602,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 4,
+      "group": "B1",
+      "seconds": 0.08133632699999893,
+      "operations_per_second": 25818.721811719228,
+      "collector_rss_kib": 35860,
+      "final_metrics": {
+        "events_attempted": 2602,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 4,
+      "group": "B0",
+      "seconds": 0.07387688700000083,
+      "operations_per_second": 28425.6698580163
+    },
+    {
+      "round": 5,
+      "group": "B0",
+      "seconds": 0.07545795800000121,
+      "operations_per_second": 27830.066644527622
+    },
+    {
+      "round": 5,
+      "group": "B1",
+      "seconds": 0.08928492799999788,
+      "operations_per_second": 23520.207128352613,
+      "collector_rss_kib": 35780,
+      "final_metrics": {
+        "events_attempted": 2602,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    }
+  ],
+  "limitation": "B0/B1 only; includes JSONL storage and local virtualization overhead; not the target VMware benchmark",
+  "median_seconds": {
+    "B0": 0.07416249599999958,
+    "B1": 0.08609063499999792
+  },
+  "elapsed_increase_percent": 16.08378849600531,
+  "throughput_drop_percent": 13.855327005078577
+}

@@ -1,0 +1,20 @@
+{
+  "review_date": "2026-09-26",
+  "archive_sha256": "930025541f57a1395951360077d56dc426136069fb3048284567717e4ea79a1a",
+  "raw_evidence": "out/vm-performance-final-20260926",
+  "source_matches_tested_files": [
+    "bpf/monitor.bpf.c",
+    "collector/main.c",
+    "scripts/benchmark.py",
+    "tests/test_collector_cli.py"
+  ],
+  "vm_cleanup": {
+    "project_processes_remaining": false,
+    "project_bpf_programs_remaining": false,
+    "temporary_directory_removed": true,
+    "uploaded_archives_removed": true,
+    "system_configuration_changed": false,
+    "original_project_overwritten": false
+  },
+  "scope": "This is an experiment and targeted regression, not the full acceptance suite or a one-hour workload."
+}

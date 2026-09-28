@@ -1,0 +1,57 @@
+{
+  "source": "REAL_KERNEL_CAPTURE",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762040
+  },
+  "passed": true,
+  "repetitions": 30,
+  "workload_uid": 1000,
+  "collector_returncode": 0,
+  "analyzer_returncode": 0,
+  "rules_seen": [
+    "C01",
+    "C02",
+    "R01",
+    "R02",
+    "R03",
+    "R04"
+  ],
+  "worker_processes": 30,
+  "worker_rule_counts": {
+    "R01": 30,
+    "R02": 30,
+    "R03": 30,
+    "R04": 30,
+    "C01": 30,
+    "C02": 30
+  },
+  "normal_fixture_alerts": 0,
+  "delivery_delay_ms": {
+    "p50": 217.172763,
+    "p95": 246.16283775,
+    "p99": 251.16113203
+  }
+}

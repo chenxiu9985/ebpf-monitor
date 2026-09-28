@@ -1,0 +1,544 @@
+{
+  "source": "LOCAL_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.8.0-136-generic-x86_64-with-glibc2.39",
+    "kernel": "6.8.0-136-generic",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": "lockdown,capability,landlock,yama,apparmor",
+    "bpf_lsm_active": false,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 3960868
+  },
+  "parameters": {
+    "out": "out/profile-kernel",
+    "rounds": 5,
+    "opens": 20000,
+    "execs": 1000,
+    "profile": true,
+    "environment_label": "vmware"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 4.225841750005202,
+      "operations_per_second": 4969.42413898347,
+      "children_cpu_seconds": 3.195078
+    },
+    {
+      "round": 1,
+      "group": "P0",
+      "seconds": 4.802482989995042,
+      "operations_per_second": 4372.738028171898,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 3325,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 0,
+      "children_cpu_seconds": 3.520708
+    },
+    {
+      "round": 1,
+      "group": "P1",
+      "seconds": 6.509366603000672,
+      "operations_per_second": 3226.1203402370165,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4276,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25002,
+      "children_cpu_seconds": 5.062225999999999
+    },
+    {
+      "round": 1,
+      "group": "P2",
+      "seconds": 6.493424526001036,
+      "operations_per_second": 3234.0408232838604,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25015,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4307,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25015,
+      "children_cpu_seconds": 5.117492
+    },
+    {
+      "round": 1,
+      "group": "B1",
+      "seconds": 6.2860006089977105,
+      "operations_per_second": 3340.756914649489,
+      "collector_rss_kib": 36184,
+      "final_metrics": {
+        "events_attempted": 25033,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23309794,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.158198999999997
+    },
+    {
+      "round": 2,
+      "group": "P0",
+      "seconds": 5.188802378004766,
+      "operations_per_second": 4047.1766835866783,
+      "collector_rss_kib": 36136,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 3801,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 0,
+      "children_cpu_seconds": 3.7200879999999987
+    },
+    {
+      "round": 2,
+      "group": "P1",
+      "seconds": 6.6302371960046,
+      "operations_per_second": 3167.307500349257,
+      "collector_rss_kib": 36132,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4276,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25002,
+      "children_cpu_seconds": 5.355810999999999
+    },
+    {
+      "round": 2,
+      "group": "P2",
+      "seconds": 6.551846463997208,
+      "operations_per_second": 3205.2033141185875,
+      "collector_rss_kib": 36052,
+      "final_metrics": {
+        "events_attempted": 25020,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4307,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25020,
+      "children_cpu_seconds": 5.381467000000006
+    },
+    {
+      "round": 2,
+      "group": "B1",
+      "seconds": 6.337578377999307,
+      "operations_per_second": 3313.5684874369053,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25003,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23285691,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.226927
+    },
+    {
+      "round": 2,
+      "group": "B0",
+      "seconds": 4.352073966998432,
+      "operations_per_second": 4825.285636053521,
+      "children_cpu_seconds": 3.310251000000001
+    },
+    {
+      "round": 3,
+      "group": "P1",
+      "seconds": 6.567640722998476,
+      "operations_per_second": 3197.495247640828,
+      "collector_rss_kib": 36068,
+      "final_metrics": {
+        "events_attempted": 25008,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4285,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25008,
+      "children_cpu_seconds": 5.149818
+    },
+    {
+      "round": 3,
+      "group": "P2",
+      "seconds": 6.416940887000237,
+      "operations_per_second": 3272.587416621347,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4316,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25002,
+      "children_cpu_seconds": 5.169073999999991
+    },
+    {
+      "round": 3,
+      "group": "B1",
+      "seconds": 6.253640295995865,
+      "operations_per_second": 3358.044116072052,
+      "collector_rss_kib": 36068,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23321105,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.429055000000002
+    },
+    {
+      "round": 3,
+      "group": "B0",
+      "seconds": 4.264989732000686,
+      "operations_per_second": 4923.810212820607,
+      "children_cpu_seconds": 3.215547000000001
+    },
+    {
+      "round": 3,
+      "group": "P0",
+      "seconds": 4.956720781003241,
+      "operations_per_second": 4236.671970808409,
+      "collector_rss_kib": 36052,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 3332,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 0,
+      "children_cpu_seconds": 3.6069760000000066
+    },
+    {
+      "round": 4,
+      "group": "P2",
+      "seconds": 6.512339095002972,
+      "operations_per_second": 3224.6478098957805,
+      "collector_rss_kib": 36136,
+      "final_metrics": {
+        "events_attempted": 25003,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4316,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25003,
+      "children_cpu_seconds": 5.119730999999991
+    },
+    {
+      "round": 4,
+      "group": "B1",
+      "seconds": 6.316469439996581,
+      "operations_per_second": 3324.6420646042684,
+      "collector_rss_kib": 36076,
+      "final_metrics": {
+        "events_attempted": 25019,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23336610,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.188184
+    },
+    {
+      "round": 4,
+      "group": "B0",
+      "seconds": 4.244429124999442,
+      "operations_per_second": 4947.661836620434,
+      "children_cpu_seconds": 3.212280000000007
+    },
+    {
+      "round": 4,
+      "group": "P0",
+      "seconds": 4.837872320000315,
+      "operations_per_second": 4340.751183776308,
+      "collector_rss_kib": 36132,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 3332,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 0,
+      "children_cpu_seconds": 3.5085529999999956
+    },
+    {
+      "round": 4,
+      "group": "P1",
+      "seconds": 6.45354466799472,
+      "operations_per_second": 3254.0256681178644,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4285,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25002,
+      "children_cpu_seconds": 5.110001000000011
+    },
+    {
+      "round": 5,
+      "group": "B1",
+      "seconds": 6.324192273998051,
+      "operations_per_second": 3320.5821534461575,
+      "collector_rss_kib": 36124,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23321106,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.140008999999999
+    },
+    {
+      "round": 5,
+      "group": "B0",
+      "seconds": 4.2168153949969565,
+      "operations_per_second": 4980.061499707923,
+      "children_cpu_seconds": 3.196380000000005
+    },
+    {
+      "round": 5,
+      "group": "P0",
+      "seconds": 4.944194928997604,
+      "operations_per_second": 4247.405351442643,
+      "collector_rss_kib": 36076,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 3332,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 0,
+      "children_cpu_seconds": 3.540702000000003
+    },
+    {
+      "round": 5,
+      "group": "P1",
+      "seconds": 6.551460422000673,
+      "operations_per_second": 3205.3921793496934,
+      "collector_rss_kib": 36136,
+      "final_metrics": {
+        "events_attempted": 25008,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4285,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25008,
+      "children_cpu_seconds": 5.108527999999993
+    },
+    {
+      "round": 5,
+      "group": "P2",
+      "seconds": 6.529913113001385,
+      "operations_per_second": 3215.9692842142026,
+      "collector_rss_kib": 36068,
+      "final_metrics": {
+        "events_attempted": 25005,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4316,
+      "capture_loss_free": true,
+      "diagnostic_only": true,
+      "consumed_events": 25005,
+      "children_cpu_seconds": 5.163871
+    }
+  ],
+  "source_sha256": {
+    "bpf/events.h": "28baa94b2c4aeb552235d5e88256c09e193a14e8fd532842095c4e01edfbcf9d",
+    "bpf/monitor.bpf.c": "edb4e12141022941b2db7197ce0ea05b70228276630298a9b8a71a3ebfd6260a",
+    "collector/main.c": "b1e77002226cd52e4b7bfa2bac6202c729238a8751b50b6107e26fd2b04978f9",
+    "monitor/__init__.py": "5708f2cd49ddfd1da4bffa02b4da7c0332c247a572c04fac001ba68e39e6b60b",
+    "monitor/__main__.py": "8915476f2450a28ce82eaa7bb26fade23677a1a7fa6374a5123f96ef6282e7c0",
+    "monitor/engine.py": "6b5c545ed3c7531e3ad36de77f1630e70d234bba14adf35e7b2836271feb77fe",
+    "monitor/model.py": "8e7ff2c8b1a927ab5fdab7298fdc7d793c39f250aeb19c215363c827114832db",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/runtime.py": "67091a287f81aa6a16ec7bc60f7d634fed3a719c8001aaa2642f01cfb1df3059",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "e3071cd37c97c9e1f68e624cb538e7ceba0b29241a044a2958930897caebeb99",
+    "scripts/ablation.py": "96f3bb79d6286a70625b4da536992122324aaa354ec08d037c1fd15c5906899c",
+    "scripts/acceptance.py": "87ffda90a4e4b1f2c7753a8fb5c6753c32ff569187dad5b8e4382b0f282b7a38",
+    "scripts/benchmark.py": "4b14e63e668676000c67d4201e5d6ab1eb5e9e81410f468a7ead783a47738ca7",
+    "scripts/build.sh": "10ab28ad535fc12925ba684245a2ab63a62a44a167a705ed33a09784154f9b30",
+    "scripts/freeze_competitors.py": "9be003626cfb91197d11255828cbe819d7f7f1220e86c4b39d398cb2ffc8f9c7",
+    "scripts/integration.py": "217c9c988ab2265d63988eccec533373fc2236642f9fe6bd5c94ae829591b996",
+    "scripts/live_edges.py": "f380e3de2be349278ee01f11f4e2db95acefec106453d42d0a3f0a59856e7143",
+    "scripts/run.sh": "4c169460ffd652082bc7c497f3f6fab76c5940add24e2638fb52cc232f37ae93",
+    "scripts/target_check.sh": "d872eaa20fe7ddf256e53fda9e323635179c29bd16d371ed2badfde6eb45f6c8",
+    "scripts/transport_recovery.py": "737554f43da1a9b38c704ce2312c376573d795199ea75ff47f5de60993f63793",
+    "scripts/verify_lsm.py": "685432986fbedd8e645f7670b3456cdaac10c519b8e40da839ec12cb0670994e",
+    "tests/fixtures/benign_preload.c": "06d94361278cb90ae9c52c41ab2883c41ff2c704ff51131972c870ad91e90f51",
+    "tests/fixtures/block_client.c": "94e0e143cb2dab14d7d72090fa5a0d1868553586e23b4088aa2244c7c72e3917",
+    "tests/fixtures/edges.c": "005726f7065b304ffe154e58f40f93239dbbc20bb6e4965d3e30a569959baa24",
+    "tests/fixtures/service.c": "8ad7c58ed14db31d1a269cf5a5e3b8f585c2ba54e440bd8719cffd10345db828",
+    "tests/fixtures/worker.c": "b9672fd6e37ac3342b8f267ad84c30da4bbff9726dd581b58c7afacc9d54e2a9",
+    "tests/test_analysis.py": "102d621eab2712e7f191b84c7d4f1ee895204bd401ffde6032f47dab44476ad8",
+    "tests/test_reload.py": "6b55990293ee64ac6ca39622b8c8921191ba2a38be7de7aaad2a413850e182c3",
+    "rules/default.yaml": "8b3ba8ab9526519ab842cde18e7fbb4cebf543a58162ba39e558fe8ba2de4c2e",
+    "config/target.json": "de354a40fbcbc82ce8a017f0f2aee0da4bdca5904fa635f27aa0d1c7563455ed",
+    "build/collector": "3b8357db979d32dd088bda5aacefc5eff4c13866daa7fd3771bb231c48664481"
+  },
+  "output_directory": "/tmp/ebpf-codex-perf.teZzU3/out/profile-kernel",
+  "group_definitions": {
+    "B0": "no collector",
+    "P0": "kernel construction/pairing/counters; ring output disabled",
+    "P1": "all probes + ring transport + consume; no JSON encoding",
+    "P2": "P1 + JSON encoding discarded before output",
+    "B1": "all probes + JSONL output, no analyzer"
+  },
+  "limitation": "Microbenchmark on the recorded environment; no analyzer, no application workload. Stage differences are diagnostic comparisons, not additive causal cost estimates.",
+  "median_seconds": {
+    "B0": 4.244429124999442,
+    "P0": 4.944194928997604,
+    "P1": 6.551460422000673,
+    "P2": 6.512339095002972,
+    "B1": 6.316469439996581
+  },
+  "stage_throughput_drop_percent": {
+    "P0": 14.153281050754074,
+    "P1": 35.21400036629869,
+    "P2": 34.82481389434612,
+    "B1": 32.80377328950175
+  },
+  "capture_loss_free": true,
+  "completed": true,
+  "elapsed_increase_percent": 48.81787995452535,
+  "throughput_drop_percent": 32.80377328950175
+}

@@ -1,0 +1,154 @@
+{
+  "source": "LOCAL_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762040
+  },
+  "parameters": {
+    "out": "/tmp/ebpf-benchmark-filter-01",
+    "rounds": 5,
+    "opens": 20000,
+    "execs": 1000
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 0.7306802640000001,
+      "operations_per_second": 28740.3410693463
+    },
+    {
+      "round": 1,
+      "group": "B1",
+      "seconds": 0.982719122000006,
+      "operations_per_second": 21369.27991923197,
+      "collector_rss_kib": 35840,
+      "final_metrics": {
+        "events_attempted": 26004,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 2,
+      "group": "B1",
+      "seconds": 0.9596408489999959,
+      "operations_per_second": 21883.186842122526,
+      "collector_rss_kib": 35864,
+      "final_metrics": {
+        "events_attempted": 26004,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 2,
+      "group": "B0",
+      "seconds": 0.7533008009999946,
+      "operations_per_second": 27877.310062756922
+    },
+    {
+      "round": 3,
+      "group": "B0",
+      "seconds": 0.7650963939999968,
+      "operations_per_second": 27447.52186088605
+    },
+    {
+      "round": 3,
+      "group": "B1",
+      "seconds": 1.025321746000003,
+      "operations_per_second": 20481.37580415654,
+      "collector_rss_kib": 35844,
+      "final_metrics": {
+        "events_attempted": 26004,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 4,
+      "group": "B1",
+      "seconds": 1.0258103550000044,
+      "operations_per_second": 20471.62021482997,
+      "collector_rss_kib": 35840,
+      "final_metrics": {
+        "events_attempted": 26004,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    },
+    {
+      "round": 4,
+      "group": "B0",
+      "seconds": 0.7586419110000122,
+      "operations_per_second": 27681.04384362132
+    },
+    {
+      "round": 5,
+      "group": "B0",
+      "seconds": 0.7348584969999905,
+      "operations_per_second": 28576.930233141567
+    },
+    {
+      "round": 5,
+      "group": "B1",
+      "seconds": 0.9812613730000095,
+      "operations_per_second": 21401.025840645005,
+      "collector_rss_kib": 35844,
+      "final_metrics": {
+        "events_attempted": 26004,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      }
+    }
+  ],
+  "limitation": "B0/B1 only; includes JSONL storage and local virtualization overhead; not the target VMware benchmark",
+  "median_seconds": {
+    "B0": 0.7533008009999946,
+    "B1": 0.982719122000006
+  },
+  "elapsed_increase_percent": 30.45507461235435,
+  "throughput_drop_percent": 23.34525866690218
+}

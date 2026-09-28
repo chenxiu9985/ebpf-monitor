@@ -1,0 +1,43 @@
+test_chain_both_correlations (test_analysis.AnalysisTests.test_chain_both_correlations) ... ok
+test_correlation_window_includes_shell_to_open (test_analysis.AnalysisTests.test_correlation_window_includes_shell_to_open) ... ok
+test_disabled_rule (test_analysis.AnalysisTests.test_disabled_rule) ... ok
+test_duplicate_id_is_ignored (test_analysis.AnalysisTests.test_duplicate_id_is_ignored) ... ok
+test_exception_requires_uid_and_exe (test_analysis.AnalysisTests.test_exception_requires_uid_and_exe) ... ok
+test_exec_replacement_clears_preload (test_analysis.AnalysisTests.test_exec_replacement_clears_preload) ... ok
+test_failed_exec_is_not_execution_success (test_analysis.AnalysisTests.test_failed_exec_is_not_execution_success) ... ok
+test_inode_alias_matches_sensitive (test_analysis.AnalysisTests.test_inode_alias_matches_sensitive) ... ok
+test_late_event_does_not_retroactively_correlate (test_analysis.AnalysisTests.test_late_event_does_not_retroactively_correlate) ... ok
+test_legitimate_non_sensitive_activity (test_analysis.AnalysisTests.test_legitimate_non_sensitive_activity) ... ok
+test_loss_breaks_sequences (test_analysis.AnalysisTests.test_loss_breaks_sequences) ... ok
+test_missing_environment_does_not_assert_preload (test_analysis.AnalysisTests.test_missing_environment_does_not_assert_preload) ... ok
+test_old_shell_cannot_start_recent_correlation (test_analysis.AnalysisTests.test_old_shell_cannot_start_recent_correlation) ... ok
+test_pid_reuse_does_not_inherit_preload (test_analysis.AnalysisTests.test_pid_reuse_does_not_inherit_preload) ... ok
+test_policy_denial_distinct_from_audit (test_analysis.AnalysisTests.test_policy_denial_distinct_from_audit) ... ok
+test_preload_config_rename (test_analysis.AnalysisTests.test_preload_config_rename) ... ok
+test_preload_config_write_intent (test_analysis.AnalysisTests.test_preload_config_write_intent) ... ok
+test_preload_library_not_in_temp_has_no_chain (test_analysis.AnalysisTests.test_preload_library_not_in_temp_has_no_chain) ... ok
+test_process_cache_is_bounded (test_analysis.AnalysisTests.test_process_cache_is_bounded) ... ok
+test_process_exit_retained_then_expired (test_analysis.AnalysisTests.test_process_exit_retained_then_expired) ... ok
+test_ptrace_failed_not_success (test_analysis.AnalysisTests.test_ptrace_failed_not_success) ... ok
+test_ptrace_read_is_not_write (test_analysis.AnalysisTests.test_ptrace_read_is_not_write) ... ok
+test_reload_clears_previous_chains (test_analysis.AnalysisTests.test_reload_clears_previous_chains) ... ok
+test_root_is_not_implicitly_allowed (test_analysis.AnalysisTests.test_root_is_not_implicitly_allowed) ... ok
+test_temp_prefix_boundary (test_analysis.AnalysisTests.test_temp_prefix_boundary) ... ok
+test_thread_exit_does_not_expire_live_process (test_analysis.AnalysisTests.test_thread_exit_does_not_expire_live_process) ... ok
+test_timeout_does_not_correlate (test_analysis.AnalysisTests.test_timeout_does_not_correlate) ... ok
+test_unrelated_branches_do_not_correlate (test_analysis.AnalysisTests.test_unrelated_branches_do_not_correlate) ... ok
+test_frames_fragmented_and_combined (test_analysis.InfrastructureTests.test_frames_fragmented_and_combined) ... ok
+test_invalid_and_truncated_frames (test_analysis.InfrastructureTests.test_invalid_and_truncated_frames) ... ok
+test_invalid_config_does_not_replace_engine (test_analysis.InfrastructureTests.test_invalid_config_does_not_replace_engine) ... ok
+test_log_rotation_preserves_valid_json (test_analysis.InfrastructureTests.test_log_rotation_preserves_valid_json) ... ok
+test_pipeline_reorder_idempotency_and_html_escape (test_analysis.InfrastructureTests.test_pipeline_reorder_idempotency_and_html_escape) ... ok
+test_schema_rejects_invalid_types (test_analysis.InfrastructureTests.test_schema_rejects_invalid_types) ... ok
+test_snapshot_parent_matches_exact_bpf_start (test_analysis.InfrastructureTests.test_snapshot_parent_matches_exact_bpf_start) ... ok
+test_live_reload_rejections_preserve_rules_and_idle_reload_applies (test_reload.ReloadTests.test_live_reload_rejections_preserve_rules_and_idle_reload_applies) ... ok
+test_nested_invalid_config_is_rejected (test_reload.ReloadTests.test_nested_invalid_config_is_rejected) ... ok
+test_reload_refreshes_sensitive_objects (test_reload.ReloadTests.test_reload_refreshes_sensitive_objects) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 1.277s
+
+OK

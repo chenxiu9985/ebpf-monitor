@@ -1,0 +1,24 @@
+{
+  "source": "REAL_TRANSPORT_OVERLOAD",
+  "passed": true,
+  "workload_seconds_while_analyzer_paused": 0.14083947900000027,
+  "final_metrics": {
+    "events_attempted": 20144,
+    "ring_lost": 0,
+    "map_fail": 0,
+    "unpaired": 0,
+    "denied": 0,
+    "queue_lost": 18744,
+    "queue_depth": 0,
+    "transport_disconnects": 0
+  },
+  "collector_exit": 0,
+  "analyzer_exit": 0,
+  "shutdown": {
+    "shutdown_unsent": 0,
+    "shutdown_queue_lost": 18744,
+    "transport_disconnects": 0,
+    "shutdown_acknowledged": true,
+    "shutdown_error": 0
+  }
+}

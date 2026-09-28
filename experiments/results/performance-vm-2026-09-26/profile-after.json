@@ -1,0 +1,416 @@
+{
+  "source": "LOCAL_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.8.0-136-generic-x86_64-with-glibc2.39",
+    "kernel": "6.8.0-136-generic",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": "lockdown,capability,landlock,yama,apparmor",
+    "bpf_lsm_active": false,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 3960868
+  },
+  "parameters": {
+    "out": "out/profile-after",
+    "rounds": 5,
+    "opens": 20000,
+    "execs": 1000,
+    "profile": true,
+    "environment_label": "vmware"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 4.442545457997767,
+      "operations_per_second": 4727.019722937083,
+      "children_cpu_seconds": 3.314126
+    },
+    {
+      "round": 1,
+      "group": "P1",
+      "seconds": 6.628256494004745,
+      "operations_per_second": 3168.253977346002,
+      "collector_rss_kib": 36216,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4276,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.214474
+    },
+    {
+      "round": 1,
+      "group": "P2",
+      "seconds": 6.514669064003101,
+      "operations_per_second": 3223.494515789882,
+      "collector_rss_kib": 36088,
+      "final_metrics": {
+        "events_attempted": 25019,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4307,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.202377000000001
+    },
+    {
+      "round": 1,
+      "group": "B1",
+      "seconds": 6.472215229994617,
+      "operations_per_second": 3244.638698459579,
+      "collector_rss_kib": 36152,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23281093,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.291194000000002
+    },
+    {
+      "round": 2,
+      "group": "P1",
+      "seconds": 6.858898730002693,
+      "operations_per_second": 3061.7160023285187,
+      "collector_rss_kib": 36076,
+      "final_metrics": {
+        "events_attempted": 25008,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4276,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.325726999999998
+    },
+    {
+      "round": 2,
+      "group": "P2",
+      "seconds": 8.335867982001218,
+      "operations_per_second": 2519.233755302164,
+      "collector_rss_kib": 36152,
+      "final_metrics": {
+        "events_attempted": 25013,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 5269,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.260500000000002
+    },
+    {
+      "round": 2,
+      "group": "B1",
+      "seconds": 6.519442076001724,
+      "operations_per_second": 3221.134531941265,
+      "collector_rss_kib": 36088,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23281093,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.336122999999997
+    },
+    {
+      "round": 2,
+      "group": "B0",
+      "seconds": 4.3477544779962045,
+      "operations_per_second": 4830.079551704238,
+      "children_cpu_seconds": 3.2873379999999983
+    },
+    {
+      "round": 3,
+      "group": "P2",
+      "seconds": 6.59126608799852,
+      "operations_per_second": 3186.0343247615397,
+      "collector_rss_kib": 36152,
+      "final_metrics": {
+        "events_attempted": 25186,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4307,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.255183000000001
+    },
+    {
+      "round": 3,
+      "group": "B1",
+      "seconds": 6.461539682997682,
+      "operations_per_second": 3249.9993856352107,
+      "collector_rss_kib": 36128,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23281092,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.326414000000007
+    },
+    {
+      "round": 3,
+      "group": "B0",
+      "seconds": 4.56780920100573,
+      "operations_per_second": 4597.389924994299,
+      "children_cpu_seconds": 3.430317999999996
+    },
+    {
+      "round": 3,
+      "group": "P1",
+      "seconds": 6.765796425002918,
+      "operations_per_second": 3103.847452813501,
+      "collector_rss_kib": 36152,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4276,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.2718419999999995
+    },
+    {
+      "round": 4,
+      "group": "B1",
+      "seconds": 6.322953884999151,
+      "operations_per_second": 3321.232509669461,
+      "collector_rss_kib": 36088,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23281092,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.436119999999999
+    },
+    {
+      "round": 4,
+      "group": "B0",
+      "seconds": 4.3976501200013445,
+      "operations_per_second": 4775.277574832074,
+      "children_cpu_seconds": 3.3122019999999956
+    },
+    {
+      "round": 4,
+      "group": "P1",
+      "seconds": 6.699235403000785,
+      "operations_per_second": 3134.6860853095986,
+      "collector_rss_kib": 36144,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4276,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.290247999999995
+    },
+    {
+      "round": 4,
+      "group": "P2",
+      "seconds": 6.575283182995918,
+      "operations_per_second": 3193.7787948521027,
+      "collector_rss_kib": 36064,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4307,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.260331999999998
+    },
+    {
+      "round": 5,
+      "group": "B0",
+      "seconds": 4.344461577995389,
+      "operations_per_second": 4833.740527563779,
+      "children_cpu_seconds": 3.280412000000009
+    },
+    {
+      "round": 5,
+      "group": "P1",
+      "seconds": 6.7875798659952125,
+      "operations_per_second": 3093.8862473216623,
+      "collector_rss_kib": 36072,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4276,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.314464999999991
+    },
+    {
+      "round": 5,
+      "group": "P2",
+      "seconds": 6.523874103993876,
+      "operations_per_second": 3218.946237350584,
+      "collector_rss_kib": 36088,
+      "final_metrics": {
+        "events_attempted": 25002,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 4307,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.240955000000014
+    },
+    {
+      "round": 5,
+      "group": "B1",
+      "seconds": 6.651048077997984,
+      "operations_per_second": 3157.397113015782,
+      "collector_rss_kib": 36132,
+      "final_metrics": {
+        "events_attempted": 25021,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0
+      },
+      "raw_bytes": 23298380,
+      "capture_loss_free": true,
+      "children_cpu_seconds": 5.393707999999997
+    }
+  ],
+  "source_sha256": {
+    "bpf/events.h": "28baa94b2c4aeb552235d5e88256c09e193a14e8fd532842095c4e01edfbcf9d",
+    "bpf/monitor.bpf.c": "74545021d67bbf917cf78451eda48f4952e00c405fb272fa11e845cafbaaffb6",
+    "collector/main.c": "b135b829ff702b720eb51812ed10c7fae1ca637d40878d31943c4e2577745c77",
+    "monitor/__init__.py": "5708f2cd49ddfd1da4bffa02b4da7c0332c247a572c04fac001ba68e39e6b60b",
+    "monitor/__main__.py": "8915476f2450a28ce82eaa7bb26fade23677a1a7fa6374a5123f96ef6282e7c0",
+    "monitor/engine.py": "6b5c545ed3c7531e3ad36de77f1630e70d234bba14adf35e7b2836271feb77fe",
+    "monitor/model.py": "8e7ff2c8b1a927ab5fdab7298fdc7d793c39f250aeb19c215363c827114832db",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/runtime.py": "67091a287f81aa6a16ec7bc60f7d634fed3a719c8001aaa2642f01cfb1df3059",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "e3071cd37c97c9e1f68e624cb538e7ceba0b29241a044a2958930897caebeb99",
+    "scripts/ablation.py": "96f3bb79d6286a70625b4da536992122324aaa354ec08d037c1fd15c5906899c",
+    "scripts/acceptance.py": "87ffda90a4e4b1f2c7753a8fb5c6753c32ff569187dad5b8e4382b0f282b7a38",
+    "scripts/benchmark.py": "2f1bd986d316169db4a19c2dfe6c0aca8de9b5cd801e4e86f14ccd420f6fc697",
+    "scripts/build.sh": "10ab28ad535fc12925ba684245a2ab63a62a44a167a705ed33a09784154f9b30",
+    "scripts/freeze_competitors.py": "9be003626cfb91197d11255828cbe819d7f7f1220e86c4b39d398cb2ffc8f9c7",
+    "scripts/integration.py": "217c9c988ab2265d63988eccec533373fc2236642f9fe6bd5c94ae829591b996",
+    "scripts/live_edges.py": "f380e3de2be349278ee01f11f4e2db95acefec106453d42d0a3f0a59856e7143",
+    "scripts/run.sh": "4c169460ffd652082bc7c497f3f6fab76c5940add24e2638fb52cc232f37ae93",
+    "scripts/target_check.sh": "d872eaa20fe7ddf256e53fda9e323635179c29bd16d371ed2badfde6eb45f6c8",
+    "scripts/transport_recovery.py": "737554f43da1a9b38c704ce2312c376573d795199ea75ff47f5de60993f63793",
+    "scripts/verify_lsm.py": "685432986fbedd8e645f7670b3456cdaac10c519b8e40da839ec12cb0670994e",
+    "tests/fixtures/benign_preload.c": "06d94361278cb90ae9c52c41ab2883c41ff2c704ff51131972c870ad91e90f51",
+    "tests/fixtures/block_client.c": "94e0e143cb2dab14d7d72090fa5a0d1868553586e23b4088aa2244c7c72e3917",
+    "tests/fixtures/edges.c": "005726f7065b304ffe154e58f40f93239dbbc20bb6e4965d3e30a569959baa24",
+    "tests/fixtures/service.c": "8ad7c58ed14db31d1a269cf5a5e3b8f585c2ba54e440bd8719cffd10345db828",
+    "tests/fixtures/worker.c": "b9672fd6e37ac3342b8f267ad84c30da4bbff9726dd581b58c7afacc9d54e2a9",
+    "tests/test_analysis.py": "102d621eab2712e7f191b84c7d4f1ee895204bd401ffde6032f47dab44476ad8",
+    "tests/test_reload.py": "6b55990293ee64ac6ca39622b8c8921191ba2a38be7de7aaad2a413850e182c3",
+    "rules/default.yaml": "8b3ba8ab9526519ab842cde18e7fbb4cebf543a58162ba39e558fe8ba2de4c2e",
+    "config/target.json": "de354a40fbcbc82ce8a017f0f2aee0da4bdca5904fa635f27aa0d1c7563455ed",
+    "build/collector": "5851ac1cd1308113b017aa359463585e6df9af5e66d25de7cf6efd26133eb9f8"
+  },
+  "output_directory": "/tmp/ebpf-codex-perf.teZzU3/out/profile-after",
+  "group_definitions": {
+    "B0": "no collector",
+    "P1": "all probes + ring transport + consume; no JSON encoding",
+    "P2": "P1 + JSON encoding discarded before output",
+    "B1": "all probes + JSONL output, no analyzer"
+  },
+  "limitation": "Microbenchmark on the recorded environment; no analyzer, no application workload. Stage differences are diagnostic comparisons, not additive causal cost estimates.",
+  "median_seconds": {
+    "B0": 4.3976501200013445,
+    "P1": 6.765796425002918,
+    "P2": 6.575283182995918,
+    "B1": 6.472215229994617
+  },
+  "stage_throughput_drop_percent": {
+    "P1": 35.00173750794685,
+    "P2": 33.11846809314714,
+    "B1": 32.053401135039174
+  },
+  "capture_loss_free": true,
+  "completed": true,
+  "elapsed_increase_percent": 47.174401177523386,
+  "throughput_drop_percent": 32.053401135039174
+}

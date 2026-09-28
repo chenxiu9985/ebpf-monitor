@@ -1,0 +1,75 @@
+{
+  "source": "REAL_KERNEL_EDGE_TESTS",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762052
+  },
+  "checks": {
+    "openat2_hardlink_identity": true,
+    "symlink_identity": true,
+    "relative_dirfd_identity": true,
+    "utf8_path_roundtrip": true,
+    "preload_config_rename": true,
+    "preload_config_unlink": true,
+    "environment_limit_visible": true,
+    "execveat": true,
+    "thread-exec": true,
+    "failed_exec_result": true,
+    "owned_child_ptrace_target": true,
+    "thread_vs_process_exit": true
+  },
+  "pid_mapping": {
+    "openat2": {
+      "namespace_pid": 613,
+      "host_pid": 1122
+    },
+    "execveat": {
+      "namespace_pid": 614,
+      "host_pid": 1123
+    },
+    "thread-exec": {
+      "namespace_pid": 615,
+      "host_pid": 1124
+    },
+    "exec-fail": {
+      "namespace_pid": 617,
+      "host_pid": 1126
+    },
+    "ptrace": {
+      "namespace_pid": 618,
+      "host_pid": 1127
+    }
+  },
+  "final_metrics": {
+    "events_attempted": 81,
+    "ring_lost": 0,
+    "map_fail": 0,
+    "unpaired": 166,
+    "denied": 0,
+    "queue_lost": 0,
+    "queue_depth": 0
+  },
+  "passed": true
+}

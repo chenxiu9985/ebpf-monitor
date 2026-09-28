@@ -1,0 +1,24 @@
+{
+  "same_input": true,
+  "same_config": true,
+  "same_alerts": true,
+  "records": 21507,
+  "pipeline_alerts": [
+    6,
+    6,
+    6
+  ],
+  "v2_median_seconds": {
+    "decode": 0.04749497999999619,
+    "engine": 1.6614265940000053,
+    "storage": 0.3832572270000014,
+    "pipeline": 2.3445505580000017
+  },
+  "v3_median_seconds": {
+    "decode": 0.049228433999999766,
+    "engine": 0.04186381099999892,
+    "storage": 0.36263014800000093,
+    "pipeline": 0.5884312850000057
+  },
+  "passed": true
+}

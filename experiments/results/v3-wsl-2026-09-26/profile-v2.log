@@ -1,0 +1,12 @@
+{
+  "source": "SYNTHETIC_ANALYSIS_BENCHMARK",
+  "records": 21507,
+  "median_seconds": {
+    "decode": 0.04749497999999619,
+    "engine": 1.6614265940000053,
+    "storage": 0.3832572270000014,
+    "pipeline": 2.3445505580000017
+  },
+  "passed": true,
+  "result": "/tmp/ebpf-v3-final-h6jznqwm/profile-v2/result.json"
+}

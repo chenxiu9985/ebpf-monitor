@@ -1,0 +1,3 @@
+{"target_opens_per_second": 500, "issued": 1500, "captured_fixture_opens": 1500, "workload_seconds": 3.0001008309999975, "actual_opens_per_second": 499.983195398142, "supervisor_exit": 0, "passed": true}
+{"target_opens_per_second": 2000, "issued": 6000, "captured_fixture_opens": 6000, "workload_seconds": 3.000079367000005, "actual_opens_per_second": 1999.947090066431, "supervisor_exit": 0, "passed": true}
+{"target_opens_per_second": 5000, "issued": 15000, "captured_fixture_opens": 15000, "workload_seconds": 3.0001041290000003, "actual_opens_per_second": 4999.826457690262, "supervisor_exit": 0, "passed": true}

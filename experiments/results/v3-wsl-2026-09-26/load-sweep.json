@@ -1,0 +1,140 @@
+{
+  "source": "REAL_KERNEL_CONTROLLED_BENIGN_OPENS",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762048
+  },
+  "seconds_per_rate": 3,
+  "cases": [
+    {
+      "target_opens_per_second": 500,
+      "issued": 1500,
+      "captured_fixture_opens": 1500,
+      "workload_seconds": 3.0001008309999975,
+      "actual_opens_per_second": 499.983195398142,
+      "supervisor_exit": 0,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/tmp/ebpf-v3-final-h6jznqwm/load-sweep/rate-0-500",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 1514,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "passed": true
+    },
+    {
+      "target_opens_per_second": 2000,
+      "issued": 6000,
+      "captured_fixture_opens": 6000,
+      "workload_seconds": 3.000079367000005,
+      "actual_opens_per_second": 1999.947090066431,
+      "supervisor_exit": 0,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/tmp/ebpf-v3-final-h6jznqwm/load-sweep/rate-1-2000",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 6009,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "passed": true
+    },
+    {
+      "target_opens_per_second": 5000,
+      "issued": 15000,
+      "captured_fixture_opens": 15000,
+      "workload_seconds": 3.0001041290000003,
+      "actual_opens_per_second": 4999.826457690262,
+      "supervisor_exit": 0,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/tmp/ebpf-v3-final-h6jznqwm/load-sweep/rate-2-5000",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 15007,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "collector_sha256": "b47911939af90d4e626d34da5701e804432e44c783e45151a2d8d3622f76d0a3",
+  "limitation": "Short fixed-rate workload; not an application overhead benchmark or long-term capacity guarantee."
+}

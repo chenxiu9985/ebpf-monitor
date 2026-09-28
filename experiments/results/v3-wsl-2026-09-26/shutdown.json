@@ -1,0 +1,109 @@
+{
+  "source": "REAL_KERNEL_SHUTDOWN",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762048
+  },
+  "cases": [
+    {
+      "name": "resume_during_drain",
+      "passed": true,
+      "shutdown_seconds": 1.7195593379999998,
+      "shutdown": {
+        "shutdown_unsent": 0,
+        "shutdown_queue_lost": 8885,
+        "transport_disconnects": 0,
+        "shutdown_acknowledged": true,
+        "shutdown_error": 0
+      },
+      "final_metrics": {
+        "events_attempted": 10001,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 8885,
+        "queue_depth": 0,
+        "transport_disconnects": 0
+      },
+      "persisted_stop_count": 1,
+      "persisted_events": 1119,
+      "collector_exit": 0,
+      "analyzer_exit": 0
+    },
+    {
+      "name": "ack_timeout",
+      "passed": true,
+      "shutdown_seconds": 1.6695046839999996,
+      "shutdown": {
+        "shutdown_unsent": 0,
+        "shutdown_queue_lost": 0,
+        "transport_disconnects": 0,
+        "shutdown_acknowledged": false,
+        "shutdown_error": -110
+      },
+      "final_metrics": {
+        "events_attempted": 51,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0,
+        "transport_disconnects": 0
+      },
+      "collector_exit": 1,
+      "analyzer_exit": 0
+    },
+    {
+      "source": "V3_SUPERVISED_LIVE",
+      "passed": true,
+      "output": "/tmp/ebpf-v3-final-h6jznqwm/shutdown/session",
+      "collector_exit": 0,
+      "analyzer_exit": 0,
+      "stop_requested": true,
+      "shutdown": {
+        "shutdown_unsent": 0,
+        "shutdown_queue_lost": 0,
+        "transport_disconnects": 0,
+        "shutdown_acknowledged": true,
+        "shutdown_error": 0
+      },
+      "final_metrics": {
+        "events_attempted": 1,
+        "ring_lost": 0,
+        "map_fail": 0,
+        "unpaired": 0,
+        "denied": 0,
+        "queue_lost": 0,
+        "queue_depth": 0,
+        "transport_disconnects": 0
+      },
+      "capture_loss_free": true,
+      "supervisor_exit": 0
+    }
+  ],
+  "passed": true
+}

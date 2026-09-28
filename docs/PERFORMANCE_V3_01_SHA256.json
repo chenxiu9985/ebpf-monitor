@@ -1,0 +1,17 @@
+{
+  "bpf/events.h": "b0d62f542e9ecf8c7cae2aaf7dcd3e762bb0f8b885e96bcafea245484dca6a89",
+  "bpf/monitor.bpf.c": "7fd35b2aa2da755ab61915ae0778db7817545cf14892afa704cda431a407f8fa",
+  "collector/main.c": "c384abbbe6b2d62f6d8f33989231069e62d7dbe21ac85f7bb74890e1d323b272",
+  "monitor/engine.py": "264967e341fbda157e6c3e7b6997e47d94faf0f2a76ba26b26adf30011d04692",
+  "monitor/model.py": "928be290678f4d03ce7600ddbf4c8ac6ea170809548ff5a4c91374ad77b6c846",
+  "schema/event.schema.json": "0ddcc9a296a36482e315a9f2e98aff4d2cebb01d5c35d691c2bf48a4b14618ae",
+  "tests/test_analysis.py": "72c8fb8d13cd6970ce7bda136335e863bc50a9723bbfe49ac128f9164416423c",
+  "tests/fixtures/denied_open.c": "7b6978334a4b7a5e35524c9438289be49fd860cac28c3985ffb8d8af3980b597",
+  "scripts/verify_denied_open.py": "5f39e5e279e8e38962871b4a947badb3b4f94dc31badef99db80ae29431c011c",
+  "scripts/benchmark.py": "0024013d6c360937e1140279957ad32ab0cf9c0aa887e5aa05bdad46d55ecfec",
+  "scripts/benchmark_live.py": "5d6b155c1e49e5f8f7305f244cf04738b26a9e5f91147ac0b95caeede30abd81",
+  "tests/test_record_codec.py": "a42df930a72888e1e2bf64736f5fdab9ff826cbce24b7e7dc2715b4e8f3c0530",
+  "tests/fixtures/record_codec.c": "231361c376ba47f55042b978001660cbcbacfd027418a2f4fa696866bccdb590",
+  "docs/PATH_CAPTURE_FIX.md": "4da90cc5cb6e6b62de63910b1c7f83bfd87b8db0e90aae5d65f3ee881d406ab2",
+  "docs/PERFORMANCE_V3_01.md": "b3a49f67769438c4e70b018faf2b71695a10370d7d8021dba3073cc5598e9395"
+}
