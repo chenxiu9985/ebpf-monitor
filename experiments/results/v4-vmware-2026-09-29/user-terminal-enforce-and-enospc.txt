@@ -1,0 +1,970 @@
+chenxiu@xdp:~$ cd ~/ebpf-monitor-v4
+chenxiu@xdp:~/ebpf-monitor-v4$ sudo cat /sys/kernel/security/lsm
+[sudo] password for chenxiu:
+lockdown,capability,landlock,yama,apparmor,bpfchenxiu@xdp:~/ebpf-monitor-v4$ sudo python3 -m monitor doctor
+{
+  "os": "Linux-6.8.0-142-generic-x86_64-with-glibc2.39",
+  "kernel": "6.8.0-142-generic",
+  "architecture": "x86_64",
+  "uid": 0,
+  "btf_readable": true,
+  "active_lsm": "lockdown,capability,landlock,yama,apparmor,bpf",
+  "bpf_lsm_active": true,
+  "cgroup_v2": true,
+  "tools": {
+    "clang": "/usr/bin/clang",
+    "cc": "/usr/bin/cc",
+    "make": "/usr/bin/make",
+    "pkg-config": "/usr/bin/pkg-config",
+    "bpftool": "/usr/sbin/bpftool"
+  },
+  "tracepoints": {
+    "sched/sched_process_exec": true,
+    "sched/sched_process_fork": true,
+    "syscalls/sys_enter_openat2": true,
+    "syscalls/sys_enter_ptrace": true
+  },
+  "load_verified": false,
+  "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+  "mem_total_kib": 3960900
+}
+chenxiu@xdp:~/ebpf-monitor-v4$ RESPONSE="out/vmware-response-$(date +%Y%m%d-%H%M%S)"
+chenxiu@xdp:~/ebpf-monitor-v4$ sudo python3 scripts/verify_response.py \
+  --uid 1000 \
+  --out "$RESPONSE"
+{
+  "source": "REAL_DYNAMIC_RESPONSE_ACCEPTANCE",
+  "environment": {
+    "os": "Linux-6.8.0-142-generic-x86_64-with-glibc2.39",
+    "kernel": "6.8.0-142-generic",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": "lockdown,capability,landlock,yama,apparmor,bpf",
+    "bpf_lsm_active": true,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 3960900
+  },
+  "status": "executed",
+  "passed": true,
+  "rounds": [
+    {
+      "gap_us": 0,
+      "operations": [
+        {
+          "phase": "initial",
+          "before_ns": 114274573147,
+          "after_ns": 114274621144,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276027071,
+          "after_ns": 114276083768,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276105767,
+          "after_ns": 114276163264,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276183463,
+          "after_ns": 114276239760,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276260159,
+          "after_ns": 114276318056,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276340255,
+          "after_ns": 114276396152,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276417351,
+          "after_ns": 114276583442,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276609341,
+          "after_ns": 114276680637,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276701836,
+          "after_ns": 114276759633,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276780332,
+          "after_ns": 114276837629,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 114276860228,
+          "after_ns": 114276919925,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114784664429,
+          "after_ns": 114784724126,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114784747625,
+          "after_ns": 114784801922,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114784819821,
+          "after_ns": 114784873918,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114784891917,
+          "after_ns": 114784945714,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114784963613,
+          "after_ns": 114785017611,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114785035710,
+          "after_ns": 114785089407,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114785107406,
+          "after_ns": 114785161703,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114785179802,
+          "after_ns": 114785234500,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114785252699,
+          "after_ns": 114785429489,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 114785454988,
+          "after_ns": 114785521485,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "existing_fd_read",
+          "retval": 1
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986410131,
+          "after_ns": 117986495426,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986530225,
+          "after_ns": 117986587622,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986609121,
+          "after_ns": 117986664718,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986683017,
+          "after_ns": 117986731315,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986764313,
+          "after_ns": 117986820411,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986839110,
+          "after_ns": 117986886907,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986905306,
+          "after_ns": 117986960104,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117986980503,
+          "after_ns": 117987028000,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117987046100,
+          "after_ns": 117987092997,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 117987111097,
+          "after_ns": 117987157894,
+          "retval": 3,
+          "errno": 0
+        }
+      ],
+      "policy": {
+        "schema_version": 2,
+        "event_id": "b26e6cfa8a684101aee6223f264d4901:f728b2f2-9f46-428b-a35c-0a73eaf8822b:1389-113954559593:49",
+        "event_type": "monitor_control",
+        "monotonic_ns": 114497995588,
+        "host_id": "b26e6cfa8a684101aee6223f264d4901",
+        "boot_id": "f728b2f2-9f46-428b-a35c-0a73eaf8822b",
+        "session_id": "b26e6cfa8a684101aee6223f264d4901:f728b2f2-9f46-428b-a35c-0a73eaf8822b:1389-113954559593",
+        "clock_domain": "CLOCK_MONOTONIC",
+        "collector_receive_ns": 114498006488,
+        "source_hook": "collector",
+        "request_id": "e616770e297b8fb15c31b5b9bcb93183",
+        "state": "applied",
+        "reason": "map_update_confirmed",
+        "policy_id": 1,
+        "update_before_ns": 114497938891,
+        "update_after_ns": 114497985289,
+        "expires_ns": 117497930392,
+        "inode": 732,
+        "device": 264241152,
+        "exec_token": 114272278967,
+        "tgid": 1392,
+        "process_start_ns": 114271589603,
+        "received_ns": 114502381459,
+        "storage_submit_ns": 114703262077,
+        "alert_id": "89cddd27666d2b48954af15f"
+      },
+      "first_open_denied": false,
+      "initial_escaped": 11,
+      "post_confirm_matched": true,
+      "passed": true
+    },
+    {
+      "gap_us": 1000,
+      "operations": [
+        {
+          "phase": "initial",
+          "before_ns": 118012231266,
+          "after_ns": 118012271564,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118012552250,
+          "after_ns": 118012601348,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118014142173,
+          "after_ns": 118014191670,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118015430309,
+          "after_ns": 118015480107,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118016818142,
+          "after_ns": 118016867440,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118018657852,
+          "after_ns": 118018759747,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118020326770,
+          "after_ns": 118020385267,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118021849995,
+          "after_ns": 118021908292,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118023609909,
+          "after_ns": 118023671506,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118025386522,
+          "after_ns": 118025435919,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 118026737956,
+          "after_ns": 118026786553,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118511556398,
+          "after_ns": 118511621596,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118511645696,
+          "after_ns": 118511699694,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118511717794,
+          "after_ns": 118511771492,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118511789492,
+          "after_ns": 118511843290,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118511861290,
+          "after_ns": 118511919388,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118511939388,
+          "after_ns": 118512004986,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118512027485,
+          "after_ns": 118512090483,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118512116783,
+          "after_ns": 118512182881,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118512207180,
+          "after_ns": 118512261679,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 118512279678,
+          "after_ns": 118512333477,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "existing_fd_read",
+          "retval": 1
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121712953320,
+          "after_ns": 121713073816,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121713130214,
+          "after_ns": 121713670899,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121713719298,
+          "after_ns": 121713814595,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121713834494,
+          "after_ns": 121713884893,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121713907592,
+          "after_ns": 121713962590,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121713984390,
+          "after_ns": 121714040889,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121714062188,
+          "after_ns": 121714112786,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121714135286,
+          "after_ns": 121714191984,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121714213383,
+          "after_ns": 121714260482,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 121714280281,
+          "after_ns": 121714326680,
+          "retval": 3,
+          "errno": 0
+        }
+      ],
+      "policy": {
+        "schema_version": 2,
+        "event_id": "b26e6cfa8a684101aee6223f264d4901:f728b2f2-9f46-428b-a35c-0a73eaf8822b:1389-113954559593:151",
+        "event_type": "monitor_control",
+        "monotonic_ns": 118244885172,
+        "host_id": "b26e6cfa8a684101aee6223f264d4901",
+        "boot_id": "f728b2f2-9f46-428b-a35c-0a73eaf8822b",
+        "session_id": "b26e6cfa8a684101aee6223f264d4901:f728b2f2-9f46-428b-a35c-0a73eaf8822b:1389-113954559593",
+        "clock_domain": "CLOCK_MONOTONIC",
+        "collector_receive_ns": 118244894071,
+        "source_hook": "collector",
+        "request_id": "5b11cc398ac4381c7fee3ca5d1471b32",
+        "state": "applied",
+        "reason": "map_update_confirmed",
+        "policy_id": 2,
+        "update_before_ns": 118244858473,
+        "update_after_ns": 118244876172,
+        "expires_ns": 121244851074,
+        "inode": 732,
+        "device": 264241152,
+        "exec_token": 118010452653,
+        "tgid": 1395,
+        "process_start_ns": 118009975177,
+        "received_ns": 118249144564,
+        "storage_submit_ns": 118471010309,
+        "alert_id": "04e2d7a6cdf19b3f7fc4dfd5"
+      },
+      "first_open_denied": false,
+      "initial_escaped": 11,
+      "post_confirm_matched": true,
+      "passed": true
+    },
+    {
+      "gap_us": 10000,
+      "operations": [
+        {
+          "phase": "initial",
+          "before_ns": 121748741188,
+          "after_ns": 121748789786,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121749164375,
+          "after_ns": 121749223574,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121759745370,
+          "after_ns": 121759856367,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121770324565,
+          "after_ns": 121770382763,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121780709165,
+          "after_ns": 121780768663,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121792162335,
+          "after_ns": 121792218833,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121802756029,
+          "after_ns": 121802808928,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121813751512,
+          "after_ns": 121813816310,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121824338206,
+          "after_ns": 121824421204,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121836257362,
+          "after_ns": 121836317061,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "initial",
+          "before_ns": 121846642263,
+          "after_ns": 121846707561,
+          "retval": 4,
+          "errno": 0
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122236808207,
+          "after_ns": 122236896204,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122236932503,
+          "after_ns": 122236997801,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237019800,
+          "after_ns": 122237091698,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237115698,
+          "after_ns": 122237177096,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237196095,
+          "after_ns": 122237252994,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237271793,
+          "after_ns": 122237328892,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237347691,
+          "after_ns": 122237407189,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237424389,
+          "after_ns": 122237610583,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237632483,
+          "after_ns": 122237687381,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "after_confirmation",
+          "before_ns": 122237704781,
+          "after_ns": 122237762579,
+          "retval": -1,
+          "errno": 1
+        },
+        {
+          "phase": "existing_fd_read",
+          "retval": 1
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438214223,
+          "after_ns": 125438281821,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438309321,
+          "after_ns": 125438355819,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438373819,
+          "after_ns": 125438420217,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438438117,
+          "after_ns": 125438484515,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438502415,
+          "after_ns": 125438548713,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438566613,
+          "after_ns": 125438613011,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438630911,
+          "after_ns": 125438677309,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438695309,
+          "after_ns": 125438752207,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438770207,
+          "after_ns": 125438816705,
+          "retval": 3,
+          "errno": 0
+        },
+        {
+          "phase": "after_expiry",
+          "before_ns": 125438834805,
+          "after_ns": 125438881403,
+          "retval": 3,
+          "errno": 0
+        }
+      ],
+      "policy": {
+        "schema_version": 2,
+        "event_id": "b26e6cfa8a684101aee6223f264d4901:f728b2f2-9f46-428b-a35c-0a73eaf8822b:1389-113954559593:265",
+        "event_type": "monitor_control",
+        "monotonic_ns": 121973828594,
+        "host_id": "b26e6cfa8a684101aee6223f264d4901",
+        "boot_id": "f728b2f2-9f46-428b-a35c-0a73eaf8822b",
+        "session_id": "b26e6cfa8a684101aee6223f264d4901:f728b2f2-9f46-428b-a35c-0a73eaf8822b:1389-113954559593",
+        "clock_domain": "CLOCK_MONOTONIC",
+        "collector_receive_ns": 121973837493,
+        "source_hook": "collector",
+        "request_id": "391552df9bc7a2bc5bdbb343d0bb7bef",
+        "state": "applied",
+        "reason": "map_update_confirmed",
+        "policy_id": 3,
+        "update_before_ns": 121973800494,
+        "update_after_ns": 121973820694,
+        "expires_ns": 124973793194,
+        "inode": 732,
+        "device": 264241152,
+        "exec_token": 121744891199,
+        "tgid": 1398,
+        "process_start_ns": 121744115921,
+        "received_ns": 121976070129,
+        "storage_submit_ns": 122200129264,
+        "alert_id": "4cdbcb305748ed306d2be056"
+      },
+      "first_open_denied": false,
+      "initial_escaped": 11,
+      "post_confirm_matched": true,
+      "passed": true
+    }
+  ],
+  "baseline": [
+    {
+      "phase": "initial",
+      "before_ns": 113734252893,
+      "after_ns": 113734272692,
+      "retval": 3,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113734462082,
+      "after_ns": 113734496180,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113734517379,
+      "after_ns": 113734694670,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113734716269,
+      "after_ns": 113734751667,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113734771066,
+      "after_ns": 113734804364,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113734848462,
+      "after_ns": 113734882560,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113734902759,
+      "after_ns": 113734934657,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113734977055,
+      "after_ns": 113735009753,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113735030052,
+      "after_ns": 113735063950,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113735092349,
+      "after_ns": 113735126347,
+      "retval": 4,
+      "errno": 0
+    },
+    {
+      "phase": "initial",
+      "before_ns": 113735146646,
+      "after_ns": 113735178844,
+      "retval": 4,
+      "errno": 0
+    }
+  ],
+  "nonmatching_opens": true
+}
+chenxiu@xdp:~/ebpf-monitor-v4$ STATUS=$?
+echo "退出码：$STATUS"
+退出码：0
+chenxiu@xdp:~/ebpf-monitor-v4$
+chenxiu@xdp:~/ebpf-monitor-v4$
+chenxiu@xdp:~/ebpf-monitor-v4$
+chenxiu@xdp:~/ebpf-monitor-v4$
+chenxiu@xdp:~/ebpf-monitor-v4$ cd ~/ebpf-monitor-v4
+bash scripts/build.sh -B -j2
+
+RUN="out/vmware-acceptance-$(date +%Y%m%d-%H%M%S)"
+
+sudo python3 scripts/acceptance_v4.py \
+  --native-data \
+  --require-enforce \
+  --stability-seconds 3600 \
+  --out "$RUN"
+mkdir -p build
+/usr/sbin/bpftool btf dump file /sys/kernel/btf/vmlinux format c > build/vmlinux.h.tmp
+mv build/vmlinux.h.tmp build/vmlinux.h
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -Ibuild -Ibpf -c bpf/monitor.bpf.c -o build/monitor.bpf.o
+/usr/sbin/bpftool gen skeleton build/monitor.bpf.o > build/monitor.skel.h.tmp
+mv build/monitor.skel.h.tmp build/monitor.skel.h
+cc -O2 -g -Wall -Wextra -Werror -Ibuild -Ibpf  collector/main.c -o build/collector -lbpf  -lelf -lz
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chenxiu/ebpf-monitor-v4/scripts/acceptance_v4.py", line 62, in <module>
+    if __name__=="__main__": raise SystemExit(main())
+                                              ^^^^^^
+  File "/home/chenxiu/ebpf-monitor-v4/scripts/acceptance_v4.py", line 58, in main
+    (out/"acceptance.json").write_text(json.dumps(result,indent=2),encoding="utf-8")
+  File "/usr/lib/python3.12/pathlib.py", line 1049, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+OSError: [Errno 28] No space left on device
+Traceback (most recent call last):
+  File "/home/chenxiu/ebpf-monitor-v4/scripts/acceptance_v4.py", line 62, in <module>
+    if __name__=="__main__": raise SystemExit(main())
+                                              ^^^^^^
+  File "/home/chenxiu/ebpf-monitor-v4/scripts/acceptance_v4.py", line 29, in main
+    if native.exists(): shutil.copytree(native,out)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/shutil.py", line 600, in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/shutil.py", line 498, in _copytree
+    os.makedirs(dst, exist_ok=dirs_exist_ok)
+  File "<frozen os>", line 225, in makedirs
+OSError: [Errno 28] No space left on device: '/home/chenxiu/ebpf-monitor-v4/out/vmware-acceptance-20260929-120129'
+chenxiu@xdp:~/ebpf-monitor-v4$

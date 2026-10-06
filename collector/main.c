@@ -22,6 +22,8 @@
 #include "transport.h"
 
 static unsigned long long seq;
+static const char *registry_service_path(unsigned id);
+static bool dynamic_enabled, registry_only;
 static char boot_id[80], host_id[128], session[256];
 static volatile sig_atomic_t stopping, reload_requested;
 static const char *open_path, *exec_path, *cgroup_path;
@@ -76,10 +78,22 @@ static void identity(FILE *f, const char *key, unsigned pid, unsigned long long 
     quote(f, tmp);
 }
 static void base(FILE *f, const char *type, unsigned long long timestamp) {
-    fprintf(f, "{\"schema_version\":1,\"event_id\":\"%s:%llu\",\"event_type\":", session, ++seq);
+    fprintf(f, "{\"schema_version\":2,\"event_id\":\"%s:%llu\",\"event_type\":", session, ++seq);
     quote(f, type);
     fprintf(f, ",\"monotonic_ns\":%llu,\"host_id\":", timestamp); quote(f, host_id);
     fputs(",\"boot_id\":", f); quote(f, boot_id);
+    fputs(",\"session_id\":", f); quote(f, session);
+    fprintf(f,",\"clock_domain\":\"CLOCK_MONOTONIC\",\"collector_receive_ns\":%llu",now_ns());
+    fputs(",\"source_hook\":",f);
+    const char *hook="selected_syscall_entry_exit";
+    if (!strncmp(type,"monitor_",8)) hook="collector";
+    else if (!strcmp(type,"process_exec")) hook="sched/sched_process_exec";
+    else if (!strcmp(type,"process_fork")) hook="raw_tp/sched_process_fork";
+    else if (!strcmp(type,"thread_exit")) hook="raw_tp/sched_process_exit";
+    else if (!strcmp(type,"file_open")) hook="syscalls/open_family+security_file_open+do_filp_open";
+    else if (!strcmp(type,"file_mapping")) hook="syscalls/mmap+security_mmap_file";
+    else if (!strcmp(type,"policy_denied")) hook="lsm/file_open_or_bprm_check_security";
+    quote(f,hook);
 }
 static const char *event_name(unsigned type) {
     switch(type) {
@@ -92,6 +106,7 @@ static const char *event_name(unsigned type) {
     case EV_RENAME: return "file_rename";
     case EV_UNLINK: return "file_unlink";
     case EV_DENY: return "policy_denied";
+    case EV_MAP: return "file_mapping";
     default: return "unknown";
     }
 }
@@ -109,6 +124,18 @@ static int on_event(void *ctx, void *data, size_t len) {
     FILE *f=open_memstream(&json, &size);
     if (!f) { queue_lost++; return 0; }
     base(f, event_name(e->type), e->timestamp_ns);
+    fprintf(f,",\"exec_token\":%llu,\"parent_exec_token\":%llu,\"dynamic_policy_id\":%llu",
+        (unsigned long long)e->exec_token,(unsigned long long)e->parent_exec_token,(unsigned long long)e->dynamic_policy_id);
+    if (e->service_id) {
+        fprintf(f,",\"service_id\":%u,\"service_source\":%u,\"service_token\":%llu,\"service_tgid\":%u,\"service_start_ns\":%llu",
+            e->service_id,e->service_source,(unsigned long long)e->service_token,e->service_tgid,(unsigned long long)e->service_start_ns);
+        identity(f,"service_process_key",e->service_tgid,e->service_start_ns);
+        fputs(",\"service_exe\":",f); quote(f,registry_service_path(e->service_id));
+    }
+    fprintf(f,",\"protected_object_id\":%u",e->protected_object_id);
+    fprintf(f,",\"operation_start_ns\":%llu,\"process_start_clock_domain\":\"CLOCK_BOOTTIME\"",(unsigned long long)e->operation_start_ns);
+    fprintf(f,",\"source_detail\":\"%s\"",e->type==EV_MAP?"syscalls/mmap+security_mmap_file":"selected_kernel_hooks");
+    fprintf(f,",\"field_quality\":{\"path\":%u,\"environment\":%u,\"argv\":%u}",e->path_quality,e->env_quality,e->argv_quality);
     identity(f, "process_key", e->tgid, e->start_ns);
     identity(f, "parent_process_key", e->ppid, e->parent_start_ns);
     if (e->target_host_pid) identity(f, "target_process_key", e->target_host_pid, e->target_start_ns);
@@ -153,8 +180,8 @@ static void metric(struct monitor_bpf *skel, const char *type) {
     __u32 zero=0, host_tgid=0;
     bpf_map_lookup_elem(bpf_map__fd(skel->maps.collector_identity), &zero, &host_tgid);
     fprintf(f,",\"pid_namespace_is_host\":%s",host_tgid==(unsigned)getpid()?"true":"false");
-    fprintf(f,",\"metrics\":{\"events_attempted\":%llu,\"ring_lost\":%llu,\"map_fail\":%llu,\"unpaired\":%llu,\"denied\":%llu,\"queue_lost\":%llu,\"queue_depth\":%u,\"transport_disconnects\":%llu},\"enforcement_enabled\":%s,\"policy_version\":%u,\"shutdown_ack_required\":%s}",
-        sums[0],sums[1],sums[2],sums[3],sums[4],queue_lost,used,transport_disconnects,policy_version?"true":"false",policy_version,
+    fprintf(f,",\"metrics\":{\"events_attempted\":%llu,\"ring_lost\":%llu,\"map_fail\":%llu,\"unpaired\":%llu,\"denied\":%llu,\"filtered\":%llu,\"queue_lost\":%llu,\"queue_depth\":%u,\"transport_disconnects\":%llu},\"enforcement_enabled\":%s,\"policy_version\":%u,\"shutdown_ack_required\":%s}",
+        sums[0],sums[1],sums[2],sums[3],sums[4],sums[5],queue_lost,used,transport_disconnects,(policy_version || dynamic_enabled)?"true":"false",policy_version,
         socket_path && !strcmp(type,"monitor_stop") ? "true" : "false");
     fclose(f); fprintf(stderr,"%s\n",json); queue_message(json,len);
 }
@@ -186,11 +213,17 @@ static int read_id(const char *path,char *buf,size_t len) {
     if(ok) buf[strcspn(buf,"\r\n")]=0;
     return ok?0:-1;
 }
+#include "registry.h"
+#include "control.h"
 static void usage(void) {
     puts("collector [--socket PATH --exclude-pid ANALYZER_PID] [--duration SECONDS] [--enforce-cgroup /sys/fs/cgroup/NAME --enforce-uid UID --deny-open FILE --deny-exec FILE]\nAudit is default. SIGHUP re-resolves explicit enforcement targets; failure preserves old policy. SIGINT/SIGTERM detach all links. JSONL is written to stdout when --socket is omitted.");
     puts("--benchmark-stage kernel|consume|encode: diagnostic only; skip ring output, discard before encoding, or discard after encoding. Cannot be combined with socket or enforcement.");
     puts("--batch-ms 0..50: ring drain interval (default 10 ms); 0 restores adaptive event notifications.");
     puts("--full-event-records: retain padded ring records for same-binary performance comparison.");
+    puts("--capture-mappings: x86 mmap object/result evidence for instances with observed loading environment; default off.");
+    puts("--asset-manifest FILE: enroll authorized service/object identities in audit or shadow; does not enable LSM denial.");
+    puts("--control-socket PATH --control-manifest FILE: automatic response for registered assets; UID/cgroup are kernel-discovered.");
+    puts("--control-socket PATH --control-object FILE --control-cgroup CGROUP --control-target-uid UID [--control-peer-uid UID]: enable restricted dynamic file_open control; requires active BPF LSM.");
     puts("--drain-timeout-ms 1..60000: shared shutdown drain/commit-ack deadline (default 10000 ms). Requires a v3 analyzer with --socket.");
 }
 int main(int argc,char **argv) {
@@ -200,11 +233,28 @@ int main(int argc,char **argv) {
         {"batch-ms",1,0,'m'},
         {"full-event-records",0,0,'F'},
         {"drain-timeout-ms",1,0,'t'},
+        {"capture-mappings",0,0,'M'},
+        {"control-socket",1,0,1001},{"control-object",1,0,1002},{"control-cgroup",1,0,1003},
+        {"asset-manifest",1,0,1007},{"control-manifest",1,0,1006},{"control-target-uid",1,0,1004},{"control-peer-uid",1,0,1005},
         {"enforce-uid",1,0,'u'},{"deny-open",1,0,'o'},{"deny-exec",1,0,'x'},{"help",0,0,'h'},{0,0,0,0}};
-    unsigned duration=0, excluded_pid=0; int opt,err=0; bool full_records=false;
+    unsigned duration=0, excluded_pid=0; int opt,err=0; bool full_records=false, mappings=false;
+    control_peer_uid=getuid();
     while((opt=getopt_long(argc,argv,"",opts,NULL))!=-1) {
         char *end=NULL;
         switch(opt) {
+        case 'M': mappings=true; break;
+        case 1007: control_manifest=optarg; registry_only=true; break;
+        case 1006: control_manifest=optarg; break;
+        case 1001: control_path=optarg; break;
+        case 1002: control_object=optarg; break;
+        case 1003: control_cgroup=optarg; break;
+        case 1004: case 1005: {
+            unsigned long value=strtoul(optarg,&end,10);
+            if (!*optarg || *end || value>4294967295UL || *optarg=='-') return 2;
+            if (opt==1004) { control_target_uid=value; control_have_uid=true; }
+            else control_peer_uid=value;
+            break;
+        }
         case 'F': full_records=true; break;
         case 't': {
             unsigned long value=strtoul(optarg,&end,10);
@@ -234,13 +284,20 @@ int main(int argc,char **argv) {
         return 2;
     }
     bool enforce=cgroup_path||have_uid||open_path||exec_path;
-    if(benchmark_stage && (socket_path || enforce)) {
+    bool dynamic=control_path||control_object||control_cgroup||control_have_uid||(control_manifest && !registry_only);
+    if (registry_only && (control_path || control_object || control_cgroup || control_have_uid)) return 2;
+    if (control_manifest && (control_object || control_cgroup || control_have_uid)) return 2;
+    if(dynamic && (!control_path||!socket_path||!excluded_pid||
+        (!control_manifest && (!control_object||!control_cgroup||!control_have_uid)))) return 2;
+    dynamic_enabled=dynamic;
+    if (control_manifest && registry_read()) { fputs("Invalid authorization manifest.\n",stderr); registry_close(); return 2; }
+    if(benchmark_stage && (socket_path || enforce || dynamic || control_manifest)) {
         fputs("Diagnostic benchmark modes cannot analyze or enforce.\n",stderr); return 2;
     }
     if(benchmark_stage) fprintf(stderr,"{\"diagnostic_only\":true,\"benchmark_stage\":\"%s\"}\n",benchmark_stage);
     if(enforce && (!cgroup_path||!have_uid||(!open_path&&!exec_path))) { usage(); return 2; }
     if(enforce && strncmp(cgroup_path,"/sys/fs/cgroup/",15)) { fputs("Enforcement requires an explicit cgroup-v2 child directory.\n",stderr); return 2; }
-    if(enforce && !active_bpf_lsm()) {
+    if((enforce || dynamic) && !active_bpf_lsm()) {
         fputs("Enforcement unavailable: cannot confirm bpf in /sys/kernel/security/lsm. CONFIG_BPF_LSM alone is insufficient. No programs loaded.\n",stderr);
         return 3;
     }
@@ -257,13 +314,28 @@ int main(int argc,char **argv) {
     skel->rodata->benchmark_no_output=benchmark_stage && !strcmp(benchmark_stage,"kernel");
     skel->rodata->batch_notifications=batch_ms != 0;
     skel->rodata->full_event_records=full_records;
-    if(!enforce) {
+    skel->rodata->capture_mappings=mappings;
+    skel->rodata->automatic_response=control_manifest!=NULL;
+    if(!mappings) {
+        bpf_program__set_autoload(skel->progs.enter_mmap,false);
+        bpf_program__set_autoload(skel->progs.exit_mmap,false);
+        bpf_program__set_autoload(skel->progs.mapping_object,false);
+    }
+    if(!enforce && !dynamic) {
         bpf_program__set_autoload(skel->progs.deny_open,false);
+    }
+    if(!enforce) {
         bpf_program__set_autoload(skel->progs.deny_exec,false);
     }
     if((err=monitor_bpf__load(skel))) goto done;
+    if (control_manifest && (err=registry_refresh(skel,true))) goto done;
     if(enforce && (err=update_policy(skel))) goto done;
     if((err=monitor_bpf__attach(skel))) goto done;
+    if(dynamic) {
+        err=control_open();
+        if(err) goto done;
+        control_bound=true;
+    }
     struct ring_buffer *ring=ring_buffer__new(bpf_map__fd(skel->maps.events),on_event,NULL,NULL);
     if(!ring) { err=-errno; goto done; }
     skel->bss->capturing=true;
@@ -285,9 +357,15 @@ int main(int argc,char **argv) {
             if(err<0) break;
         }
         err=0; flush_queue();
+        // Any failed reconciliation stops automatic policy application, never silently
+        // claiming successful registry refresh. The next refresh can recover.
+        if (registry_refresh(skel,false)) registry_objects=0;
+        control_poll(skel,excluded_pid);
         if(now_ns()-last>=1000000000ULL) { metric(skel,"monitor_health"); last=now_ns(); }
     }
     metric(skel,"monitor_health");
+    control_expire(skel,true);
+    control_close();
     // Stop recording before links are detached individually. Calls spanning this
     // boundary are outside the completed observation window, not missing pairs.
     skel->bss->capturing=false;
@@ -307,6 +385,8 @@ int main(int argc,char **argv) {
         used,queue_lost,transport_disconnects,socket_path && !shutdown_rc ? "true":"false",shutdown_rc);
     ring_buffer__free(ring);
 done:
+    control_close();
+    registry_close();
     if(err) fprintf(stderr,"collector failed: %d (%s)\n",err,strerror(-err));
     monitor_bpf__destroy(skel);
     transport_cleanup();

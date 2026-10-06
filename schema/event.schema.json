@@ -1,20 +1,194 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "eBPF monitor event v1",
+  "title": "eBPF monitor event v4 / schema 2",
   "type": "object",
-  "required": ["schema_version", "event_id", "event_type", "monotonic_ns"],
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "monotonic_ns",
+    "session_id",
+    "clock_domain",
+    "source_hook"
+  ],
   "properties": {
-    "schema_version": {"const": 1},
-    "event_id": {"type": "string", "minLength": 1, "maxLength": 512},
-    "event_type": {"enum": ["process_fork", "process_exec", "process_exec_failed", "thread_exit", "file_open", "ptrace", "file_rename", "file_unlink", "policy_denied", "process_snapshot", "monitor_start", "monitor_health", "monitor_stop"]},
-    "monotonic_ns": {"type": "integer", "minimum": 0},
-    "shutdown_ack_required": {"type": "boolean"},
-    "process_key": {"type": "string", "minLength": 1},
-    "parent_process_key": {"type": "string"},
-    "result_state": {"enum": ["succeeded", "failed", "attempted", "unknown"]},
-    "quality_flags": {"type": "integer", "minimum": 0},
-    "path_source": {"enum": ["kernel_filename", "syscall_entry", "unavailable"]},
-    "env": {"type": "object", "additionalProperties": {"type": "string"}}
+    "schema_version": {
+      "const": 2
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "event_type": {
+      "enum": [
+        "process_fork",
+        "process_exec",
+        "process_exec_failed",
+        "thread_exit",
+        "file_open",
+        "ptrace",
+        "file_rename",
+        "file_unlink",
+        "policy_denied",
+        "process_snapshot",
+        "monitor_start",
+        "monitor_health",
+        "monitor_stop",
+        "file_mapping",
+        "monitor_control",
+        "monitor_registry"
+      ]
+    },
+    "monotonic_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "shutdown_ack_required": {
+      "type": "boolean"
+    },
+    "process_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_process_key": {
+      "type": "string"
+    },
+    "result_state": {
+      "enum": [
+        "succeeded",
+        "failed",
+        "attempted",
+        "unknown"
+      ]
+    },
+    "quality_flags": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "path_source": {
+      "enum": [
+        "kernel_filename",
+        "syscall_entry",
+        "unavailable"
+      ]
+    },
+    "env": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clock_domain": {
+      "const": "CLOCK_MONOTONIC"
+    },
+    "source_hook": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exec_token": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "process_start_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "collector_receive_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "operation_start_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "process_start_clock_domain": {
+      "const": "CLOCK_BOOTTIME"
+    },
+    "received_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "storage_submit_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "field_quality": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "dynamic_policy_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cgroup_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "service_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "service_source": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "service_tgid": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "service_start_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "service_token": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "protected_object_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "service_process_key": {
+      "type": "string"
+    },
+    "service_exe": {
+      "type": "string"
+    }
   },
-  "allOf": [{"if": {"properties": {"event_type": {"enum": ["monitor_start", "monitor_health", "monitor_stop"]}}}, "else": {"required": ["process_key"]}}]
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "not": {
+              "enum": [
+                "monitor_start",
+                "monitor_health",
+                "monitor_stop",
+                "monitor_control",
+                "process_snapshot"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "process_key",
+          "exec_token",
+          "process_start_ns",
+          "tgid",
+          "uid"
+        ]
+      }
+    }
+  ]
 }

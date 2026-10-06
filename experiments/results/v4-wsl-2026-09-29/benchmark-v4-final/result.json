@@ -1,0 +1,364 @@
+{
+  "source": "FULL_LIVE_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762052
+  },
+  "parameters": {
+    "out": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/benchmark-v4-final",
+    "rounds": 5,
+    "opens": 2000,
+    "execs": 20,
+    "environment_label": "WSL-Ubuntu24.04"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 0.03811496999999875,
+      "completion_seconds": 0.038118934999999965,
+      "drain_and_shutdown_seconds": 3.9650000012159126e-06,
+      "passed": true
+    },
+    {
+      "round": 1,
+      "group": "B3",
+      "seconds": 0.05307739699999914,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.01999999999999999,
+        "analyzer_pid": 0.039999999999999994
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 37848,
+        "analyzer_pid": 27392
+      },
+      "completion_seconds": 2.9343868829999984,
+      "drain_and_shutdown_seconds": 2.8813094859999993,
+      "session": {
+        "source": "V4_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/benchmark-v4-final/round-1",
+        "mode": "audit",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "filtered": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "group": "B3",
+      "seconds": 0.06009139700000077,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.01999999999999999,
+        "analyzer_pid": 0.039999999999999994
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 37436,
+        "analyzer_pid": 28416
+      },
+      "completion_seconds": 2.9886841659999988,
+      "drain_and_shutdown_seconds": 2.928592768999998,
+      "session": {
+        "source": "V4_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/benchmark-v4-final/round-2",
+        "mode": "audit",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "filtered": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "group": "B0",
+      "seconds": 0.055489949999998345,
+      "completion_seconds": 0.05549549799999909,
+      "drain_and_shutdown_seconds": 5.548000000743514e-06,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "group": "B0",
+      "seconds": 0.0530546230000013,
+      "completion_seconds": 0.05305912700000093,
+      "drain_and_shutdown_seconds": 4.503999999627695e-06,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "group": "B3",
+      "seconds": 0.07168956599999987,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.03,
+        "analyzer_pid": 0.030000000000000013
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 37688,
+        "analyzer_pid": 28416
+      },
+      "completion_seconds": 2.846955328,
+      "drain_and_shutdown_seconds": 2.775265762,
+      "session": {
+        "source": "V4_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/benchmark-v4-final/round-3",
+        "mode": "audit",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "filtered": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 4,
+      "group": "B3",
+      "seconds": 0.07837033300000229,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.009999999999999981,
+        "analyzer_pid": 0.04999999999999999
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 37688,
+        "analyzer_pid": 29952
+      },
+      "completion_seconds": 2.4519223470000036,
+      "drain_and_shutdown_seconds": 2.3735520140000013,
+      "session": {
+        "source": "V4_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/benchmark-v4-final/round-4",
+        "mode": "audit",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2131,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "filtered": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 4,
+      "group": "B0",
+      "seconds": 0.06690692000000098,
+      "completion_seconds": 0.06691228300000063,
+      "drain_and_shutdown_seconds": 5.3629999996474e-06,
+      "passed": true
+    },
+    {
+      "round": 5,
+      "group": "B0",
+      "seconds": 0.07088095699999997,
+      "completion_seconds": 0.07088530800000115,
+      "drain_and_shutdown_seconds": 4.351000001179273e-06,
+      "passed": true
+    },
+    {
+      "round": 5,
+      "group": "B3",
+      "seconds": 0.08059155500000514,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.03,
+        "analyzer_pid": 0.05
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 37940,
+        "analyzer_pid": 28928
+      },
+      "completion_seconds": 3.0037267999999955,
+      "drain_and_shutdown_seconds": 2.9231352449999903,
+      "session": {
+        "source": "V4_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/benchmark-v4-final/round-5",
+        "mode": "audit",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "filtered": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    }
+  ],
+  "completed": true,
+  "group_definitions": {
+    "B0": "no collector or analyzer",
+    "B3": "collector + rules + JSONL + SQLite"
+  },
+  "limitations": [
+    "Open/exec-intensive synthetic workload; not representative application overhead.",
+    "RSS is an end-of-workload sample, not peak or total kernel memory.",
+    "CPU covers the two userspace processes during workload, not all system CPU."
+  ],
+  "source_sha256": {
+    "bpf/events.h": "0b3b1e70d16ba6e69e1a963d36d45fdf4934c6347a2fe9ae7f7eb88a1ac406bd",
+    "bpf/monitor.bpf.c": "d06768f94458cac6633f7c403e1131254168d76a4e37fb569c3b6cc4c2e9068f",
+    "collector/control.h": "8de4c537d5b897ada3e6dfcdffbdb9ce0d39e1b8dccaab88667f4ffa74eacbc4",
+    "collector/main.c": "5ae1a2f26957ae178ee05bdbf1abe5c38bafd864c64c020266e04a5125f7a8db",
+    "collector/transport.h": "be74c5466fa42aa11c407139bd0460f539b32e41a4880903d862bfa59f542f45",
+    "monitor/__init__.py": "50409324baba5d44181b03eefde40f56779f8bcbca2e916109d152152e6ff355",
+    "monitor/__main__.py": "05a992f2d77d144c349d4125f6ecf9cd6ded2c6327ccffe193f333b68763d699",
+    "monitor/capture.py": "8f1c27cc7c85d4b87ab23c6dfabc25cf8bdd2b18081098ef3be71b5bb2e233a5",
+    "monitor/engine.py": "65fee0d6cf5ec322459748c7319990b60cfb2ee6edc423f1c44b2d03554b03ee",
+    "monitor/evidence.py": "b80664de17baef92057e2696b5484c3b2a7585949cfbdac2445640be115abe36",
+    "monitor/model.py": "814c9d143d642b018f8d3a64e4e0b312b2a47b23ee775163879a15db70819d48",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/response.py": "151c1dd76f344bc06460edd76ef65d6c3d9c500d0ed56bc498f224fc8858eb95",
+    "monitor/runtime.py": "8b052f7ad2a27905216bcd3f54fb449a086986ed7c1f7a85f50cacdf207621da",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "c5f192d9971a9570ffeb2eb75b6539eb1f16f2e8b49716b045171f17b3ecec51",
+    "scripts/ablation.py": "96f3bb79d6286a70625b4da536992122324aaa354ec08d037c1fd15c5906899c",
+    "scripts/acceptance.py": "87ffda90a4e4b1f2c7753a8fb5c6753c32ff569187dad5b8e4382b0f282b7a38",
+    "scripts/analysis_benchmark.py": "7132fae41d93b3d018c2da1be41a6487d213ea43c9f0942a986e4589457293c0",
+    "scripts/benchmark.py": "0024013d6c360937e1140279957ad32ab0cf9c0aa887e5aa05bdad46d55ecfec",
+    "scripts/benchmark_live.py": "5d6b155c1e49e5f8f7305f244cf04738b26a9e5f91147ac0b95caeede30abd81",
+    "scripts/build.sh": "9b1a9515dcb414416cf9cb0afe8b9b165499b19e2b4b7fe460f95bdca1404f7e",
+    "scripts/equivalence.py": "d856b0843d4074e876b1574953a8c345abac6495e971ba1d45ff8aaeb1be20d8",
+    "scripts/freeze_competitors.py": "9be003626cfb91197d11255828cbe819d7f7f1220e86c4b39d398cb2ffc8f9c7",
+    "scripts/freeze_contract.py": "ef030a8504d375d29c73ca8675b29dba791b55c5a82e3d058ebf5dd5de5fe94e",
+    "scripts/integration.py": "c8f7108c685052d0e86bbd9d2ff1858ffd2271a81da364c89cc5f6647fc5fe07",
+    "scripts/live_edges.py": "3f2471cdb5a140f2eaf1d4e15c9c75b777486c68606b0a277e0762af3024a3d0",
+    "scripts/load_sweep.py": "6c0e061843663403861a1ad81a43eb3cb511e8bf61a2bceb20b072029a18c7c0",
+    "scripts/run.sh": "422ceda067ccac4b84bfbe0d23469123980a2e04581727def76a722118ae8358",
+    "scripts/run_live.py": "92c833f496674d5c818369917ec6fec111c40f9a07e1bdd83a6930b57c6c803d",
+    "scripts/stability.py": "0dc78c5608a7c04a47629426b9826e2268a96cfe235d58c6d96535dea3c619c4",
+    "scripts/target_check.sh": "d872eaa20fe7ddf256e53fda9e323635179c29bd16d371ed2badfde6eb45f6c8",
+    "scripts/transport_recovery.py": "e58b2cb210b52b778f52b2c051c1ce3227706d254c9ca9387d0c19bd80284fdf",
+    "scripts/verify_denied_open.py": "5f39e5e279e8e38962871b4a947badb3b4f94dc31badef99db80ae29431c011c",
+    "scripts/verify_lsm.py": "685432986fbedd8e645f7670b3456cdaac10c519b8e40da839ec12cb0670994e",
+    "scripts/verify_mapping.py": "b12a70d1fd54d3fa1e69489a62b4232331d20c9a2080e532ddf497950d1807f2",
+    "scripts/verify_response.py": "2a0cea3b86d5bd8820e009ebd183916acadc0f5d768fdc45b4492195f78b2671",
+    "scripts/verify_shutdown.py": "6ea9b79e47c6d9c65d163d5ad95e2a1c3d9b35272d7385ec6bcb88346cbd19f9",
+    "scripts/verify_shutdown_native.py": "f3f294089264745d5885c9a06f663282212ead438943eb06bf712c88e6084f6c",
+    "rules/default.yaml": "66ee5ae0e3584aa73a0eac1444d42d8f18d4a9ae5bca66ce44dfe697ac1af3ba",
+    "build/collector": "401a87910f87cfce509bc280403a7656aa539f2db7a344ee3125c542feea22a0"
+  },
+  "median_seconds": {
+    "B0": 0.055489949999998345,
+    "B3": 0.07168956599999987
+  },
+  "passed": true,
+  "elapsed_increase_percent": 29.193783739221256,
+  "throughput_drop_percent": 22.59689506280671,
+  "overhead_valid_for_complete_capture": true
+}

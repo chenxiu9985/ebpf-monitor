@@ -1,0 +1,25 @@
+{
+  "name": "ack_timeout",
+  "passed": true,
+  "shutdown_seconds": 1.8197269299999945,
+  "shutdown": {
+    "shutdown_unsent": 0,
+    "shutdown_queue_lost": 0,
+    "transport_disconnects": 0,
+    "shutdown_acknowledged": false,
+    "shutdown_error": -110
+  },
+  "final_metrics": {
+    "events_attempted": 51,
+    "ring_lost": 0,
+    "map_fail": 0,
+    "unpaired": 0,
+    "denied": 0,
+    "filtered": 0,
+    "queue_lost": 0,
+    "queue_depth": 0,
+    "transport_disconnects": 0
+  },
+  "collector_exit": 1,
+  "analyzer_exit": 0
+}

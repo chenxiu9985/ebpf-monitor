@@ -1,0 +1,7 @@
+{
+  "filesystem": "ext2/ext3",
+  "execution_directory": "/tmp/ebpf-v4-native-ycynvimz/shutdown",
+  "archived_directory": "/tmp/ebpf-v4-acceptance-r475b43o/acceptance/shutdown_native",
+  "test_exit": 0,
+  "note": "Unchanged 10000-open, 5000-ms matrix; native outputs archived after completion."
+}

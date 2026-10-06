@@ -1,0 +1,2 @@
+{"snapshot": "unavailable", "reason": "collector is not in host PID namespace; live process events remain enabled"}
+{"processed": 2, "duplicates": 0, "late": 0, "evicted": 0, "alerts": 0, "loss_epoch": 0, "capture_profile": "full", "storage_filter_considered": 2, "storage_filter_omitted": 0}

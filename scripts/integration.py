@@ -44,6 +44,9 @@ def main():
     p.add_argument("--out", default="out/integration")
     p.add_argument("--repetitions", type=int, default=1)
     p.add_argument("--uid", type=int, default=os.getuid())
+    p.add_argument("--capture-mappings", action="store_true")
+    p.add_argument("--response-ready-fixture", action="store_true")
+    p.add_argument("--response-mode", choices=["audit", "shadow"], default="audit")
     args = p.parse_args()
     if args.repetitions < 1 or args.uid < 0:
         p.error("invalid repetitions or uid")
@@ -61,10 +64,11 @@ def main():
         protected = temp / "protected.txt"
         protected.write_text("synthetic test data; not an actual credential\n")
         protected.chmod(0o644)
-        for source, target in (("service.c", service), ("worker.c", worker)):
+        for source, target in (("response_service.c" if args.response_ready_fixture else "service.c", service), ("worker.c", worker)):
             subprocess.run(["cc", "-Wall", "-Wextra", "-Werror", str(ROOT / "tests/fixtures" / source), "-o", str(target)], check=True)
         subprocess.run(["cc", "-shared", "-fPIC", str(ROOT / "tests/fixtures/benign_preload.c"), "-o", str(library)], check=True)
         config = {**load_config(), "service_executables": [str(service)], "sensitive_paths": [str(protected)],
+                  "response_mode": args.response_mode,
                   "exceptions": [{"rule": "R01", "exe": "/usr/bin/cat", "uid": args.uid},
                                  {"rule": "R03", "exe": "/usr/bin/true", "uid": args.uid}]}
         rules = destination / "rules.json"
@@ -76,7 +80,8 @@ def main():
                                              "--db", str(destination / "alerts.db"), "--raw", str(destination / "events.jsonl"),
                                              "--alerts", str(destination / "alerts.jsonl"), "--rules", str(rules)], cwd=ROOT, stdout=alog, stderr=alog)
                 wait_for(sock.exists, analyzer)
-                collector = subprocess.Popen([str(ROOT / "build/collector"), "--socket", str(sock), "--exclude-pid", str(analyzer.pid)],
+                collector = subprocess.Popen([str(ROOT / "build/collector"), "--socket", str(sock), "--exclude-pid", str(analyzer.pid),
+                                              *(["--capture-mappings"] if args.capture_mappings else [])],
                                              cwd=ROOT, stdout=clog, stderr=clog)
                 wait_for(lambda: '"event_type":"monitor_start"' in (destination / "collector.log").read_text(), collector)
                 def test_identity():
@@ -114,6 +119,18 @@ def main():
                     result["worker_processes"] = len(workers)
                     result["worker_rule_counts"] = {rule: len({a["process_key"] for a in all_alerts if a["rule_id"] == rule and a.get("exe") == str(worker)}) for rule in ("R01", "R02", "R03", "R04", "C01", "C02")}
                     result["normal_fixture_alerts"] = len([a for a in all_alerts if a.get("exe") in ("/usr/bin/cat", "/usr/bin/true")])
+                    result["mapping_collection_requested"] = args.capture_mappings
+                    result["c02_complete_mapping_chains"] = sum(a["rule_id"] == "C02" and "file_mapping_observed" in a.get("stages", {}) for a in all_alerts)
+                    result["r04_response_eligible"] = sum(a["rule_id"] == "R04" and a.get("evidence_quality", {}).get("response_eligible", False) for a in all_alerts)
+                    result["response_ready_fixture"] = args.response_ready_fixture
+                    result["response_mode"] = args.response_mode
+                    result["shadow_requests"] = sum(r["state"] == "shadow" for r in store.responses())
+                    if args.response_ready_fixture:
+                        result["passed"] = result["passed"] and result["r04_response_eligible"] == args.repetitions
+                    if args.response_mode == "shadow" and args.response_ready_fixture:
+                        result["passed"] = result["passed"] and result["shadow_requests"] == args.repetitions
+                    if args.capture_mappings:
+                        result["passed"] = result["passed"] and result["c02_complete_mapping_chains"] == args.repetitions
                     delays = [a["delivery_delay_ns"]/1_000_000 for a in all_alerts if "delivery_delay_ns" in a]
                     if len(delays) >= 2:
                         quantiles = statistics.quantiles(delays, n=100, method="inclusive")

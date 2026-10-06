@@ -23,7 +23,7 @@ class AnalysisTests(unittest.TestCase):
         alerts = self.run_events(malicious_chain())
         self.assertEqual({a["rule_id"] for a in alerts}, {"R01", "R02", "R03", "R04", "C01", "C02"})
         c1 = next(a for a in alerts if a["rule_id"] == "C01")
-        self.assertEqual(c1["evidence_ids"], ["synthetic:3", "synthetic:5", "synthetic:6"])
+        self.assertEqual(c1["evidence_ids"], ["synthetic:1", "synthetic:3", "synthetic:5", "synthetic:6"])
         self.assertEqual(c1["result_state"], "failed")
 
     def test_legitimate_non_sensitive_activity(self):

@@ -1,0 +1,146 @@
+{
+  "source": "REAL_SUSTAINED_INPUT",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762044
+  },
+  "seconds_requested": 10,
+  "rate_requested": 1000,
+  "generated": 10000,
+  "samples": [
+    {
+      "elapsed_seconds": 0.00017207799999852114,
+      "generated": 10,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 22016
+      }
+    },
+    {
+      "elapsed_seconds": 1.000318344,
+      "generated": 1010,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 32000
+      }
+    },
+    {
+      "elapsed_seconds": 2.0102789920000035,
+      "generated": 2020,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 38400
+      }
+    },
+    {
+      "elapsed_seconds": 3.010293813000004,
+      "generated": 3020,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 45056
+      }
+    },
+    {
+      "elapsed_seconds": 4.0202688030000004,
+      "generated": 4030,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 51712
+      }
+    },
+    {
+      "elapsed_seconds": 5.020269892000002,
+      "generated": 5030,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 58624
+      }
+    },
+    {
+      "elapsed_seconds": 6.020351785000003,
+      "generated": 6030,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 65536
+      }
+    },
+    {
+      "elapsed_seconds": 7.030281533,
+      "generated": 7040,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 72192
+      }
+    },
+    {
+      "elapsed_seconds": 8.030282671999998,
+      "generated": 8040,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 78592
+      }
+    },
+    {
+      "elapsed_seconds": 9.030332756,
+      "generated": 9040,
+      "rss_kib": {
+        "collector_pid": 35892,
+        "analyzer_pid": 86272
+      }
+    }
+  ],
+  "passed": true,
+  "workload_seconds": 10.000106338000002,
+  "saved": 10000,
+  "session": {
+    "source": "V4_SUPERVISED_LIVE",
+    "passed": true,
+    "output": "/tmp/ebpf-v4-acceptance-r475b43o/acceptance/stability/session",
+    "mode": "audit",
+    "collector_exit": 0,
+    "analyzer_exit": 0,
+    "stop_requested": true,
+    "shutdown": {
+      "shutdown_unsent": 0,
+      "shutdown_queue_lost": 0,
+      "transport_disconnects": 0,
+      "shutdown_acknowledged": true,
+      "shutdown_error": 0
+    },
+    "final_metrics": {
+      "events_attempted": 10450,
+      "ring_lost": 0,
+      "map_fail": 0,
+      "unpaired": 0,
+      "denied": 0,
+      "filtered": 0,
+      "queue_lost": 0,
+      "queue_depth": 0,
+      "transport_disconnects": 0
+    },
+    "capture_loss_free": true
+  },
+  "rate_achieved": 999.9893663130763
+}

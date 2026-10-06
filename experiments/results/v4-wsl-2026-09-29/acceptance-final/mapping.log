@@ -1,0 +1,1 @@
+{"passed": true, "checks": {"fixture_succeeded": true, "successful_object_result": true, "failed_mmap_result": true, "fd_reuse_different_object": true, "thread_mapping_same_exec_token": true, "link_object_identity": true, "collector_normal_exit": true, "loss_free": true}}

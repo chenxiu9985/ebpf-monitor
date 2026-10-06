@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "eBPF monitor event v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "monotonic_ns"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "event_type": {
+      "enum": [
+        "process_fork",
+        "process_exec",
+        "process_exec_failed",
+        "thread_exit",
+        "file_open",
+        "ptrace",
+        "file_rename",
+        "file_unlink",
+        "policy_denied",
+        "process_snapshot",
+        "monitor_start",
+        "monitor_health",
+        "monitor_stop"
+      ]
+    },
+    "monotonic_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "shutdown_ack_required": {
+      "type": "boolean"
+    },
+    "process_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_process_key": {
+      "type": "string"
+    },
+    "result_state": {
+      "enum": [
+        "succeeded",
+        "failed",
+        "attempted",
+        "unknown"
+      ]
+    },
+    "quality_flags": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "path_source": {
+      "enum": [
+        "kernel_filename",
+        "syscall_entry",
+        "unavailable"
+      ]
+    },
+    "env": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": [
+              "monitor_start",
+              "monitor_health",
+              "monitor_stop"
+            ]
+          }
+        }
+      },
+      "else": {
+        "required": [
+          "process_key"
+        ]
+      }
+    }
+  ]
+}

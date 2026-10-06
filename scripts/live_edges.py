@@ -93,6 +93,7 @@ def main():
         for mode in ("execveat", "thread-exec"):
             execs = events(mode, "process_exec")
             result["checks"][mode] = len(execs) == 2 and not bool(execs[-1]["quality_flags"] & 4)
+            result["checks"][mode+"_kernel_exec_token"] = len(execs) == 2 and all(e.get("exec_token",0)>0 for e in execs) and execs[0]["exec_token"]!=execs[1]["exec_token"]
         failures = events("exec-fail", "process_exec_failed")
         result["checks"]["failed_exec_result"] = bool(failures and failures[0]["retval"] == -2)
         writes = [e for e in events("ptrace", "ptrace") if e.get("request") == 5]

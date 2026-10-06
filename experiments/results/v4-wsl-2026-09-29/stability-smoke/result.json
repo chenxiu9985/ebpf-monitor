@@ -1,0 +1,146 @@
+{
+  "source": "REAL_SUSTAINED_INPUT",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762040
+  },
+  "seconds_requested": 10,
+  "rate_requested": 1000,
+  "generated": 10000,
+  "samples": [
+    {
+      "elapsed_seconds": 0.00015587799999927654,
+      "generated": 10,
+      "rss_kib": {
+        "collector_pid": 35896,
+        "analyzer_pid": 21504
+      }
+    },
+    {
+      "elapsed_seconds": 1.0002688299999996,
+      "generated": 1010,
+      "rss_kib": {
+        "collector_pid": 35896,
+        "analyzer_pid": 30976
+      }
+    },
+    {
+      "elapsed_seconds": 2.0004094850000005,
+      "generated": 2010,
+      "rss_kib": {
+        "collector_pid": 36152,
+        "analyzer_pid": 36096
+      }
+    },
+    {
+      "elapsed_seconds": 3.000689165999999,
+      "generated": 3010,
+      "rss_kib": {
+        "collector_pid": 37944,
+        "analyzer_pid": 43008
+      }
+    },
+    {
+      "elapsed_seconds": 4.010294531000001,
+      "generated": 4020,
+      "rss_kib": {
+        "collector_pid": 37944,
+        "analyzer_pid": 49664
+      }
+    },
+    {
+      "elapsed_seconds": 5.010420600000002,
+      "generated": 5020,
+      "rss_kib": {
+        "collector_pid": 38712,
+        "analyzer_pid": 52992
+      }
+    },
+    {
+      "elapsed_seconds": 6.020268036999999,
+      "generated": 6030,
+      "rss_kib": {
+        "collector_pid": 38712,
+        "analyzer_pid": 63232
+      }
+    },
+    {
+      "elapsed_seconds": 7.020326357,
+      "generated": 7030,
+      "rss_kib": {
+        "collector_pid": 38968,
+        "analyzer_pid": 69632
+      }
+    },
+    {
+      "elapsed_seconds": 8.020482174,
+      "generated": 8030,
+      "rss_kib": {
+        "collector_pid": 38968,
+        "analyzer_pid": 76032
+      }
+    },
+    {
+      "elapsed_seconds": 9.030268923,
+      "generated": 9040,
+      "rss_kib": {
+        "collector_pid": 39224,
+        "analyzer_pid": 82176
+      }
+    }
+  ],
+  "passed": true,
+  "workload_seconds": 10.000107916,
+  "saved": 10000,
+  "session": {
+    "source": "V4_SUPERVISED_LIVE",
+    "passed": true,
+    "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/stability-smoke/session",
+    "mode": "audit",
+    "collector_exit": 0,
+    "analyzer_exit": 0,
+    "stop_requested": true,
+    "shutdown": {
+      "shutdown_unsent": 0,
+      "shutdown_queue_lost": 0,
+      "transport_disconnects": 0,
+      "shutdown_acknowledged": true,
+      "shutdown_error": 0
+    },
+    "final_metrics": {
+      "events_attempted": 10923,
+      "ring_lost": 0,
+      "map_fail": 0,
+      "unpaired": 0,
+      "denied": 0,
+      "filtered": 0,
+      "queue_lost": 0,
+      "queue_depth": 0,
+      "transport_disconnects": 0
+    },
+    "capture_loss_free": true
+  },
+  "rate_achieved": 999.9892085164574
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 control logical request; seqpacket ASCII encoding in docs",
+  "type": "object",
+  "required": [
+    "verb",
+    "request_id",
+    "session_id",
+    "rule_version",
+    "evidence_id",
+    "tgid",
+    "start_ns",
+    "exec_token",
+    "uid",
+    "object_id",
+    "ttl_ms"
+  ],
+  "properties": {
+    "verb": {
+      "enum": [
+        "APPLY",
+        "QUERY",
+        "REVOKE"
+      ]
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rule_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tgid": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "start_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "exec_token": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "uid": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "object_id": {
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "ttl_ms": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30000
+    },
+    "cgroup_id": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 18446744073709551615
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "cgroup_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "object_id": {
+            "const": 0
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "object_id": {
+            "const": 1
+          }
+        }
+      }
+    }
+  ]
+}

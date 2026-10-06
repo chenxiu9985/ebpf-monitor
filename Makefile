@@ -18,7 +18,7 @@ build/monitor.bpf.o: bpf/monitor.bpf.c bpf/events.h build/vmlinux.h
 build/monitor.skel.h: build/monitor.bpf.o
 	$(BPFTOOL) gen skeleton $< > $@.tmp
 	mv $@.tmp $@
-build/collector: collector/main.c collector/transport.h bpf/events.h build/monitor.skel.h
+build/collector: collector/main.c collector/transport.h collector/control.h collector/registry.h bpf/events.h build/monitor.skel.h
 	$(CC) $(CFLAGS) -Ibuild -Ibpf $(shell pkg-config --cflags libbpf) $< -o $@ $(LIBS)
 test:
 	python3 -m unittest discover -s tests -v

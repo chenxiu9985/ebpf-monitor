@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "v4 response timeline",
+  "type": "object",
+  "required": [
+    "request_id",
+    "state"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "enum": [
+        "audit",
+        "shadow",
+        "requested",
+        "applied",
+        "rejected",
+        "denied",
+        "expired",
+        "revoked",
+        "timed_out",
+        "unknown"
+      ]
+    }
+  }
+}

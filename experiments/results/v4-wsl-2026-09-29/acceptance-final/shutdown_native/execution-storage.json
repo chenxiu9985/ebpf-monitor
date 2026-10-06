@@ -1,0 +1,7 @@
+{
+  "filesystem": "ext2/ext3",
+  "execution_directory": "/tmp/ebpf-v4-native-ovc7f84w/shutdown",
+  "archived_directory": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/acceptance-final/shutdown_native",
+  "test_exit": 0,
+  "note": "Unchanged 10000-open, 5000-ms matrix; native outputs archived after completion."
+}

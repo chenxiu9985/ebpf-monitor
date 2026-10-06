@@ -1,0 +1,27 @@
+{
+  "name": "resume_during_drain",
+  "passed": true,
+  "shutdown_seconds": 3.022289366999999,
+  "shutdown": {
+    "shutdown_unsent": 0,
+    "shutdown_queue_lost": 0,
+    "transport_disconnects": 0,
+    "shutdown_acknowledged": true,
+    "shutdown_error": 0
+  },
+  "final_metrics": {
+    "events_attempted": 10001,
+    "ring_lost": 0,
+    "map_fail": 0,
+    "unpaired": 0,
+    "denied": 0,
+    "filtered": 0,
+    "queue_lost": 0,
+    "queue_depth": 0,
+    "transport_disconnects": 0
+  },
+  "persisted_stop_count": 1,
+  "persisted_events": 10004,
+  "collector_exit": 0,
+  "analyzer_exit": 0
+}

@@ -1,0 +1,1216 @@
+<!doctype html><html lang='zh-CN'><meta charset='utf-8'><meta name='viewport' content='width=device-width'><title>eBPF 告警证据报告</title><style>body{max-width:1100px;margin:40px auto;padding:0 20px;font:16px/1.65 system-ui;background:#f3f5f8;color:#16243a}article{background:white;border:1px solid #d9e0e9;border-radius:12px;padding:20px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}code{font-size:12px;overflow-wrap:anywhere}h1{color:#174b78}</style><h1>eBPF 告警证据报告</h1><p>本报告展示观测证据和规则判断；风险提示不等同于攻击成功。</p><article><h2>R03 · medium</h2><p>执行环境出现动态加载相关配置，不等于共享库已加载</p><p>操作：succeeded；处置：audit；质量：[&#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34790286588,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34792467001,
+    &quot;exec_token&quot;: 34790287893,
+    &quot;parent_exec_token&quot;: 0,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1045,
+    &quot;tid&quot;: 1045,
+    &quot;ppid&quot;: 1022,
+    &quot;process_start_ns&quot;: 34788281248,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;service&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;received_ns&quot;: 34792691656,
+    &quot;storage_submit_ns&quot;: 35019948739
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;configuration_observed&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;temporary_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ],
+    &quot;configuration_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    }
+  },
+  &quot;status&quot;: &quot;complete_for_rule&quot;,
+  &quot;response_eligible&quot;: true,
+  &quot;response_prohibited_reasons&quot;: [],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34790286588,
+  &quot;window_end_ns&quot;: 34790286588,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article>
+<article><h2>R03 · medium</h2><p>执行环境出现动态加载相关配置，不等于共享库已加载</p><p>操作：succeeded；处置：audit；质量：[&#x27;capture_fields_incomplete&#x27;, &#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li><li>/bin/sh <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34791575925,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34792628505,
+    &quot;exec_token&quot;: 34791576825,
+    &quot;parent_exec_token&quot;: 34790287893,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 2,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 2
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1046,
+    &quot;tid&quot;: 1046,
+    &quot;ppid&quot;: 1045,
+    &quot;process_start_ns&quot;: 34791141169,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 2,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;sh&quot;,
+    &quot;path&quot;: &quot;/bin/sh&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/bin/sh&quot;,
+    &quot;received_ns&quot;: 34793648778,
+    &quot;storage_submit_ns&quot;: 35024180330
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;configuration_observed&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;shell_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;
+    ],
+    &quot;configuration_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;: {
+      &quot;path&quot;: 2,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 2
+    }
+  },
+  &quot;status&quot;: &quot;reduced&quot;,
+  &quot;response_eligible&quot;: false,
+  &quot;response_prohibited_reasons&quot;: [
+    &quot;capture_fields_incomplete:d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;
+  ],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34791575925,
+  &quot;window_end_ns&quot;: 34791575925,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article>
+<article><h2>R03 · medium</h2><p>执行环境出现动态加载相关配置，不等于共享库已加载</p><p>操作：succeeded；处置：audit；质量：[&#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li><li>/bin/sh <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169</code></li><li>/tmp/ebpf-monitor-mawljw9z/worker <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34793916903,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802846879,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;received_ns&quot;: 34803016186,
+    &quot;storage_submit_ns&quot;: 35065675005
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;configuration_observed&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;temporary_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;configuration_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    }
+  },
+  &quot;status&quot;: &quot;complete_for_rule&quot;,
+  &quot;response_eligible&quot;: true,
+  &quot;response_prohibited_reasons&quot;: [],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34793916903,
+  &quot;window_end_ns&quot;: 34793916903,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article>
+<article><h2>R04 · high</h2><p>服务后代 shell 执行临时目录程序；目录匹配是风险线索，不证明实际可写</p><p>操作：succeeded；处置：audit；质量：[&#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li><li>/bin/sh <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169</code></li><li>/tmp/ebpf-monitor-mawljw9z/worker <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34790286588,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34792467001,
+    &quot;exec_token&quot;: 34790287893,
+    &quot;parent_exec_token&quot;: 0,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1045,
+    &quot;tid&quot;: 1045,
+    &quot;ppid&quot;: 1022,
+    &quot;process_start_ns&quot;: 34788281248,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;service&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;received_ns&quot;: 34792691656,
+    &quot;storage_submit_ns&quot;: 35019948739
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34791575925,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34792628505,
+    &quot;exec_token&quot;: 34791576825,
+    &quot;parent_exec_token&quot;: 34790287893,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 2,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 2
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1046,
+    &quot;tid&quot;: 1046,
+    &quot;ppid&quot;: 1045,
+    &quot;process_start_ns&quot;: 34791141169,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 2,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;sh&quot;,
+    &quot;path&quot;: &quot;/bin/sh&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/bin/sh&quot;,
+    &quot;received_ns&quot;: 34793648778,
+    &quot;storage_submit_ns&quot;: 35024180330
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34793916903,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802846879,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;received_ns&quot;: 34803016186,
+    &quot;storage_submit_ns&quot;: 35065675005
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;service_origin&quot;,
+    &quot;shell_exec&quot;,
+    &quot;temporary_exec&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;temporary_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;configuration_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;shell_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;: {
+      &quot;path&quot;: 2,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 2
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    }
+  },
+  &quot;status&quot;: &quot;reduced&quot;,
+  &quot;response_eligible&quot;: false,
+  &quot;response_prohibited_reasons&quot;: [
+    &quot;capture_fields_incomplete:d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;
+  ],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34790286588,
+  &quot;window_end_ns&quot;: 34793916903,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[
+  {
+    &quot;request_id&quot;: &quot;4003a0f24d0c3931d66c7008f15cd7c9&quot;,
+    &quot;alert_id&quot;: &quot;eeca9bdab3d3f854a3eb86cd&quot;,
+    &quot;evidence_ids&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;mode&quot;: &quot;audit&quot;,
+    &quot;state&quot;: &quot;audit&quot;,
+    &quot;decision_ns&quot;: 35066048410,
+    &quot;reasons&quot;: [
+      &quot;capture_fields_incomplete:d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;,
+      &quot;audit_mode&quot;
+    ],
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;exec_token&quot;: 34793917804
+  }
+]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article>
+<article><h2>C02 · high</h2><p>动态加载配置、文件对象、成功映射及后续敏感行为分阶段显示；未知阶段不推断成功或代码执行</p><p>操作：succeeded；处置：audit；质量：[&#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li><li>/bin/sh <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169</code></li><li>/tmp/ebpf-monitor-mawljw9z/worker <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34793916903,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802846879,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;received_ns&quot;: 34803016186,
+    &quot;storage_submit_ns&quot;: 35065675005
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:43&quot;,
+    &quot;event_type&quot;: &quot;file_open&quot;,
+    &quot;monotonic_ns&quot;: 34794075136,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802878477,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 3,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 16,
+    &quot;flags&quot;: 524288,
+    &quot;dirfd&quot;: -100,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 126684,
+    &quot;device&quot;: 8388656,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path_source&quot;: &quot;kernel_filename&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;received_ns&quot;: 34803438307,
+    &quot;storage_submit_ns&quot;: 35066270924
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:47&quot;,
+    &quot;event_type&quot;: &quot;file_mapping&quot;,
+    &quot;monotonic_ns&quot;: 34794138379,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802907696,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;syscalls/mmap+security_mmap_file&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 137341754724352,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 2066,
+    &quot;dirfd&quot;: 3,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 126684,
+    &quot;device&quot;: 8388656,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 3,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path&quot;: &quot;&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;received_ns&quot;: 34803471735,
+    &quot;storage_submit_ns&quot;: 35066455720
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;,
+    &quot;event_type&quot;: &quot;file_open&quot;,
+    &quot;monotonic_ns&quot;: 34794484017,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802976627,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 3,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 16,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: -100,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 124681,
+    &quot;device&quot;: 8388656,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path_source&quot;: &quot;kernel_filename&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/protected.txt&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;received_ns&quot;: 34803553915,
+    &quot;storage_submit_ns&quot;: 35067789344
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;configuration_observed&quot;,
+    &quot;object_open_observed&quot;,
+    &quot;file_mapping_observed&quot;,
+    &quot;subsequent_sensitive_action&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;temporary_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;configuration_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;object_open_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:43&quot;
+    ],
+    &quot;file_mapping_attempted&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:47&quot;
+    ],
+    &quot;file_mapping_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:47&quot;
+    ],
+    &quot;sensitive_open_result&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;
+    ],
+    &quot;subsequent_sensitive_action&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:43&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:47&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    }
+  },
+  &quot;status&quot;: &quot;complete_for_rule&quot;,
+  &quot;response_eligible&quot;: true,
+  &quot;response_prohibited_reasons&quot;: [],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34793916903,
+  &quot;window_end_ns&quot;: 34794484017,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article>
+<article><h2>R01 · high</h2><p>非例外主体打开敏感对象；成功打开与读取内容严格区分</p><p>操作：succeeded；处置：audit；质量：[&#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li><li>/bin/sh <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169</code></li><li>/tmp/ebpf-monitor-mawljw9z/worker <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;,
+    &quot;event_type&quot;: &quot;file_open&quot;,
+    &quot;monotonic_ns&quot;: 34794484017,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802976627,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 3,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 16,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: -100,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 124681,
+    &quot;device&quot;: 8388656,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path_source&quot;: &quot;kernel_filename&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/protected.txt&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;received_ns&quot;: 34803553915,
+    &quot;storage_submit_ns&quot;: 35067789344
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;sensitive_open_result&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;sensitive_open_result&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;
+    ],
+    &quot;subsequent_sensitive_action&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    }
+  },
+  &quot;status&quot;: &quot;complete_for_rule&quot;,
+  &quot;response_eligible&quot;: true,
+  &quot;response_prohibited_reasons&quot;: [],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34794484017,
+  &quot;window_end_ns&quot;: 34794484017,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article>
+<article><h2>C01 · high</h2><p>服务 → shell → 临时程序 → 敏感对象访问的时间窗口关联</p><p>操作：succeeded；处置：audit；质量：[&#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li><li>/bin/sh <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169</code></li><li>/tmp/ebpf-monitor-mawljw9z/worker <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34790286588,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34792467001,
+    &quot;exec_token&quot;: 34790287893,
+    &quot;parent_exec_token&quot;: 0,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1045,
+    &quot;tid&quot;: 1045,
+    &quot;ppid&quot;: 1022,
+    &quot;process_start_ns&quot;: 34788281248,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;service&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/service&quot;,
+    &quot;received_ns&quot;: 34792691656,
+    &quot;storage_submit_ns&quot;: 35019948739
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34791575925,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34792628505,
+    &quot;exec_token&quot;: 34791576825,
+    &quot;parent_exec_token&quot;: 34790287893,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 2,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 2
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1046,
+    &quot;tid&quot;: 1046,
+    &quot;ppid&quot;: 1045,
+    &quot;process_start_ns&quot;: 34791141169,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 2,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;sh&quot;,
+    &quot;path&quot;: &quot;/bin/sh&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/bin/sh&quot;,
+    &quot;received_ns&quot;: 34793648778,
+    &quot;storage_submit_ns&quot;: 35024180330
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;,
+    &quot;event_type&quot;: &quot;process_exec&quot;,
+    &quot;monotonic_ns&quot;: 34793916903,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802846879,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 0,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 0,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/benign.so&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;exe&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/worker&quot;,
+    &quot;received_ns&quot;: 34803016186,
+    &quot;storage_submit_ns&quot;: 35065675005
+  },
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;,
+    &quot;event_type&quot;: &quot;file_open&quot;,
+    &quot;monotonic_ns&quot;: 34794484017,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802976627,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: 3,
+    &quot;result_state&quot;: &quot;succeeded&quot;,
+    &quot;quality_flags&quot;: 16,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: -100,
+    &quot;request&quot;: 0,
+    &quot;target_pid&quot;: 0,
+    &quot;inode&quot;: 124681,
+    &quot;device&quot;: 8388656,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path_source&quot;: &quot;kernel_filename&quot;,
+    &quot;path&quot;: &quot;/tmp/ebpf-monitor-mawljw9z/protected.txt&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;received_ns&quot;: 34803553915,
+    &quot;storage_submit_ns&quot;: 35067789344
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;service_origin&quot;,
+    &quot;shell_exec&quot;,
+    &quot;temporary_exec&quot;,
+    &quot;sensitive_open_result&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;temporary_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;configuration_observed&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;,
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;
+    ],
+    &quot;shell_exec&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;
+    ],
+    &quot;sensitive_open_result&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;
+    ],
+    &quot;subsequent_sensitive_action&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;: {
+      &quot;path&quot;: 2,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 2
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:40&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:57&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    }
+  },
+  &quot;status&quot;: &quot;reduced&quot;,
+  &quot;response_eligible&quot;: false,
+  &quot;response_prohibited_reasons&quot;: [
+    &quot;capture_fields_incomplete:d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:22&quot;
+  ],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34790286588,
+  &quot;window_end_ns&quot;: 34794484017,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article>
+<article><h2>R02 · high</h2><p>观察到 ptrace 写内存请求；操作结果单列，不代表已证实恶意注入</p><p>操作：failed；处置：audit；质量：[&#x27;capture_fields_incomplete&#x27;, &#x27;ancestry_incomplete&#x27;]</p><h3>事实与来源</h3><ol><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:829:5321361475</code></li><li>未知映像 <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1022:32821816003</code></li><li>/tmp/ebpf-monitor-mawljw9z/service <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1045:34788281248</code></li><li>/bin/sh <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169</code></li><li>/tmp/ebpf-monitor-mawljw9z/worker <code>d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612</code></li></ol><details><summary>原始证据与时间线</summary><pre>[
+  {
+    &quot;schema_version&quot;: 2,
+    &quot;event_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:58&quot;,
+    &quot;event_type&quot;: &quot;ptrace&quot;,
+    &quot;monotonic_ns&quot;: 34794491156,
+    &quot;host_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321&quot;,
+    &quot;boot_id&quot;: &quot;71d44f60-33d6-47e4-b835-75641310520f&quot;,
+    &quot;session_id&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159&quot;,
+    &quot;clock_domain&quot;: &quot;CLOCK_MONOTONIC&quot;,
+    &quot;source_hook&quot;: &quot;kernel_or_collector&quot;,
+    &quot;collector_receive_ns&quot;: 34802983436,
+    &quot;exec_token&quot;: 34793917804,
+    &quot;parent_exec_token&quot;: 34791576825,
+    &quot;dynamic_policy_id&quot;: 0,
+    &quot;source_detail&quot;: &quot;selected_kernel_hooks&quot;,
+    &quot;field_quality&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    },
+    &quot;process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1047:34793583612&quot;,
+    &quot;parent_process_key&quot;: &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:1046:34791141169&quot;,
+    &quot;process_dead&quot;: false,
+    &quot;tgid&quot;: 1047,
+    &quot;tid&quot;: 1047,
+    &quot;ppid&quot;: 1046,
+    &quot;process_start_ns&quot;: 34793583612,
+    &quot;uid&quot;: 1000,
+    &quot;euid&quot;: 1000,
+    &quot;cgroup_id&quot;: 21,
+    &quot;retval&quot;: -3,
+    &quot;result_state&quot;: &quot;failed&quot;,
+    &quot;quality_flags&quot;: 4,
+    &quot;flags&quot;: 0,
+    &quot;dirfd&quot;: 0,
+    &quot;request&quot;: 5,
+    &quot;target_pid&quot;: 2147483647,
+    &quot;inode&quot;: 0,
+    &quot;device&quot;: 0,
+    &quot;policy_version&quot;: 0,
+    &quot;operation&quot;: 0,
+    &quot;comm&quot;: &quot;worker&quot;,
+    &quot;path&quot;: &quot;&quot;,
+    &quot;path2&quot;: &quot;&quot;,
+    &quot;argv_summary&quot;: &quot;&quot;,
+    &quot;env&quot;: {
+      &quot;LD_PRELOAD&quot;: &quot;&quot;,
+      &quot;LD_LIBRARY_PATH&quot;: &quot;&quot;
+    },
+    &quot;received_ns&quot;: 34803562497,
+    &quot;storage_submit_ns&quot;: 35068600133
+  }
+]</pre></details><h3>证据质量</h3><pre>{
+  &quot;requirements&quot;: [
+    &quot;ptrace_request_result&quot;
+  ],
+  &quot;observed&quot;: {
+    &quot;ptrace_request_result&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:58&quot;
+    ],
+    &quot;service_origin&quot;: [
+      &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:4&quot;
+    ]
+  },
+  &quot;missing&quot;: [],
+  &quot;field_quality&quot;: {
+    &quot;d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:58&quot;: {
+      &quot;path&quot;: 0,
+      &quot;environment&quot;: 0,
+      &quot;argv&quot;: 0
+    }
+  },
+  &quot;status&quot;: &quot;reduced&quot;,
+  &quot;response_eligible&quot;: false,
+  &quot;response_prohibited_reasons&quot;: [
+    &quot;capture_fields_incomplete:d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:58&quot;,
+    &quot;ptrace_target_identity_unknown:d794bde0c61c4c168caf4dbb87940321:71d44f60-33d6-47e4-b835-75641310520f:532-34574527159:58&quot;
+  ],
+  &quot;loss_intervals&quot;: [],
+  &quot;observation_start_ns&quot;: 34747708598,
+  &quot;window_start_ns&quot;: 34794491156,
+  &quot;window_end_ns&quot;: 34794491156,
+  &quot;scope&quot;: &quot;Observed source relations and rule stages; no claim of attack causality or content read.&quot;
+}</pre><h3>动作时间线</h3><pre>[]</pre><h3>成本</h3><p>请关联同轮性能文件；没有测量的成本保持未知。</p></article></html>

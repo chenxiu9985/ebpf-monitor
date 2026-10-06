@@ -21,7 +21,10 @@ class RecordCodecTests(unittest.TestCase):
             def run(mode):
                 return [json.loads(s) for s in subprocess.check_output([binary,mode],text=True).splitlines()]
             full, compact = run('full'), run('compact')
-            self.assertEqual(len(full),9)
+            self.assertEqual(len(full),10)
+            # Receipt time is sampled separately in each actual encoding run.
+            for record in full + compact:
+                self.assertGreater(record.pop('collector_receive_ns'), 0)
             self.assertEqual(full,compact)
 
 

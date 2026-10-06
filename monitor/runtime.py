@@ -10,6 +10,8 @@ from pathlib import Path
 
 from .engine import Engine
 from .model import validate_event
+from .response import ControlClient, ResponseManager
+from .capture import CapturePlan
 
 
 def doctor():
@@ -77,6 +79,9 @@ class RotatingJSONL:
         self.size = self.path.stat().st_size if self.path.exists() else 0
 
     def write(self, record):
+        self.write_encoded(json.dumps(record, ensure_ascii=False))
+
+    def write_encoded(self, encoded):
         if self.size >= self.max_bytes:
             self.close()
             oldest = Path(str(self.path) + f".{self.backups}")
@@ -89,7 +94,7 @@ class RotatingJSONL:
             self.size = 0
         if self.stream is None:
             self.stream = self.path.open("a", encoding="utf-8", newline="\n", buffering=65536)
-        line = json.dumps(record, ensure_ascii=False) + "\n"
+        line = encoded + "\n"
         self.stream.write(line)
         self.size += len(line.encode("utf-8"))
 
@@ -100,7 +105,7 @@ class RotatingJSONL:
 
 
 class Pipeline:
-    def __init__(self, config, store, raw=None, alerts=None, live=False):
+    def __init__(self, config, store, raw=None, alerts=None, live=False, control_socket=None):
         self.engine, self.store = Engine(config), store
         self.raw = RotatingJSONL(raw) if raw else None
         self.alert_sink = RotatingJSONL(alerts) if alerts else None
@@ -108,9 +113,21 @@ class Pipeline:
         self.aliases = {}
         self.snapshot_candidates = {}
         self.live = live
+        self.response = ResponseManager(config, store, live, ControlClient(control_socket) if control_socket else None)
+        self.session_id = None
+        self.capture = CapturePlan(config)
 
     def push(self, event):
         e = validate_event(event)
+        if self.live:
+            e["received_ns"] = time.monotonic_ns()
+        if self.session_id != e.get("session_id"):
+            self.flush()
+            self.aliases.clear()
+            self.snapshot_candidates.clear()
+            self.maximum = 0
+            self.session_id = e.get("session_id")
+            self.capture.loading.clear()
         if e["event_type"] == "process_snapshot":
             self.snapshot_candidates[(e.get("host_id"), e.get("boot_id"), e["tgid"])] = e
         elif "tgid" in e:
@@ -132,9 +149,16 @@ class Pipeline:
                 pass
         if parent_key in self.aliases:
             e["parent_process_key"] = self.aliases[parent_key]
-        new = self.store.event(e)
-        if self.raw and new:
-            self.raw.write(e)
+        source_key = e.get("service_process_key", "")
+        if source_key:
+            try:
+                prefix, pid, start = source_key.rsplit(":", 2)
+                snapshot = self.snapshot_candidates.get((e.get("host_id"), e.get("boot_id"), int(pid)))
+                if snapshot and 0 <= int(start)-snapshot["process_start_ns"] < snapshot["snapshot_tick_ns"]:
+                    self.aliases[source_key] = snapshot["process_key"]
+            except ValueError:
+                pass
+            e["service_process_key"] = self.aliases.get(source_key, source_key)
         self.serial += 1
         self.maximum = max(self.maximum, e["monotonic_ns"])
         heapq.heappush(self.heap, (e["monotonic_ns"], self.serial, e))
@@ -148,12 +172,33 @@ class Pipeline:
     def flush(self, watermark=None):
         while self.heap and (watermark is None or self.heap[0][0] <= watermark):
             _, _, e = heapq.heappop(self.heap)
+            self.capture.config = self.engine.config
+            keep = self.capture.keep(e, self.engine.sensitive_objects)
+            if keep:
+                new, body = self.store.event_with_body(e)
+                if not new:
+                    self.engine.metrics["duplicates"] += 1
+                    continue
+                if self.raw:
+                    self.raw.write_encoded(body)
+            # All records still update identity, lineage, event time and cache
+            # order. Filtering those updates changed ancestry in a real replay.
+            self.response.denial(e)
             for a in self.engine.process(e):
+                if not keep:
+                    _, body = self.store.event_with_body(e)
+                    if self.raw:
+                        self.raw.write_encoded(body)
+                    keep = True
+                    self.capture.filtered -= 1
                 if self.live:
                     a["analysis_time_ns"] = time.monotonic_ns()
                     a["delivery_delay_ns"] = max(0, a["analysis_time_ns"] - a["monotonic_ns"])
-                if self.store.alert(a) and self.alert_sink:
-                    self.alert_sink.write(a)
+                if self.store.alert(a):
+                    self.response.config = self.engine.config
+                    self.response.consider(a, e)
+                    if self.alert_sink:
+                        self.alert_sink.write(a)
         if watermark is None:
             self.store.flush()
             if self.raw:

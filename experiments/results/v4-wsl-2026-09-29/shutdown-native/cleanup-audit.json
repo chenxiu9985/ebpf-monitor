@@ -1,0 +1,73 @@
+{
+  "generated_path": "/shutdown",
+  "archive_verified": [
+    {
+      "path": "supervisor.log",
+      "sha256": "8bd758458dbee33042c622a66657193ee09627e63e166f4b14199f3a91af2ee1"
+    },
+    {
+      "path": "result.json",
+      "sha256": "d9342f75898523311fe6aaeda9a8b3e87ba72fd71c92b26d7af41e2366575264"
+    },
+    {
+      "path": "timeout/alerts.db",
+      "sha256": "b9fa338d63f9c04440799d380f61317a5b001a7eb8cf5a76b04b29d5eea66a9b"
+    },
+    {
+      "path": "timeout/result.json",
+      "sha256": "928f8602f277cd8574abaadba2f9da055373a27de7e2cfa629ad8033b2aef3f8"
+    },
+    {
+      "path": "timeout/collector.log",
+      "sha256": "e575b576e58ef000be24214b7782808afcffdf19747bd086847a0b787f8a9d06"
+    },
+    {
+      "path": "timeout/analyzer.log",
+      "sha256": "f142d7abc3e596f2896d3e9ac1493bf099b8c8ff8bd2323801dbfaaced9b7d10"
+    },
+    {
+      "path": "resume/events.jsonl.1",
+      "sha256": "dee2f06a6df6a64a69e2f5561a1734c47bdc43eccc969bd2cff71e3f81dcfa2e"
+    },
+    {
+      "path": "resume/events.jsonl",
+      "sha256": "aa9819dd69d7ea8fe8c56684bb9735dae393b494ef74ae9f2d6a95405757f7ec"
+    },
+    {
+      "path": "resume/alerts.db",
+      "sha256": "ac4637cb4e42892bc3034922a8fa03549c87152df3615075245d4f06ae868112"
+    },
+    {
+      "path": "resume/result.json",
+      "sha256": "2071607df3ce207fcb195a67aebf603632106aa05008d8a57b5aaa04d1abb66c"
+    },
+    {
+      "path": "resume/collector.log",
+      "sha256": "144fdbad021e3eec1cb414cefa2738ca72430e646b93480497bcfbc8b4b1efaf"
+    },
+    {
+      "path": "resume/analyzer.log",
+      "sha256": "dd686ba5bc08b4272915ba819b5eb21f50845aa576b66dbb6f3229b01e35d02c"
+    },
+    {
+      "path": "session/events.jsonl",
+      "sha256": "8cc54fc62c3b385622bcf55cec2ab7b42c87bab63932bd61557345a954ec2eec"
+    },
+    {
+      "path": "session/alerts.db",
+      "sha256": "224c86c75989012c21e9fb61fdd9ef70cdc9eeaf62317e19b873b01416eb62f2"
+    },
+    {
+      "path": "session/session.json",
+      "sha256": "cf482a8f7cc2536bef3f734c182af1bf60840a63558737abe19622cab41f2d17"
+    },
+    {
+      "path": "session/collector.log",
+      "sha256": "d99249ccb5a3f94b29790bec6fa134b6b919528db9dc154d4ec4dab170b9d596"
+    },
+    {
+      "path": "session/analyzer.log",
+      "sha256": "53debef936fbcbbca1f07d3ab43d3064a0ba8745e26e3cb9c307a12a139ecae6"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+Monitoring output: /mnt/d/work/研究生/演武堂/基于eBPF的Linux内核攻击监控方案/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3/round-2
+Press Ctrl+C once; capture will stop, then analysis will drain.
+{"collector_pid": 496, "analyzer_pid": 495}
+{
+  "source": "V3_SUPERVISED_LIVE",
+  "passed": true,
+  "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3/round-2",
+  "collector_exit": 0,
+  "analyzer_exit": 0,
+  "stop_requested": true,
+  "shutdown": {
+    "shutdown_unsent": 0,
+    "shutdown_queue_lost": 0,
+    "transport_disconnects": 0,
+    "shutdown_acknowledged": true,
+    "shutdown_error": 0
+  },
+  "final_metrics": {
+    "events_attempted": 2129,
+    "ring_lost": 0,
+    "map_fail": 0,
+    "unpaired": 0,
+    "denied": 0,
+    "queue_lost": 0,
+    "queue_depth": 0,
+    "transport_disconnects": 0
+  },
+  "capture_loss_free": true
+}

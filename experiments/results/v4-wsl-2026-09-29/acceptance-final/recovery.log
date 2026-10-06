@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/mnt/d/work/研究生/演武堂/基于eBPF的Linux内核攻击监控方案/ebpf-monitor-v4/scripts/transport_recovery.py", line 82, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/mnt/d/work/研究生/演武堂/基于eBPF的Linux内核攻击监控方案/ebpf-monitor-v4/scripts/transport_recovery.py", line 51, in main
+    wait_for(loss_visible, analyzer, 15)
+  File "/mnt/d/work/研究生/演武堂/基于eBPF的Linux内核攻击监控方案/ebpf-monitor-v4/scripts/integration.py", line 29, in wait_for
+    raise RuntimeError("timed out waiting for readiness")
+RuntimeError: timed out waiting for readiness

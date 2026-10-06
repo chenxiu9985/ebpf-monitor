@@ -1,10 +1,12 @@
-# 事件、规则与传输接口
+# v4 事件、证据、响应与传输接口
+
+当前事件为 schema_version=2；旧 v3 格式保存在 event-v1.schema.json，由运行时适配并保留身份未知。alert/evidence/control/response.schema.json 分别定义告警、质量、控制逻辑请求和生命周期。控制独立采用受限 seqpacket 版本1，不混入事件通道。精确身份、时间、质量和处置边界见 [PROTOCOL_V4.md](../docs/PROTOCOL_V4.md)。
 
 `event.schema.json` 是对外事件格式；`monitor/model.py` 是运行时验证器。内核和 C 采集器之间另用 `bpf/events.h` 定长结构，两个层面的版本不可混用。
 
 - socket 消息：4 字节大端无符号长度 + UTF-8 JSON。上限 1 MiB；半包累计，非法长度与断线残包报错。
 - v3 socket 退出协议：采集器停探针后使用一个总超时排空队列与剩余 ring 数据，发送带 `shutdown_ack_required=true` 的 monitor_stop，再半关闭发送方向。分析器收到完整 EOF 后完成 SQLite 提交、JSONL flush/close，再返回 ASCII `COMMITTED <monitor_stop event_id>\n`。确认身份不匹配、超时、断线或残包均不算成功；这不补回运行期间已丢失事件，也不承诺断电下多个文件的原子一致性。
-- v3 `--socket` 采集器需要搭配 v3 分析器。`--exit-on-stop` 供监督启动器使用；独立 listen 默认仍可等待后续连接。stdout JSONL 模式不使用确认协议。
+- v4 `--socket` 采集器需要搭配 v4 分析器。`--exit-on-stop` 供监督启动器使用；独立 listen 默认仍可等待后续连接。stdout JSONL 模式不使用确认协议；旧v3 JSONL可回放但不能授权真实策略。
 - `transport_disconnects` 记录发送断线；与 ring/map/queue 丢失和 unpaired 一起使后续关联状态失效。`shutdown_unsent=0` 仅表示发送队列为空，须同时检查 `shutdown_acknowledged` 和退出状态。
 - JSONL：每行一个完整事件。event_id 在一次采集会话内唯一；数据库幂等插入，关联器有界去重。
 - monotonic_ns 使用 CLOCK_MONOTONIC；start_ns 使用任务 start_boottime，只用于身份，不用于延迟相减。

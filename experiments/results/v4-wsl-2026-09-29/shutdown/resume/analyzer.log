@@ -1,0 +1,2 @@
+{"snapshot": "unavailable", "reason": "collector is not in host PID namespace; live process events remain enabled"}
+monitor error: [Errno 32] Broken pipe

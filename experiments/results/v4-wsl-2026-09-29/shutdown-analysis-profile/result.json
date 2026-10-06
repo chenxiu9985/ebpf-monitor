@@ -1,0 +1,114 @@
+{
+  "source": "JSONL_REPLAY_NOT_LIVE_CAPTURE",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "source_root": "/mnt/d/work/研究生/演武堂/基于eBPF的Linux内核攻击监控方案/ebpf-monitor-v4",
+  "output_directory": "/mnt/d/work/研究生/演武堂/基于eBPF的Linux内核攻击监控方案/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/shutdown-analysis-profile",
+  "records": 3332,
+  "input_sha256": "60c61f4f0f24384e22284f158d9968b91696a237fd01813ab5243afcab2f5a5c",
+  "config": {
+    "version": 1,
+    "window_seconds": 30,
+    "reorder_ms": 200,
+    "max_processes": 8192,
+    "exit_retention_seconds": 60,
+    "enabled": [
+      "C01",
+      "C02",
+      "R01",
+      "R02",
+      "R03",
+      "R04"
+    ],
+    "sensitive_paths": [
+      "/etc/shadow",
+      "/etc/gshadow"
+    ],
+    "preload_config": "/etc/ld.so.preload",
+    "temporary_roots": [
+      "/tmp",
+      "/var/tmp",
+      "/dev/shm"
+    ],
+    "service_executables": [
+      "/usr/sbin/nginx",
+      "/usr/sbin/apache2",
+      "/usr/sbin/sshd",
+      "/usr/bin/demo-service"
+    ],
+    "shell_executables": [
+      "/bin/sh",
+      "/bin/bash",
+      "/usr/bin/sh",
+      "/usr/bin/bash",
+      "/usr/bin/dash"
+    ],
+    "exceptions": [],
+    "response_mode": "audit",
+    "response_ttl_ms": 5000,
+    "capture_profile": "full"
+  },
+  "source_sha256": {
+    "monitor/__init__.py": "50409324baba5d44181b03eefde40f56779f8bcbca2e916109d152152e6ff355",
+    "monitor/__main__.py": "05a992f2d77d144c349d4125f6ecf9cd6ded2c6327ccffe193f333b68763d699",
+    "monitor/capture.py": "8f1c27cc7c85d4b87ab23c6dfabc25cf8bdd2b18081098ef3be71b5bb2e233a5",
+    "monitor/engine.py": "65fee0d6cf5ec322459748c7319990b60cfb2ee6edc423f1c44b2d03554b03ee",
+    "monitor/evidence.py": "b80664de17baef92057e2696b5484c3b2a7585949cfbdac2445640be115abe36",
+    "monitor/model.py": "814c9d143d642b018f8d3a64e4e0b312b2a47b23ee775163879a15db70819d48",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/response.py": "151c1dd76f344bc06460edd76ef65d6c3d9c500d0ed56bc498f224fc8858eb95",
+    "monitor/runtime.py": "8b052f7ad2a27905216bcd3f54fb449a086986ed7c1f7a85f50cacdf207621da",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "c5f192d9971a9570ffeb2eb75b6539eb1f16f2e8b49716b045171f17b3ecec51"
+  },
+  "stage_definitions": {
+    "decode": "framed JSON bytes -> dictionaries",
+    "engine": "complete rule engine, including process-cache population",
+    "storage": "all event rows and final SQLite commit, no analysis",
+    "pipeline": "validation, reorder, rules, raw/alerts JSONL and SQLite, final flush"
+  },
+  "limitation": "Sequential diagnostic stages are not additive costs. No eBPF/collector, live socket rate, or VMware claim.",
+  "rounds": [
+    {
+      "round": 1,
+      "decode": {
+        "seconds": 0.045980917999999704,
+        "cpu_seconds": 0.045188701,
+        "events_per_second": 72464.84291592485
+      },
+      "engine_alerts": 0,
+      "engine": {
+        "seconds": 0.03322618599999938,
+        "cpu_seconds": 0.03265608799999997,
+        "events_per_second": 100282.3495901715
+      },
+      "storage": {
+        "seconds": 2.305026473,
+        "cpu_seconds": 0.269415284,
+        "events_per_second": 1445.536543301991
+      },
+      "pipeline_alerts": 0,
+      "alert_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "event_rows": 3332,
+      "engine_metrics": {
+        "processed": 3332,
+        "duplicates": 0,
+        "late": 0,
+        "evicted": 0,
+        "alerts": 0
+      },
+      "pipeline": {
+        "seconds": 2.5537769300000015,
+        "cpu_seconds": 0.4338394469999999,
+        "events_per_second": 1304.7341609433358
+      }
+    }
+  ],
+  "median_seconds": {
+    "decode": 0.045980917999999704,
+    "engine": 0.03322618599999938,
+    "storage": 2.305026473,
+    "pipeline": 2.5537769300000015
+  },
+  "passed": true
+}

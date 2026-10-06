@@ -1,0 +1,3 @@
+{"snapshot": "unavailable", "reason": "collector is not in host PID namespace; live process events remain enabled"}
+{"shutdown_committed": "d794bde0c61c4c168caf4dbb87940321:54900880-b597-492d-a6bf-c38a7d65748e:424-8391923262:418"}
+{"processed": 418, "duplicates": 0, "late": 0, "evicted": 0, "alerts": 24, "loss_epoch": 0, "capture_profile": "full", "storage_filter_considered": 418, "storage_filter_omitted": 0}

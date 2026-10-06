@@ -1,0 +1,100 @@
+{
+  "source": "AUTOMATIC_RESPONSE_LOCAL_VALIDATION",
+  "target": "D:\\share\\ebpf-monitor-v4",
+  "timestamp_utc": "2026-10-05T08:12:03.318250+00:00",
+  "build": "BPF and collector compiled with clang 18, cc and libbpf 1.3.0; warnings treated as errors",
+  "linux_tests": {
+    "ran": 93,
+    "passed": true
+  },
+  "windows_tests": {
+    "ran": 93,
+    "skipped": 21,
+    "passed": true
+  },
+  "native_provenance": {
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "mode": "shadow",
+    "existing_service": true,
+    "helper_fork": true,
+    "response_eligible": true,
+    "service_registration": true,
+    "collector_exit": 0,
+    "analyzer_exit": 0,
+    "final_metrics": {
+      "events_attempted": 59,
+      "ring_lost": 0,
+      "map_fail": 0,
+      "unpaired": 0,
+      "denied": 0,
+      "filtered": 0,
+      "queue_lost": 0,
+      "queue_depth": 0,
+      "transport_disconnects": 0
+    }
+  },
+  "real_lsm_acceptance": {
+    "source": "REAL_AUTOMATIC_RESPONSE_ACCEPTANCE",
+    "environment": {
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "kernel": "6.6.87.2-microsoft-standard-WSL2",
+      "architecture": "x86_64",
+      "uid": 0,
+      "btf_readable": true,
+      "active_lsm": "capability,landlock,yama,safesetid,selinux",
+      "bpf_lsm_active": false,
+      "cgroup_v2": true,
+      "tools": {
+        "clang": "/usr/bin/clang",
+        "cc": "/usr/bin/cc",
+        "make": "/usr/bin/make",
+        "pkg-config": "/usr/bin/pkg-config",
+        "bpftool": "/usr/sbin/bpftool"
+      },
+      "tracepoints": {
+        "sched/sched_process_exec": true,
+        "sched/sched_process_fork": true,
+        "syscalls/sys_enter_openat2": true,
+        "syscalls/sys_enter_ptrace": true
+      },
+      "load_verified": false,
+      "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+      "mem_total_kib": 7762044
+    },
+    "status": "unavailable",
+    "passed": false,
+    "first_open_guaranteed": false,
+    "workload_waits_for_policy": false,
+    "rounds": [],
+    "reason": "Root and active BPF LSM required; no kernel configuration changed"
+  },
+  "source_hashes": {
+    "Makefile": "0baec05cb23a8c69782e8960a0f258eeb094bd1fc47b035bdbb66d1eba615956",
+    "README.md": "544916c6d3da49cc3c7724f49e1d1b51fa79013aeb411222904b90fcc3018355",
+    "bpf/events.h": "ca6fcce834270b52330cea8cae3f49b1f5a62ca3bba30b0b0745d6558c5d93bc",
+    "bpf/monitor.bpf.c": "c099396518356eaecea4bd78cddf593a8535a86846520e0abc5ce2b11e665ee1",
+    "collector/control.h": "4b8b6bc3c4fda787839dd8adb976bacca1e76c51363f7369bb767c77ebc1d317",
+    "collector/main.c": "72e793bab0937ee2a7efc3b2e712e1961835fff40a95dfa7b1d0ec7f01d183d6",
+    "monitor/engine.py": "e138576543d6ea3604b878a1059332f79515267a171a3f99e811786e51dd47e7",
+    "monitor/evidence.py": "66e2c331c5ae5e9aaaf1758a8789780cedbe30238eb17130717baac33f63458e",
+    "monitor/model.py": "359bbfe24b13e0b3eb4955b646d51ff59c1fde8e607a1397439e5820dacec5d9",
+    "monitor/response.py": "33197f08a4537cf6449340f2ffebedbbf47596f48d1d5684534d741e164ab94f",
+    "monitor/runtime.py": "5e318d267b285428ccaf5b6ce903a116db2e590f6f0174bed5e8094bd9600951",
+    "monitor/__main__.py": "1af4f7227b094bfebb4286f00c5e1aebc7c55143bf5f07c1407cf6abe4302a53",
+    "rules/default.yaml": "e1e47b18bda51acefaf1cc1ba53963e32b1fa287f9da11c4d0e6cb932bf4ac43",
+    "schema/control.schema.json": "fc479a64819bdb63b34e42d240f55705531c1fee31b3a419605b74e003229d58",
+    "schema/event.schema.json": "87b54ffbecf8e70f2c20371f3ceb5e5a913c5ea75f7e9870bb44950ff4c8961b",
+    "scripts/run_live.py": "4d43ed64036b0568cd12c76e523edf27f0ac8255645b75cf3ed5830524e4f03d",
+    "scripts/verify_response.py": "c6f447a77fd1d04f4a04f34f219f69b571c3a5916c517bd105a776909d047cf4",
+    "tests/test_supervisor.py": "e2d2c3d27f87f1eb61df600fd3ceb84fac2630562715b1566d2e194f3831b37c",
+    "tests/test_v4.py": "09cb3c6962703c1502fde9a6d96236722c434393231c84bd5b8e3ce3269a9fb4",
+    "tests/fixtures/control_mock.c": "2a21cd0edf384dc155a1b06729902affcb4e33d9fc310281044023e2ad9a6349",
+    "monitor/assets.py": "3a4a2ca51edca2959c4610547b2b44091943334c0f76a639e599760832193c9e",
+    "collector/registry.h": "60f23b8909639744ab16c2aab247e0625037278eed8bf72946598b1e89a62703",
+    "scripts/verify_response_auto.py": "64b86517fbf8c37619934ddaf7f4194f6184ac16d620c270c2f14a7b974f95e6",
+    "tests/test_auto_response.py": "c17489ec6829e36218597e38860d1463b3245b148e4e326c51fa73a82593aa0e",
+    "tests/fixtures/auto_response_service.c": "85aacd4f39c1c31d8924d724dc0cf7a8b9f21ce57b48bc9d9621bd11f260e88f",
+    "tests/fixtures/auto_response_worker.c": "4157dc3577e64431c4f7099cb7e1e9c27010617c43333c7a117e6e8a7a0868fd",
+    "docs/automatic-response.md": "173438314d09e61fcca8b926ed4ac934f533e982ad005f6980f5daf7df66668e"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "source": "V4_LOCAL_ACCEPTANCE",
+  "checks": [
+    {
+      "name": "build",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "unit",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "shadow",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "edges",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "mapping",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "shutdown_native",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "recovery",
+      "exit_code": 1,
+      "status": "failed"
+    },
+    {
+      "name": "equivalence",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "enforce",
+      "exit_code": 77,
+      "status": "unavailable"
+    }
+  ],
+  "local_functional_verified": false,
+  "full_v4_plan_verified": false,
+  "full_plan_gaps": [
+    "VMware target verification",
+    "complete dynamic enforcement failure matrix",
+    "representative business performance below 5%",
+    "one-hour sustained input",
+    "equivalent Falco/Tracee/Tetragon comparisons",
+    "v4 detection/performance ablations",
+    "kernel rule-related filtering"
+  ],
+  "enforcement_verified": false
+}

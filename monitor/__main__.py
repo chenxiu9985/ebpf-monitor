@@ -28,6 +28,7 @@ def parser():
             sub.add_argument("input")
         else:
             sub.add_argument("--socket", required=True)
+            sub.add_argument("--control-socket")
             sub.add_argument("--raw", required=True)
             sub.add_argument("--duration", type=float, default=0)
             sub.add_argument("--no-snapshot", action="store_true")
@@ -70,6 +71,9 @@ def listen(args, pipeline):
         try:
             config = load_config(args.rules)
             pipeline.flush()
+            if pipeline.live and any(config[k] != pipeline.engine.config[k] for k in
+                    ("sensitive_paths", "service_executables", "response_scope", "response_mode")):
+                raise ValueError("response authorization changed; restart run_live to register new assets")
             pipeline.engine.reload(config)
             print(json.dumps({"rule_reload": "applied", "version": config["version"]}), file=sys.stderr)
         except (ValueError, OSError) as exc:
@@ -136,6 +140,8 @@ def listen(args, pipeline):
                         if event["event_type"] == "monitor_start" and event.get("pid_namespace_is_host", False) and event["event_id"] not in started and not args.no_snapshot:
                             started.add(event["event_id"])
                             for snapshot in process_snapshot(event["host_id"], event["boot_id"]):
+                                snapshot.update(schema_version=2, session_id=event["session_id"],
+                                                clock_domain="CLOCK_MONOTONIC", source_hook="proc_snapshot")
                                 snapshot["monotonic_ns"] = event["monotonic_ns"]
                                 pipeline.push(snapshot)
             pipeline.flush()
@@ -162,7 +168,7 @@ def main(argv=None):
         elif args.command == "report":
             report(store, args.output)
         else:
-            pipeline = Pipeline(load_config(args.rules), store, raw=getattr(args, "raw", None), alerts=args.alerts, live=args.command == "listen")
+            pipeline = Pipeline(load_config(args.rules), store, raw=getattr(args, "raw", None), alerts=args.alerts, live=args.command == "listen", control_socket=getattr(args, "control_socket", None))
             if args.command == "replay":
                 with Path(args.input).open(encoding="utf-8") as stream:
                     for number, line in enumerate(stream, 1):
@@ -173,7 +179,10 @@ def main(argv=None):
                 pipeline.flush()
             else:
                 listen(args, pipeline)
-            print(json.dumps({**pipeline.engine.metrics, "loss_epoch": pipeline.engine.loss_epoch}, ensure_ascii=False))
+            print(json.dumps({**pipeline.engine.metrics, "loss_epoch": pipeline.engine.loss_epoch,
+                              "capture_profile": pipeline.capture.config["capture_profile"],
+                              "storage_filter_considered": pipeline.capture.considered,
+                              "storage_filter_omitted": pipeline.capture.filtered}, ensure_ascii=False))
     finally:
         store.close()
     return 0

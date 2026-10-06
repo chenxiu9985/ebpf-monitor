@@ -1,0 +1,4 @@
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -Ibuild -Ibpf -c bpf/monitor.bpf.c -o build/monitor.bpf.o
+/usr/lib/linux-tools/6.8.0-142-generic/bpftool gen skeleton build/monitor.bpf.o > build/monitor.skel.h.tmp
+mv build/monitor.skel.h.tmp build/monitor.skel.h
+cc -O2 -g -Wall -Wextra -Werror -Ibuild -Ibpf  collector/main.c -o build/collector -lbpf  -lelf -lz

@@ -1,0 +1,11 @@
+{
+  "contract_version": 1,
+  "baseline": "ebpf-monitor-v3",
+  "environment_label": "WSL Ubuntu 24.04, kernel 6.6.87.2-microsoft-standard-WSL2",
+  "workload": {"microbenchmark_opens": 2000, "microbenchmark_execs": 20, "rounds": 5, "order": "alternating B0/B3", "warmup": {"opens": 100, "execs": 5}},
+  "criteria": {"controlled_loss_counters": 0, "correct_scenario_rules": ["R01", "R02", "R03", "R04", "C01", "C02"], "normal_fixture_alerts": 0, "alert_p95_target_ms": 500, "representative_business_throughput_drop_target_percent": 5, "release_requires_real_lsm_identity_and_response_matrix": true, "stability_target_seconds": 3600},
+  "status": {"representative_business": "not_run", "one_hour_stability": "not_run", "dynamic_enforcement": "blocked_until_active_bpf_lsm_confirmed", "competitor_equivalent_comparison": "not_run"},
+  "failure_definition": "Wrong instance denial, unsupported success claims, lost events without quality downgrade, unexplained action state, or incorrect normal scenario alerts fail acceptance.",
+  "formulas": {"duration_increase_percent": "100*(T_monitored/T_baseline-1)", "throughput_drop_percent": "100*(1-T_baseline/T_monitored)"},
+  "scope": "Dense synthetic local-file open/exec workload. WSL results are not VMware or representative-business results. No inference from subtracting different-run medians. Enforcement path changes must not be interpreted as probe cost."
+}

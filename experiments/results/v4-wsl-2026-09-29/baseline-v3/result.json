@@ -1,0 +1,344 @@
+{
+  "source": "FULL_LIVE_MICROBENCHMARK",
+  "environment": {
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "uid": 0,
+    "btf_readable": true,
+    "active_lsm": null,
+    "bpf_lsm_active": null,
+    "cgroup_v2": true,
+    "tools": {
+      "clang": "/usr/bin/clang",
+      "cc": "/usr/bin/cc",
+      "make": "/usr/bin/make",
+      "pkg-config": "/usr/bin/pkg-config",
+      "bpftool": "/usr/sbin/bpftool"
+    },
+    "tracepoints": {
+      "sched/sched_process_exec": true,
+      "sched/sched_process_fork": true,
+      "syscalls/sys_enter_openat2": true,
+      "syscalls/sys_enter_ptrace": true
+    },
+    "load_verified": false,
+    "note": "Static capability inventory only; run integration tests to prove loading and hook coverage.",
+    "mem_total_kib": 7762060
+  },
+  "parameters": {
+    "out": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3",
+    "rounds": 5,
+    "opens": 2000,
+    "execs": 20,
+    "environment_label": "WSL-Ubuntu24.04"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "group": "B0",
+      "seconds": 0.034920491999997694,
+      "completion_seconds": 0.034924450000005436,
+      "drain_and_shutdown_seconds": 3.958000007742157e-06,
+      "passed": true
+    },
+    {
+      "round": 1,
+      "group": "B3",
+      "seconds": 0.05290676499998881,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.010000000000000009,
+        "analyzer_pid": 0.009999999999999995
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 38416,
+        "analyzer_pid": 22528
+      },
+      "completion_seconds": 3.076059454000003,
+      "drain_and_shutdown_seconds": 3.023152689000014,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3/round-1",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2180,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "group": "B3",
+      "seconds": 0.07153265399999498,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.0,
+        "analyzer_pid": 0.01999999999999999
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 38416,
+        "analyzer_pid": 23040
+      },
+      "completion_seconds": 3.001177265999999,
+      "drain_and_shutdown_seconds": 2.929644612000004,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3/round-2",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 2,
+      "group": "B0",
+      "seconds": 0.05160927700001139,
+      "completion_seconds": 0.05161577000001216,
+      "drain_and_shutdown_seconds": 6.493000000773463e-06,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "group": "B0",
+      "seconds": 0.05235434299999042,
+      "completion_seconds": 0.052358427000001484,
+      "drain_and_shutdown_seconds": 4.084000011062017e-06,
+      "passed": true
+    },
+    {
+      "round": 3,
+      "group": "B3",
+      "seconds": 0.07269138199998793,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.01999999999999999,
+        "analyzer_pid": 0.01999999999999999
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 39188,
+        "analyzer_pid": 23552
+      },
+      "completion_seconds": 3.0456426439999973,
+      "drain_and_shutdown_seconds": 2.9729512620000094,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3/round-3",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 4,
+      "group": "B3",
+      "seconds": 0.08343423799999528,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.009999999999999981,
+        "analyzer_pid": 0.03
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 39188,
+        "analyzer_pid": 23296
+      },
+      "completion_seconds": 2.95706404500001,
+      "drain_and_shutdown_seconds": 2.8736298070000146,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3/round-4",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    },
+    {
+      "round": 4,
+      "group": "B0",
+      "seconds": 0.06932435300001316,
+      "completion_seconds": 0.06932889500001238,
+      "drain_and_shutdown_seconds": 4.541999999219115e-06,
+      "passed": true
+    },
+    {
+      "round": 5,
+      "group": "B0",
+      "seconds": 0.07006613000001494,
+      "completion_seconds": 0.070070630999993,
+      "drain_and_shutdown_seconds": 4.5009999780631915e-06,
+      "passed": true
+    },
+    {
+      "round": 5,
+      "group": "B3",
+      "seconds": 0.08669395699999427,
+      "cpu_seconds_during_workload": {
+        "collector_pid": 0.01999999999999999,
+        "analyzer_pid": 0.01999999999999999
+      },
+      "rss_kib_at_workload_end": {
+        "collector_pid": 39188,
+        "analyzer_pid": 23296
+      },
+      "completion_seconds": 3.010063803999998,
+      "drain_and_shutdown_seconds": 2.9233698470000036,
+      "session": {
+        "source": "V3_SUPERVISED_LIVE",
+        "passed": true,
+        "output": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/baseline-v3/round-5",
+        "collector_exit": 0,
+        "analyzer_exit": 0,
+        "stop_requested": true,
+        "shutdown": {
+          "shutdown_unsent": 0,
+          "shutdown_queue_lost": 0,
+          "transport_disconnects": 0,
+          "shutdown_acknowledged": true,
+          "shutdown_error": 0
+        },
+        "final_metrics": {
+          "events_attempted": 2129,
+          "ring_lost": 0,
+          "map_fail": 0,
+          "unpaired": 0,
+          "denied": 0,
+          "queue_lost": 0,
+          "queue_depth": 0,
+          "transport_disconnects": 0
+        },
+        "capture_loss_free": true
+      },
+      "captured_fixture_opens": 2000,
+      "passed": true
+    }
+  ],
+  "completed": true,
+  "group_definitions": {
+    "B0": "no collector or analyzer",
+    "B3": "collector + rules + JSONL + SQLite"
+  },
+  "limitations": [
+    "Open/exec-intensive synthetic workload; not representative application overhead.",
+    "RSS is an end-of-workload sample, not peak or total kernel memory.",
+    "CPU covers the two userspace processes during workload, not all system CPU."
+  ],
+  "source_sha256": {
+    "bpf/events.h": "b0d62f542e9ecf8c7cae2aaf7dcd3e762bb0f8b885e96bcafea245484dca6a89",
+    "bpf/monitor.bpf.c": "7fd35b2aa2da755ab61915ae0778db7817545cf14892afa704cda431a407f8fa",
+    "collector/main.c": "c384abbbe6b2d62f6d8f33989231069e62d7dbe21ac85f7bb74890e1d323b272",
+    "collector/transport.h": "be74c5466fa42aa11c407139bd0460f539b32e41a4880903d862bfa59f542f45",
+    "monitor/__init__.py": "50409324baba5d44181b03eefde40f56779f8bcbca2e916109d152152e6ff355",
+    "monitor/__main__.py": "befde7545c73fe47546fbc3e688292fd475cc865445fd006eb739b91f1f8ec95",
+    "monitor/engine.py": "264967e341fbda157e6c3e7b6997e47d94faf0f2a76ba26b26adf30011d04692",
+    "monitor/model.py": "928be290678f4d03ce7600ddbf4c8ac6ea170809548ff5a4c91374ad77b6c846",
+    "monitor/protocol.py": "cb2fdcd5ef033b02f9cecaf3d9ed63c0f942c156f5adbeccd720a092e786821f",
+    "monitor/runtime.py": "67091a287f81aa6a16ec7bc60f7d634fed3a719c8001aaa2642f01cfb1df3059",
+    "monitor/scenarios.py": "e1a580bea361253680be81649e4a64dc3cfa3477e1d5fab26edd41414d39a299",
+    "monitor/storage.py": "e3071cd37c97c9e1f68e624cb538e7ceba0b29241a044a2958930897caebeb99",
+    "scripts/ablation.py": "96f3bb79d6286a70625b4da536992122324aaa354ec08d037c1fd15c5906899c",
+    "scripts/acceptance.py": "87ffda90a4e4b1f2c7753a8fb5c6753c32ff569187dad5b8e4382b0f282b7a38",
+    "scripts/analysis_benchmark.py": "95e2f2725099ddc5374bf2d8023844affe9211ac7a4885548d5c4921d5f9c626",
+    "scripts/benchmark.py": "0024013d6c360937e1140279957ad32ab0cf9c0aa887e5aa05bdad46d55ecfec",
+    "scripts/benchmark_live.py": "5d6b155c1e49e5f8f7305f244cf04738b26a9e5f91147ac0b95caeede30abd81",
+    "scripts/build.sh": "10ab28ad535fc12925ba684245a2ab63a62a44a167a705ed33a09784154f9b30",
+    "scripts/freeze_competitors.py": "9be003626cfb91197d11255828cbe819d7f7f1220e86c4b39d398cb2ffc8f9c7",
+    "scripts/integration.py": "f1affee378ab92a14076e9e5e5189703b444b6fda4547e407f4a932977d0a911",
+    "scripts/live_edges.py": "f380e3de2be349278ee01f11f4e2db95acefec106453d42d0a3f0a59856e7143",
+    "scripts/load_sweep.py": "6c0e061843663403861a1ad81a43eb3cb511e8bf61a2bceb20b072029a18c7c0",
+    "scripts/run.sh": "422ceda067ccac4b84bfbe0d23469123980a2e04581727def76a722118ae8358",
+    "scripts/run_live.py": "533fd3f462a29773d25ae6d7507917108427cbf6a5c8c85eab69107f03e32dd6",
+    "scripts/target_check.sh": "d872eaa20fe7ddf256e53fda9e323635179c29bd16d371ed2badfde6eb45f6c8",
+    "scripts/transport_recovery.py": "e58b2cb210b52b778f52b2c051c1ce3227706d254c9ca9387d0c19bd80284fdf",
+    "scripts/verify_denied_open.py": "5f39e5e279e8e38962871b4a947badb3b4f94dc31badef99db80ae29431c011c",
+    "scripts/verify_lsm.py": "685432986fbedd8e645f7670b3456cdaac10c519b8e40da839ec12cb0670994e",
+    "scripts/verify_shutdown.py": "6ea9b79e47c6d9c65d163d5ad95e2a1c3d9b35272d7385ec6bcb88346cbd19f9",
+    "rules/default.yaml": "8b3ba8ab9526519ab842cde18e7fbb4cebf543a58162ba39e558fe8ba2de4c2e",
+    "build/collector": "9e92df340d622b8301dd44b4814c5e049dbd69d958d6b20e8ba618b0fe7c879a"
+  },
+  "median_seconds": {
+    "B0": 0.05235434299999042,
+    "B3": 0.07269138199998793
+  },
+  "passed": true,
+  "elapsed_increase_percent": 38.84498942141481,
+  "throughput_drop_percent": 27.977235320688887,
+  "overhead_valid_for_complete_capture": true
+}

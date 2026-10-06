@@ -1,0 +1,12 @@
+{
+  "source": "JSONL_REPLAY_NOT_LIVE_CAPTURE",
+  "records": 3332,
+  "median_seconds": {
+    "decode": 0.045980917999999704,
+    "engine": 0.03322618599999938,
+    "storage": 2.305026473,
+    "pipeline": 2.5537769300000015
+  },
+  "passed": true,
+  "result": "/mnt/d/work/\u7814\u7a76\u751f/\u6f14\u6b66\u5802/\u57fa\u4e8eeBPF\u7684Linux\u5185\u6838\u653b\u51fb\u76d1\u63a7\u65b9\u6848/ebpf-monitor-v4/experiments/results/v4-wsl-2026-09-29/shutdown-analysis-profile/result.json"
+}

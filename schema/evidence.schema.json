@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rule evidence quality",
+  "type": "object",
+  "required": [
+    "requirements",
+    "observed",
+    "missing",
+    "status",
+    "response_eligible",
+    "response_prohibited_reasons"
+  ],
+  "properties": {
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "observed": {
+      "type": "object"
+    },
+    "missing": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "enum": [
+        "complete_for_rule",
+        "reduced"
+      ]
+    },
+    "response_eligible": {
+      "type": "boolean"
+    },
+    "response_prohibited_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

@@ -91,6 +91,8 @@ def main():
                     pipe.push(record)
                 pipe.flush()
                 alerts = sorted(store.alerts(), key=lambda x: x["alert_id"])
+                for alert in alerts:
+                    alert.pop("storage_submit_ns", None)
                 row["pipeline_alerts"] = len(alerts)
                 row["alert_sha256"] = hashlib.sha256(json.dumps(alerts, sort_keys=True).encode()).hexdigest()
                 row["event_rows"] = store.db.execute("SELECT COUNT(*) FROM events").fetchone()[0]

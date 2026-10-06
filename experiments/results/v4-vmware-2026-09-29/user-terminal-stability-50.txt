@@ -1,0 +1,1772 @@
+    {
+      "elapsed_seconds": 3381.020586226001,
+      "generated": 169052,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3382.0214483380005,
+      "generated": 169102,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3383.0405477490003,
+      "generated": 169153,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3384.04057017,
+      "generated": 169203,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3385.0406793400016,
+      "generated": 169253,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3386.040983056,
+      "generated": 169303,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3387.060948552,
+      "generated": 169354,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3388.0809466950013,
+      "generated": 169405,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3389.100736089,
+      "generated": 169456,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3390.100825308,
+      "generated": 169506,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3391.1206881020007,
+      "generated": 169557,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3392.1208110220014,
+      "generated": 169607,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3393.120947493,
+      "generated": 169657,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3394.140842836001,
+      "generated": 169708,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3395.1610474240006,
+      "generated": 169759,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3396.180877767001,
+      "generated": 169810,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3397.200782261001,
+      "generated": 169861,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3398.220816604,
+      "generated": 169912,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3399.240593398001,
+      "generated": 169963,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3400.2407603310003,
+      "generated": 170013,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3401.260825327001,
+      "generated": 170064,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3402.261057963,
+      "generated": 170114,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3403.2808387660007,
+      "generated": 170165,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3404.3011606130003,
+      "generated": 170216,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3405.3208585210014,
+      "generated": 170267,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3406.340493482001,
+      "generated": 170318,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3407.340803084,
+      "generated": 170368,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3408.361490233001,
+      "generated": 170419,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3409.380714158,
+      "generated": 170470,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3410.4005371270014,
+      "generated": 170521,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3411.401076237,
+      "generated": 170571,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3412.4208729150014,
+      "generated": 170622,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3413.4212184380012,
+      "generated": 170672,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3414.440787226,
+      "generated": 170723,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3415.460498265,
+      "generated": 170774,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3416.460865952,
+      "generated": 170824,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3417.4610376990004,
+      "generated": 170874,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3418.480917699,
+      "generated": 170925,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3419.502083233001,
+      "generated": 170976,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446492
+      }
+    },
+    {
+      "elapsed_seconds": 3420.5209335590007,
+      "generated": 171027,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446496
+      }
+    },
+    {
+      "elapsed_seconds": 3421.5408031240004,
+      "generated": 171078,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446496
+      }
+    },
+    {
+      "elapsed_seconds": 3422.5409301500003,
+      "generated": 171128,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446500
+      }
+    },
+    {
+      "elapsed_seconds": 3423.5606943270013,
+      "generated": 171179,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446500
+      }
+    },
+    {
+      "elapsed_seconds": 3424.580510560001,
+      "generated": 171230,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446500
+      }
+    },
+    {
+      "elapsed_seconds": 3425.580894551,
+      "generated": 171280,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446500
+      }
+    },
+    {
+      "elapsed_seconds": 3426.5809408060013,
+      "generated": 171330,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3427.600603209001,
+      "generated": 171381,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3428.6008302750015,
+      "generated": 171431,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3429.6206593900006,
+      "generated": 171482,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3430.62093587,
+      "generated": 171532,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3431.620995512001,
+      "generated": 171582,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3432.640483004001,
+      "generated": 171633,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3433.6407115600014,
+      "generated": 171683,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3434.640750177001,
+      "generated": 171733,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3435.661280524,
+      "generated": 171784,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3436.681226638,
+      "generated": 171835,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3437.701330707001,
+      "generated": 171886,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3438.7207095450012,
+      "generated": 171937,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3439.7408265310005,
+      "generated": 171988,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3440.7410079990004,
+      "generated": 172038,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3441.7610159040014,
+      "generated": 172089,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3442.7804053750006,
+      "generated": 172140,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3443.7804179250015,
+      "generated": 172190,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3444.780551531001,
+      "generated": 172240,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446504
+      }
+    },
+    {
+      "elapsed_seconds": 3445.7805782000014,
+      "generated": 172290,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446508
+      }
+    },
+    {
+      "elapsed_seconds": 3446.781051922,
+      "generated": 172340,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446508
+      }
+    },
+    {
+      "elapsed_seconds": 3447.8011619810004,
+      "generated": 172391,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446508
+      }
+    },
+    {
+      "elapsed_seconds": 3448.820653609,
+      "generated": 172442,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446508
+      }
+    },
+    {
+      "elapsed_seconds": 3449.821478308,
+      "generated": 172492,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3450.8406805590002,
+      "generated": 172543,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3451.8407480920014,
+      "generated": 172593,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3452.8408561860015,
+      "generated": 172643,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3453.860607611001,
+      "generated": 172694,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3454.880569191,
+      "generated": 172745,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3455.880991365,
+      "generated": 172795,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3456.900942870001,
+      "generated": 172846,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3457.920791736,
+      "generated": 172897,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3458.9403809670002,
+      "generated": 172948,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446512
+      }
+    },
+    {
+      "elapsed_seconds": 3459.9408426870013,
+      "generated": 172998,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3460.960814436001,
+      "generated": 173049,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3461.9610269840014,
+      "generated": 173099,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3462.961442592001,
+      "generated": 173149,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3463.9615099680013,
+      "generated": 173199,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3464.980898076001,
+      "generated": 173250,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3465.980996278,
+      "generated": 173300,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3467.000512109,
+      "generated": 173351,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3468.000927633,
+      "generated": 173401,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3469.020990180001,
+      "generated": 173452,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3470.0403285030006,
+      "generated": 173503,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3471.0403640230015,
+      "generated": 173553,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3472.041266993001,
+      "generated": 173603,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3473.060719203,
+      "generated": 173654,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3474.080764067001,
+      "generated": 173705,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3475.0808181440007,
+      "generated": 173755,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3476.1009784320013,
+      "generated": 173806,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3477.120446797,
+      "generated": 173857,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3478.1207439650007,
+      "generated": 173907,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3479.1409491450013,
+      "generated": 173958,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3480.1613080880015,
+      "generated": 174009,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3481.1807531110007,
+      "generated": 174060,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3482.2013549760013,
+      "generated": 174111,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3483.2209675250015,
+      "generated": 174162,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3484.2411081280006,
+      "generated": 174213,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3485.2604078120003,
+      "generated": 174264,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446516
+      }
+    },
+    {
+      "elapsed_seconds": 3486.2606568010015,
+      "generated": 174314,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3487.280962897001,
+      "generated": 174365,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3488.3011426620014,
+      "generated": 174416,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3489.3209920980007,
+      "generated": 174467,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3490.340951497001,
+      "generated": 174518,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3491.360952160001,
+      "generated": 174569,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3492.3808733900005,
+      "generated": 174620,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3493.4008170860016,
+      "generated": 174671,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3494.4208700460003,
+      "generated": 174722,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3495.421555426001,
+      "generated": 174772,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446520
+      }
+    },
+    {
+      "elapsed_seconds": 3496.4405325370008,
+      "generated": 174823,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3497.4405414640005,
+      "generated": 174873,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3498.4407754560016,
+      "generated": 174923,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3499.460452657,
+      "generated": 174974,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3500.4606520830002,
+      "generated": 175024,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3501.4607984780014,
+      "generated": 175074,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3502.4608648440008,
+      "generated": 175124,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3503.460887677,
+      "generated": 175174,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3504.480822511001,
+      "generated": 175225,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3505.4808781810007,
+      "generated": 175275,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3506.4809833200015,
+      "generated": 175325,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3507.5005800650015,
+      "generated": 175376,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3508.5007597390013,
+      "generated": 175426,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3509.5007756860014,
+      "generated": 175476,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3510.500775702001,
+      "generated": 175526,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3511.520618317001,
+      "generated": 175577,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3512.540706195001,
+      "generated": 175628,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3513.560763642001,
+      "generated": 175679,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3514.561419822001,
+      "generated": 175729,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3515.5804794250016,
+      "generated": 175780,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3516.6004698800007,
+      "generated": 175831,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3517.6009530720003,
+      "generated": 175881,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3518.620344078001,
+      "generated": 175932,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446524
+      }
+    },
+    {
+      "elapsed_seconds": 3519.6205867160006,
+      "generated": 175982,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3520.6211958170006,
+      "generated": 176032,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3521.640884026001,
+      "generated": 176083,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3522.661334890001,
+      "generated": 176134,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3523.680467149001,
+      "generated": 176185,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3524.681495424,
+      "generated": 176235,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3525.7007847200002,
+      "generated": 176286,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3526.700875953,
+      "generated": 176336,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3527.720651881,
+      "generated": 176387,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3528.7206896590014,
+      "generated": 176437,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3529.721068502,
+      "generated": 176487,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3530.740725844,
+      "generated": 176538,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3531.740900533001,
+      "generated": 176588,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3532.7612450040015,
+      "generated": 176639,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3533.7807526610013,
+      "generated": 176690,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3534.800822880001,
+      "generated": 176741,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3535.820652474,
+      "generated": 176792,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3536.8207044240007,
+      "generated": 176842,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3537.8208773450006,
+      "generated": 176892,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3538.8209176400014,
+      "generated": 176942,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3539.840774622,
+      "generated": 176993,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3540.841431549001,
+      "generated": 177043,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3541.8612010750003,
+      "generated": 177094,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3542.861527256,
+      "generated": 177144,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3543.8805980410016,
+      "generated": 177195,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3544.8808349690007,
+      "generated": 177245,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3545.880962272,
+      "generated": 177295,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3546.9005678640005,
+      "generated": 177346,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3547.900574016001,
+      "generated": 177396,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3548.900584141,
+      "generated": 177446,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3549.9207272430012,
+      "generated": 177497,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3550.920798414001,
+      "generated": 177547,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3551.920875758,
+      "generated": 177597,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3552.9209554770005,
+      "generated": 177647,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3553.940898076,
+      "generated": 177698,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3554.9414103340005,
+      "generated": 177748,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3555.960903287001,
+      "generated": 177799,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446528
+      }
+    },
+    {
+      "elapsed_seconds": 3556.980476812001,
+      "generated": 177850,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446532
+      }
+    },
+    {
+      "elapsed_seconds": 3557.980570101001,
+      "generated": 177900,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3558.9813352520014,
+      "generated": 177950,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3560.0006189060005,
+      "generated": 178001,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3561.020438024001,
+      "generated": 178052,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3562.0209447020006,
+      "generated": 178102,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3563.021353457001,
+      "generated": 178152,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3564.0408788040004,
+      "generated": 178203,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3565.061023311,
+      "generated": 178254,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3566.0611789960003,
+      "generated": 178304,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3567.061197561001,
+      "generated": 178354,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3568.0808943010015,
+      "generated": 178405,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3569.100742214001,
+      "generated": 178456,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3570.120938895001,
+      "generated": 178507,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3571.140296667001,
+      "generated": 178558,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3572.140730299001,
+      "generated": 178608,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3573.1608223070016,
+      "generated": 178659,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3574.160881298001,
+      "generated": 178709,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3575.1809002600003,
+      "generated": 178760,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3576.200690099,
+      "generated": 178811,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3577.2008494170004,
+      "generated": 178861,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3578.2010868080015,
+      "generated": 178911,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3579.2211450700015,
+      "generated": 178962,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3580.2211711200016,
+      "generated": 179012,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3581.241022338001,
+      "generated": 179063,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3582.260839535,
+      "generated": 179114,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3583.2608619150014,
+      "generated": 179164,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3584.280668362,
+      "generated": 179215,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3585.300496086,
+      "generated": 179266,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446536
+      }
+    },
+    {
+      "elapsed_seconds": 3586.300828388001,
+      "generated": 179316,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3587.321011758,
+      "generated": 179367,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3588.3405542180008,
+      "generated": 179418,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3589.3408746530004,
+      "generated": 179468,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3590.3611478500006,
+      "generated": 179519,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3591.3811878300003,
+      "generated": 179570,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3592.400766296001,
+      "generated": 179621,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3593.420367738001,
+      "generated": 179672,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3594.4210191520015,
+      "generated": 179722,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3595.441211036001,
+      "generated": 179773,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3596.460510416,
+      "generated": 179824,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3597.4608010720003,
+      "generated": 179874,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3598.4609027100014,
+      "generated": 179924,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    },
+    {
+      "elapsed_seconds": 3599.461010328001,
+      "generated": 179974,
+      "rss_kib": {
+        "collector_pid": 36632,
+        "analyzer_pid": 446540
+      }
+    }
+  ],
+  "passed": true,
+  "workload_seconds": 3600.00089139,
+  "saved": 180000,
+  "session": {
+    "source": "V4_SUPERVISED_LIVE",
+    "passed": true,
+    "output": "/home/chenxiu/ebpf-monitor-v4/out/vmware-stability-50-20260929-142914/session",
+    "mode": "audit",
+    "collector_exit": 0,
+    "analyzer_exit": 0,
+    "stop_requested": true,
+    "shutdown": {
+      "shutdown_unsent": 0,
+      "shutdown_queue_lost": 0,
+      "transport_disconnects": 0,
+      "shutdown_acknowledged": true,
+      "shutdown_error": 0
+    },
+    "final_metrics": {
+      "events_attempted": 192085,
+      "ring_lost": 0,
+      "map_fail": 0,
+      "unpaired": 0,
+      "denied": 0,
+      "filtered": 0,
+      "queue_lost": 0,
+      "queue_depth": 0,
+      "transport_disconnects": 0
+    },
+    "capture_loss_free": true
+  },
+  "rate_achieved": 49.9999876195864
+}Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv  9.8G  7.1G  2.3G  77% /
+chenxiu@xdp:~/ebpf-monitor-v4$

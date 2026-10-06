@@ -1,0 +1,19 @@
+{"round": 1, "group": "B0", "seconds": 0.035401807000000396, "completion_seconds": 0.03540672500000053, "drain_and_shutdown_seconds": 4.918000000131428e-06, "passed": true}
+{"round": 1, "group": "B3", "seconds": 0.049919469999999855, "cpu_seconds_during_workload": {"collector_pid": 0.010000000000000009, "analyzer_pid": 0.039999999999999994}, "rss_kib_at_workload_end": {"collector_pid": 38200, "analyzer_pid": 26880}, "completion_seconds": 2.579913561999999, "drain_and_shutdown_seconds": 2.529994091999999, "captured_fixture_opens": 2000, "passed": true}
+{"round": 2, "group": "B3", "seconds": 0.057439113999999236, "cpu_seconds_during_workload": {"collector_pid": 0.010000000000000009, "analyzer_pid": 0.039999999999999994}, "rss_kib_at_workload_end": {"collector_pid": 37688, "analyzer_pid": 27904}, "completion_seconds": 2.5879499359999993, "drain_and_shutdown_seconds": 2.530510822, "captured_fixture_opens": 2000, "passed": true}
+{"round": 2, "group": "B0", "seconds": 0.05664555499999935, "completion_seconds": 0.05664973100000026, "drain_and_shutdown_seconds": 4.1760000009105624e-06, "passed": true}
+{"round": 3, "group": "B0", "seconds": 0.052250654999999924, "completion_seconds": 0.052255225999999766, "drain_and_shutdown_seconds": 4.570999999842229e-06, "passed": true}
+{"round": 3, "group": "B3", "seconds": 0.07132321799999986, "cpu_seconds_during_workload": {"collector_pid": 0.03, "analyzer_pid": 0.04999999999999999}, "rss_kib_at_workload_end": {"collector_pid": 37852, "analyzer_pid": 27904}, "completion_seconds": 3.060802209, "drain_and_shutdown_seconds": 2.9894789910000004, "captured_fixture_opens": 2000, "passed": true}
+{"round": 4, "group": "B3", "seconds": 0.07680282499999791, "cpu_seconds_during_workload": {"collector_pid": 0.010000000000000009, "analyzer_pid": 0.05}, "rss_kib_at_workload_end": {"collector_pid": 37428, "analyzer_pid": 29440}, "completion_seconds": 2.65687698, "drain_and_shutdown_seconds": 2.580074155000002, "captured_fixture_opens": 2000, "passed": true}
+{"round": 4, "group": "B0", "seconds": 0.06980459900000113, "completion_seconds": 0.06980855600000169, "drain_and_shutdown_seconds": 3.95700000055399e-06, "passed": true}
+{"round": 5, "group": "B0", "seconds": 0.06903825300000221, "completion_seconds": 0.0690423609999975, "drain_and_shutdown_seconds": 4.107999995284217e-06, "passed": true}
+{"round": 5, "group": "B3", "seconds": 0.08499870300000012, "cpu_seconds_during_workload": {"collector_pid": 0.020000000000000018, "analyzer_pid": 0.05}, "rss_kib_at_workload_end": {"collector_pid": 37428, "analyzer_pid": 30976}, "completion_seconds": 2.411200000000001, "drain_and_shutdown_seconds": 2.326201297000001, "captured_fixture_opens": 2000, "passed": true}
+{
+  "passed": true,
+  "median_seconds": {
+    "B0": 0.05664555499999935,
+    "B3": 0.07132321799999986
+  },
+  "elapsed_increase_percent": 25.911411760376744,
+  "throughput_drop_percent": 20.579081274768807
+}

@@ -1,0 +1,19 @@
+{
+  "purpose": "Reuse one event JSON serialization for SQLite and raw JSONL",
+  "source": "VMware profile-20261001.json",
+  "files": {
+    "monitor/runtime.py": {
+      "vmware_base_sha256": "8b052f7ad2a27905216bcd3f54fb449a086986ed7c1f7a85f50cacdf207621da",
+      "updated_sha256": "712a4cbee3a52bfab031c20955d2fb584efb6f5c26adae7b10b671b63fe121a1"
+    },
+    "monitor/storage.py": {
+      "vmware_base_sha256": "8f26ce24b6a6045e7c463ce6010188b0536dc20b5198d973271279beafae3c24",
+      "updated_sha256": "174db01d72b3b1faaa13b43cdb9da61cbd087b65c7e2551c247737e7ab6bdb13"
+    },
+    "tests/test_v4.py": {
+      "vmware_base_sha256": "c1708a795bc2eb43744aa4f6efb65eb39e55148b3f264607698756cb2a7a00be",
+      "updated_sha256": "9ff890d37635bf500e5ef5fc67f96127c2fed45ee2549bcb24cb42266e8de72c"
+    }
+  },
+  "validation": "84 Linux unit tests and one real-kernel shadow integration in WSL; VMware performance unverified"
+}

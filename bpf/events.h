@@ -7,11 +7,11 @@
 #define ENV_LEN 256
 #define MAX_PENDING 2048
 enum event_type { EV_FORK=1, EV_EXEC, EV_EXIT, EV_OPEN, EV_PTRACE,
-                  EV_EXEC_FAIL, EV_RENAME, EV_UNLINK, EV_DENY };
+                  EV_EXEC_FAIL, EV_RENAME, EV_UNLINK, EV_DENY, EV_MAP };
 enum quality_flag { Q_TRUNCATED=1, Q_READ_ERROR=2, Q_MISSING=4,
                     Q_ENV_INCOMPLETE=8, Q_KERNEL_OPEN_PATH=16 };
 enum counters { CNT_EVENTS, CNT_RING_LOST, CNT_MAP_FAIL, CNT_UNPAIRED,
-                CNT_DENIED, CNT_TOTAL };
+                CNT_DENIED, CNT_FILTERED, CNT_TOTAL };
 struct event {
     __u64 timestamp_ns, start_ns, parent_start_ns, cgroup_id;
     __u64 thread_start_ns, target_start_ns, inode, device;
@@ -20,6 +20,10 @@ struct event {
     __u32 type, tgid, tid, ppid, uid, euid, target_pid;
     __u32 request, quality, operation, policy_version, process_dead, target_host_pid;
     __s32 dirfd;
+    __u32 path_quality, env_quality, argv_quality;
+    __u64 exec_token, parent_exec_token, dynamic_policy_id, operation_start_ns;
+    __u64 service_start_ns, service_token;
+    __u32 service_tgid, service_id, service_source, protected_object_id;
     char comm[16], path[PATH_LEN], path2[PATH_LEN];
     char preload[ENV_LEN], library_path[ENV_LEN];
     char argv_summary[PATH_LEN];
@@ -37,5 +41,16 @@ static __inline __attribute__((always_inline)) unsigned event_wire_size(unsigned
 struct enforcement_policy {
     __u64 cgroup_id, open_inode, open_device, exec_inode, exec_device;
     __u32 uid, version;
+};
+struct instance_key { __u64 start_ns; __u32 tgid, reserved; };
+struct file_key { __u64 device, inode; };
+// Source 1: observed service exec. Source 2: kernel-verified existing executable.
+struct execution_identity {
+    __u64 token, cgroup_id, service_start_ns, service_token;
+    __u32 mappings, uid, service_tgid, service_id, service_source, reserved;
+};
+struct dynamic_policy {
+    __u64 token, expires_ns, inode, device, cgroup_id, policy_id;
+    __u32 uid, version, object_set, reserved;
 };
 #endif
